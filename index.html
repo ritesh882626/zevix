@@ -2321,6 +2321,67 @@
       margin-bottom: 14px;
     }
 
+    .cart-urgency-timer-bar {
+      background: linear-gradient(90deg, rgba(230, 81, 0, 0.16), rgba(255, 167, 38, 0.1));
+      border-bottom: 1px solid rgba(255, 167, 38, 0.25);
+      padding: 10px 20px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #FFA726;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .cart-promo-banner {
+      background: rgba(43, 42, 160, 0.2);
+      border: 1px solid rgba(58, 56, 184, 0.4);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-promo-pill {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      font-size: 10.5px;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .btn-remove-cart-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #FF6B6B;
+      background: rgba(255, 107, 107, 0.08);
+      border: 1px solid rgba(255, 107, 107, 0.2);
+      padding: 3px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-remove-cart-item:hover {
+      background: rgba(255, 107, 107, 0.2);
+      color: #FF4757;
+      border-color: rgba(255, 107, 107, 0.45);
+    }
+
     .btn-checkout {
       width: 100%;
       height: 50px;
@@ -3348,15 +3409,19 @@
       background: #3A38B8;
     }
 
-    /* SCREEN 3: SUCCESS CELEBRATION */
-    .rzp-success-view {
+    /* SCREEN 5: SUCCESS CELEBRATION (STRICTLY DISPLAY NONE UNLESS ACTIVE) */
+    .rzp-screen-view.rzp-success-view {
+      display: none !important;
       padding: 36px 24px;
       text-align: center;
-      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 16px;
+    }
+
+    .rzp-screen-view.rzp-success-view.active {
+      display: flex !important;
     }
 
     .rzp-success-circle {
@@ -3615,46 +3680,46 @@
         </div>
         <div class="tax-inclusive-label">Inclusive of all taxes</div>
 
-        <!-- PAYMENT OFFER BANNER -->
-        <div class="payment-offer-card" id="paymentOfferCard">
-          <div class="payment-offer-left">
-            <div class="payment-offer-tag-circle">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
-                <line x1="7" y1="7" x2="7.01" y2="7"></line>
-              </svg>
+        <!-- PROMOTIONAL PAYMENT METHOD DISCOUNT BANNERS -->
+        <div class="promotions-box" style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
+          
+          <!-- UPI Discount Banner -->
+          <div class="payment-offer-card" style="margin-bottom:0; background:linear-gradient(135deg, rgba(43,42,160,0.28) 0%, rgba(17,17,46,0.92) 100%); border:1px solid rgba(58,56,184,0.55);">
+            <div class="payment-offer-left">
+              <div class="payment-offer-tag-circle" style="background:#2B2AA0; color:#5AD88B; border-color:rgba(90,216,139,0.4);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+              </div>
+              <div class="payment-offer-text-box">
+                <span class="payment-offer-headline" style="color:#5AD88B; display:flex; align-items:center; gap:6px;">
+                  <span>EXTRA 10% INSTANT OFF (UPI / QR)</span>
+                  <span style="background:rgba(90,216,139,0.2); color:#5AD88B; font-size:10px; padding:1px 5px; border-radius:3px;">AUTO-APPLIED</span>
+                </span>
+                <span class="payment-offer-sub">Pay only <strong style="color:#FFFFFF; font-size:13px;">₹1,979</strong> (Save ₹220) using GPay, PhonePe, Paytm or CRED</span>
+              </div>
             </div>
-            <div class="payment-offer-text-box">
-              <span class="payment-offer-headline">EXTRA 10% OFF</span>
-              <span class="payment-offer-sub">on UPI &amp; Credit Card Payments</span>
-              <span class="payment-offer-caption">Fast. Secure. Extra Savings.</span>
+            <div class="payment-offer-logos">
+              <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.15); padding:4px 8px; border-radius:4px; font-size:11px; font-weight:800; color:#E5E7ED; letter-spacing:0.04em;">UPI-10</span>
             </div>
           </div>
 
-          <div class="payment-offer-logos">
-            <div class="payment-logo-badge" title="UPI Payment">
-              <svg width="42" height="18" viewBox="0 0 60 24" fill="none">
-                <path d="M4 18L10 6H15L9 18H4Z" fill="#D7D8DC"/>
-                <path d="M17 6H22L19 14C18.5 15.5 17 18 14 18H9L12 14H15L17 6Z" fill="#D7D8DC"/>
-                <path d="M24 6H29L26 18H21L24 6Z" fill="#D7D8DC"/>
-                <path d="M33 6L39 12L33 18H28L34 12L28 6H33Z" fill="#3A38B8"/>
-                <path d="M37 6L43 12L37 18H32L38 12L32 6H37Z" fill="#E5E7ED"/>
-              </svg>
+          <!-- Credit Card & EMI Promo Banner -->
+          <div class="payment-offer-card" style="margin-bottom:0;">
+            <div class="payment-offer-left">
+              <div class="payment-offer-tag-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+              </div>
+              <div class="payment-offer-text-box">
+                <span class="payment-offer-headline">💳 5% CASHBACK ON CREDIT CARDS</span>
+                <span class="payment-offer-sub">Available on HDFC, ICICI, SBI, Axis + No Cost EMI options</span>
+              </div>
             </div>
-            <div class="payment-logo-divider"></div>
-            <div class="payment-logo-badge" title="Mastercard">
-              <svg width="28" height="18" viewBox="0 0 32 20" fill="none">
-                <circle cx="11" cy="10" r="9" fill="#EB001B"/>
-                <circle cx="21" cy="10" r="9" fill="#F79E1B" fill-opacity="0.92"/>
-              </svg>
-            </div>
-            <div class="payment-logo-divider"></div>
-            <div class="payment-logo-badge" title="VISA">
-              <svg width="32" height="14" viewBox="0 0 50 16" fill="none">
-                <path d="M19.6 1.1L12.9 15.2H8.5L5.2 3.6C5 2.9 4.8 2.6 4.2 2.3C3.3 1.8 1.5 1.4 0 1.1L0.1 0.6H7.1C8 0.6 8.8 1.2 9 2.2L10.7 11.2L15.3 0.6H19.6ZM37 10.3C37 6.4 31.5 6.2 31.5 4.5C31.5 3.9 32.1 3.3 33.3 3.1C33.9 3 35.5 2.9 37.3 3.8L38 0.8C37 0.4 35.7 0.1 34.1 0.1C29.9 0.1 27 2.3 27 5.5C27 7.9 29.1 9.2 30.7 10C32.4 10.8 33 11.3 33 12.1C33 13.2 31.6 13.7 30.3 13.7C28.1 13.7 26.9 13.3 25.8 12.8L25.1 15.9C26.3 16.4 28.3 16.8 30.3 16.8C34.8 16.8 37.7 14.6 37 10.3ZM47.8 15.2H51.6L48.2 0.6H44.7C43.9 0.6 43.2 1.1 42.9 1.8L36.6 15.2H41L41.9 12.7H47.3L47.8 15.2ZM43 9.7L45.2 3.7L46.4 9.7H43ZM26.3 0.6L22.9 15.2H18.8L22.2 0.6H26.3Z" fill="#FFFFFF"/>
-              </svg>
+            <div class="payment-offer-logos">
+              <div class="payment-logo-badge" title="Mastercard"><svg width="24" height="16" viewBox="0 0 32 20" fill="none"><circle cx="11" cy="10" r="9" fill="#EB001B"/><circle cx="21" cy="10" r="9" fill="#F79E1B" fill-opacity="0.9"/></svg></div>
+              <div class="payment-logo-divider"></div>
+              <div class="payment-logo-badge" title="Visa"><svg width="26" height="12" viewBox="0 0 50 16" fill="none"><path d="M19.6 1.1L12.9 15.2H8.5L5.2 3.6C5 2.9 4.8 2.6 4.2 2.3C3.3 1.8 1.5 1.4 0 1.1L0.1 0.6H7.1C8 0.6 8.8 1.2 9 2.2L10.7 11.2L15.3 0.6H19.6Z" fill="#FFFFFF"/></svg></div>
             </div>
           </div>
+
         </div>
 
         <!-- Quantity & Add to Cart Action Row -->
@@ -3982,24 +4047,54 @@
         <h3 class="cart-drawer-title">YOUR CART (<span id="cartDrawerCount">1</span>)</h3>
         <button class="cart-close-btn" id="closeCartBtn" aria-label="Close Cart">✕</button>
       </div>
+
+      <!-- 12-Hour Urgency Reservation Timer -->
+      <div class="cart-urgency-timer-bar">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFA726" stroke-width="2.2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>🔥 Cart reserved for <strong id="cartReserveCountdown" style="color:#FFA726; font-family:monospace; font-size:13px; letter-spacing:0.04em;">11:59:58</strong> to prevent stockout!</span>
+      </div>
+
       <div class="cart-shipping-meter">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-        <span>Congratulations! You've unlocked <strong>FREE Shipping</strong></span>
+        <span>Assured Dispatch in <strong>24 Hours</strong> &bull; Free Express Delivery</span>
       </div>
+
       <div class="cart-drawer-body">
-        <div class="cart-item-card">
-          <div class="cart-item-thumb"><img src="assets/images/product_1_white_bg.jpg" alt="ZEVIX EAZE"></div>
-          <div class="cart-item-info">
-            <h4 class="cart-item-title">ZEVIX EAZE</h4>
-            <div class="cart-item-variant">Neck &amp; Shoulder Massager with Heat</div>
-            <div class="cart-item-price-row">
-              <span class="cart-item-price" id="cartItemPrice">₹2,199</span>
-              <span style="font-size:12px; color:var(--text-muted);">Qty: <strong id="cartItemQty" style="color:#FFFFFF;">1</strong></span>
+        <!-- Payment Discounts Promo in Cart -->
+        <div class="cart-promo-banner">
+          <span class="cart-promo-pill">⚡ UPI Special</span>
+          <span>Save <strong>₹220 (10% OFF)</strong> instantly with UPI! Pay <strong>₹1,979</strong> at checkout.</span>
+        </div>
+
+        <div id="cartItemsContainer">
+          <div class="cart-item-card">
+            <div class="cart-item-thumb"><img src="assets/images/product_1_white_bg.jpg" alt="ZEVIX EAZE"></div>
+            <div class="cart-item-info">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px;">
+                <h4 class="cart-item-title" style="margin:0;">ZEVIX EAZE</h4>
+                <button type="button" class="btn-remove-cart-item" id="btnRemoveCartItem" title="Remove from cart" aria-label="Remove item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                  <span>Remove</span>
+                </button>
+              </div>
+              <div class="cart-item-variant">Neck &amp; Shoulder Massager with Heat</div>
+              <div class="cart-item-price-row">
+                <span class="cart-item-price" id="cartItemPrice">₹2,199</span>
+                <span style="font-size:12px; color:var(--text-muted);">Qty: <strong id="cartItemQty" style="color:#FFFFFF;">1</strong></span>
+              </div>
             </div>
           </div>
         </div>
+
+        <div id="cartEmptyState" style="display:none; text-align:center; padding:40px 16px;">
+          <div style="font-size:40px; margin-bottom:12px;">🛒</div>
+          <h4 style="font-family:var(--font-display); font-size:18px; color:var(--text-primary); margin-bottom:6px;">Your cart is currently empty</h4>
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px; line-height:1.5;">Items sell out fast! Add ZEVIX EAZE back to reserve your stock.</p>
+          <button type="button" class="btn-checkout" id="btnRestoreCartItem" style="max-width:220px; margin:0 auto; height:44px; font-size:12px;">ADD TO CART</button>
+        </div>
       </div>
-      <div class="cart-drawer-footer">
+
+      <div class="cart-drawer-footer" id="cartDrawerFooter">
         <div class="cart-subtotal-row"><span>Subtotal</span><span id="cartSubtotal">₹2,199</span></div>
         <button class="btn-checkout" id="btnProceedCheckout">PROCEED TO CHECKOUT</button>
       </div>
@@ -4648,7 +4743,46 @@
       }
 
       // --- CART DRAWER SYSTEM ---
+      const cartItemsContainer = document.getElementById('cartItemsContainer');
+      const cartEmptyState = document.getElementById('cartEmptyState');
+      const cartDrawerFooter = document.getElementById('cartDrawerFooter');
+      const btnRemoveCartItem = document.getElementById('btnRemoveCartItem');
+      const btnRestoreCartItem = document.getElementById('btnRestoreCartItem');
+
+      // 12-Hour Urgency Reservation Timer
+      let cartReservationSeconds = 12 * 3600; // 12 hours (43,200s)
+      const cartReserveCountdown = document.getElementById('cartReserveCountdown');
+      setInterval(() => {
+        cartReservationSeconds--;
+        if (cartReservationSeconds < 0) cartReservationSeconds = 12 * 3600;
+        const h = Math.floor(cartReservationSeconds / 3600);
+        const m = Math.floor((cartReservationSeconds % 3600) / 60);
+        const s = cartReservationSeconds % 60;
+        if (cartReserveCountdown) {
+          cartReserveCountdown.textContent = `${h < 10 ? '0' : ''}${h}:${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+      }, 1000);
+
+      function setCartEmpty(isEmpty) {
+        if (isEmpty) {
+          state.cartCount = 0;
+          if (cartCountBadge) cartCountBadge.textContent = '0';
+          if (cartDrawerCount) cartDrawerCount.textContent = '0';
+          if (cartItemsContainer) cartItemsContainer.style.display = 'none';
+          if (cartEmptyState) cartEmptyState.style.display = 'block';
+          if (cartDrawerFooter) cartDrawerFooter.style.display = 'none';
+        } else {
+          state.cartCount = state.quantity || 1;
+          if (cartCountBadge) cartCountBadge.textContent = state.cartCount;
+          if (cartDrawerCount) cartDrawerCount.textContent = state.cartCount;
+          if (cartItemsContainer) cartItemsContainer.style.display = 'block';
+          if (cartEmptyState) cartEmptyState.style.display = 'none';
+          if (cartDrawerFooter) cartDrawerFooter.style.display = 'block';
+        }
+      }
+
       function triggerCart() {
+        setCartEmpty(false);
         state.cartCount = state.quantity;
         cartCountBadge.textContent = state.cartCount;
         cartDrawerCount.textContent = state.cartCount;
@@ -4674,12 +4808,27 @@
         }
       }
 
+      if (btnRemoveCartItem) {
+        btnRemoveCartItem.addEventListener('click', (e) => {
+          e.stopPropagation();
+          setCartEmpty(true);
+        });
+      }
+
+      if (btnRestoreCartItem) {
+        btnRestoreCartItem.addEventListener('click', () => {
+          state.quantity = 1;
+          updatePricing();
+          updateCheckoutTotals();
+          triggerCart();
+        });
+      }
+
       if (addToCartBtn) addToCartBtn.addEventListener('click', triggerCart);
       if (stickyAtcBtn) stickyAtcBtn.addEventListener('click', triggerCart);
       if (openCartBtn) {
         openCartBtn.addEventListener('click', () => {
           if (state.cartCount === 0) {
-            state.cartCount = 1;
             state.quantity = 1;
           }
           triggerCart();
