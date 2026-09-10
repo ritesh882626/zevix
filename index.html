@@ -2690,7 +2690,7 @@
       color: #1A1A24;
     }
 
-    /* SCREEN 1: REVIEW ORDER (AUTOFILLED ADDRESS FROM SCREENSHOT 2) */
+    /* SCREEN VIEWS & ANIMATIONS */
     .rzp-screen-view {
       display: none;
       flex-direction: column;
@@ -2713,6 +2713,143 @@
         padding: 24px 28px 32px 28px;
       }
     }
+
+    /* STEP 1: PHONE & STEP 2: OTP SPECIFIC STYLES */
+    .rzp-flow-hero-title {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: #1A1A24;
+      margin-bottom: 4px;
+    }
+
+    .rzp-flow-hero-desc {
+      font-size: 13px;
+      color: #717180;
+      line-height: 1.45;
+      margin-bottom: 18px;
+    }
+
+    .rzp-phone-input-wrap {
+      display: flex;
+      align-items: center;
+      border: 1.5px solid #DCDCED;
+      border-radius: 8px;
+      background: #FFFFFF;
+      overflow: hidden;
+      margin-bottom: 14px;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .rzp-phone-input-wrap:focus-within {
+      border-color: #2B2AA0;
+      box-shadow: 0 0 0 3px rgba(43, 42, 160, 0.12);
+    }
+
+    .rzp-phone-prefix {
+      padding: 12px 14px;
+      background: #F6F6FA;
+      border-right: 1.5px solid #DCDCED;
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A1A24;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      user-select: none;
+    }
+
+    .rzp-phone-input {
+      flex: 1;
+      height: 48px;
+      border: none;
+      outline: none;
+      padding: 0 14px;
+      font-size: 15px;
+      font-weight: 600;
+      color: #1A1A24;
+      letter-spacing: 0.04em;
+    }
+
+    .rzp-trust-badge-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #F4F6FF;
+      border: 1px solid #E0E4F8;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12px;
+      color: #2B2AA0;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .rzp-otp-digits-container {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 18px 0;
+    }
+
+    .rzp-otp-box {
+      width: 52px;
+      height: 56px;
+      border: 2px solid #DCDCED;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 800;
+      color: #1A1A24;
+      outline: none;
+      background: #FAFAFC;
+      transition: all var(--transition-fast);
+    }
+
+    .rzp-otp-box:focus {
+      border-color: #2B2AA0;
+      background: #FFFFFF;
+      box-shadow: 0 0 0 3px rgba(43, 42, 160, 0.15);
+    }
+
+    .rzp-autofill-hint-pill {
+      background: #E8F5E9;
+      border: 1px solid #C8E6C9;
+      color: #1B5E20;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .rzp-resend-row {
+      font-size: 12.5px;
+      color: #717180;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .rzp-link-action {
+      color: #2B2AA0;
+      font-weight: 700;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 12.5px;
+    }
+
+    .rzp-link-action:hover {
+      text-decoration: underline;
+    }
+
+    /* STEP 3: REVIEW ORDER (AUTOFILLED ADDRESS FROM SCREENSHOT 2) */
 
     /* 1. Logged In User Card */
     .rzp-user-card {
@@ -3953,7 +4090,7 @@
             <button type="button" class="rzp-back-btn" id="rzpBackBtn" style="display:none;" aria-label="Go back">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </button>
-            <span id="rzpScreenHeaderTitle">Review Order</span>
+            <span id="rzpScreenHeaderTitle">Fast Checkout</span>
           </div>
           <div class="rzp-header-actions">
             <button type="button" class="rzp-icon-btn" aria-label="More options">···</button>
@@ -3961,8 +4098,67 @@
           </div>
         </div>
 
-        <!-- SCREEN 1: REVIEW ORDER (AUTOFILLED ADDRESS AS IN SCREENSHOT 2) -->
-        <div class="rzp-screen-view active" id="rzpScreenReview">
+        <!-- SCREEN 1: PHONE NUMBER & CONSENT -->
+        <div class="rzp-screen-view active" id="rzpScreenPhone">
+          <div class="rzp-flow-hero-title">Fast 1-Click Checkout</div>
+          <p class="rzp-flow-hero-desc">Enter your mobile number to get OTP and automatically fetch your saved delivery address with Razorpay.</p>
+
+          <label style="font-size:12px; font-weight:700; color:#555566; margin-bottom:6px; display:block;">Mobile Number</label>
+          <div class="rzp-phone-input-wrap">
+            <div class="rzp-phone-prefix">
+              <span>🇮🇳</span>
+              <span>+91</span>
+            </div>
+            <input type="tel" class="rzp-phone-input" id="rzpInputPhone" placeholder="Enter 10-digit mobile" value="8826002574" maxlength="10">
+          </div>
+
+          <div class="rzp-trust-badge-row">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            <span>Instant Address Autofill &bull; 100% Safe &bull; Zero Passwords</span>
+          </div>
+
+          <label class="rzp-checkbox-row">
+            <div class="rzp-checkbox-custom">✓</div>
+            <span>Send order updates &amp; tracking on WhatsApp</span>
+          </label>
+
+          <button type="button" class="rzp-btn-continue" id="rzpBtnSendOtp">
+            Continue &bull; Send OTP
+          </button>
+        </div>
+
+        <!-- SCREEN 2: OTP VERIFICATION -->
+        <div class="rzp-screen-view" id="rzpScreenOtp">
+          <div class="rzp-flow-hero-title">Verify Phone Number</div>
+          <p class="rzp-flow-hero-desc">
+            Enter 4-digit OTP sent to <strong id="rzpOtpSentTo">+91 88260 02574</strong>
+            <button type="button" class="rzp-link-action" id="rzpBtnEditPhone" style="margin-left:6px;">Edit</button>
+          </p>
+
+          <div class="rzp-autofill-hint-pill">
+            <span>✨ Auto-detected OTP from SMS</span>
+            <strong>8826</strong>
+          </div>
+
+          <div class="rzp-otp-digits-container">
+            <input type="text" maxlength="1" class="rzp-otp-box" id="otpDigit1" value="8" inputmode="numeric">
+            <input type="text" maxlength="1" class="rzp-otp-box" id="otpDigit2" value="8" inputmode="numeric">
+            <input type="text" maxlength="1" class="rzp-otp-box" id="otpDigit3" value="2" inputmode="numeric">
+            <input type="text" maxlength="1" class="rzp-otp-box" id="otpDigit4" value="6" inputmode="numeric">
+          </div>
+
+          <div class="rzp-resend-row">
+            <span id="rzpResendText">Resend OTP in <strong id="rzpResendTimer">00:25</strong></span>
+            <button type="button" class="rzp-link-action" id="rzpBtnResendNow" style="display:none;">Resend OTP Now</button>
+          </div>
+
+          <button type="button" class="rzp-btn-continue" id="rzpBtnVerifyOtp">
+            Verify &amp; Fetch Address
+          </button>
+        </div>
+
+        <!-- SCREEN 3: REVIEW ORDER (AUTOFILLED ADDRESS AS IN SCREENSHOT 2) -->
+        <div class="rzp-screen-view" id="rzpScreenReview">
           
           <!-- 1. Logged in Contact Card -->
           <div class="rzp-user-card">
@@ -4352,9 +4548,28 @@
       const rzpCloseModalBtn = document.getElementById('rzpCloseModalBtn');
       const rzpBackBtn = document.getElementById('rzpBackBtn');
       const rzpScreenHeaderTitle = document.getElementById('rzpScreenHeaderTitle');
+      const rzpSidebarNotice = document.getElementById('rzpSidebarNotice');
+
+      const rzpScreenPhone = document.getElementById('rzpScreenPhone');
+      const rzpScreenOtp = document.getElementById('rzpScreenOtp');
       const rzpScreenReview = document.getElementById('rzpScreenReview');
       const rzpScreenPayment = document.getElementById('rzpScreenPayment');
       const rzpScreenSuccess = document.getElementById('rzpScreenSuccess');
+
+      const rzpInputPhone = document.getElementById('rzpInputPhone');
+      const rzpBtnSendOtp = document.getElementById('rzpBtnSendOtp');
+      const rzpBtnVerifyOtp = document.getElementById('rzpBtnVerifyOtp');
+      const rzpOtpSentTo = document.getElementById('rzpOtpSentTo');
+      const rzpBtnEditPhone = document.getElementById('rzpBtnEditPhone');
+      const rzpResendTimer = document.getElementById('rzpResendTimer');
+      const rzpResendText = document.getElementById('rzpResendText');
+      const rzpBtnResendNow = document.getElementById('rzpBtnResendNow');
+      const otpBoxes = [
+        document.getElementById('otpDigit1'),
+        document.getElementById('otpDigit2'),
+        document.getElementById('otpDigit3'),
+        document.getElementById('otpDigit4')
+      ];
 
       const rzpSidebarPrice = document.getElementById('rzpSidebarPrice');
       const sidebarQtyVal = document.getElementById('sidebarQtyVal');
@@ -4367,6 +4582,7 @@
       const rzpAddressEditOverlay = document.getElementById('rzpAddressEditOverlay');
       const rzpCloseAddressEditBtn = document.getElementById('rzpCloseAddressEditBtn');
       const rzpAutofillAddressDetails = document.getElementById('rzpAutofillAddressDetails');
+      const rzpUserPhoneDisplay = document.getElementById('rzpUserPhoneDisplay');
 
       const payMethodItems = document.querySelectorAll('.rzp-pay-method-item');
       const viewUpiQr = document.getElementById('viewUpiQr');
@@ -4502,24 +4718,77 @@
         rzpSidebarPrice.textContent = '₹' + finalPayable.toLocaleString('en-IN');
       }
 
+      let resendCountdownTimer = null;
+
+      function startOtpResendTimer() {
+        if (resendCountdownTimer) clearInterval(resendCountdownTimer);
+        let seconds = 25;
+        if (rzpResendText) rzpResendText.style.display = 'inline';
+        if (rzpBtnResendNow) rzpBtnResendNow.style.display = 'none';
+        if (rzpResendTimer) rzpResendTimer.textContent = '00:25';
+
+        resendCountdownTimer = setInterval(() => {
+          seconds--;
+          if (seconds <= 0) {
+            clearInterval(resendCountdownTimer);
+            if (rzpResendText) rzpResendText.style.display = 'none';
+            if (rzpBtnResendNow) rzpBtnResendNow.style.display = 'inline';
+          } else {
+            if (rzpResendTimer) rzpResendTimer.textContent = `00:${seconds < 10 ? '0' : ''}${seconds}`;
+          }
+        }, 1000);
+      }
+
       function showRzpScreen(screenName) {
         state.checkout.currentScreen = screenName;
-        rzpScreenReview.classList.remove('active');
-        rzpScreenPayment.classList.remove('active');
-        rzpScreenSuccess.classList.remove('active');
+        
+        // Hide all screens
+        if (rzpScreenPhone) rzpScreenPhone.classList.remove('active');
+        if (rzpScreenOtp) rzpScreenOtp.classList.remove('active');
+        if (rzpScreenReview) rzpScreenReview.classList.remove('active');
+        if (rzpScreenPayment) rzpScreenPayment.classList.remove('active');
+        if (rzpScreenSuccess) rzpScreenSuccess.classList.remove('active');
 
-        if (screenName === 'review') {
-          rzpScreenReview.classList.add('active');
-          rzpScreenHeaderTitle.textContent = 'Review Order';
+        if (screenName === 'phone') {
+          if (rzpScreenPhone) rzpScreenPhone.classList.add('active');
+          rzpScreenHeaderTitle.textContent = 'Fast Checkout';
+          if (rzpSidebarNotice) rzpSidebarNotice.textContent = 'Quick 1-click checkout via Razorpay';
           rzpBackBtn.style.display = 'none';
+          setTimeout(() => { if (rzpInputPhone) rzpInputPhone.focus(); }, 150);
+        } else if (screenName === 'otp') {
+          if (rzpScreenOtp) rzpScreenOtp.classList.add('active');
+          rzpScreenHeaderTitle.textContent = 'Verify Phone Number';
+          if (rzpSidebarNotice) rzpSidebarNotice.textContent = 'Verifying your mobile number...';
+          rzpBackBtn.style.display = 'flex';
+          startOtpResendTimer();
+          setTimeout(() => {
+            const firstEmpty = otpBoxes.find(b => b && !b.value) || otpBoxes[0];
+            if (firstEmpty) firstEmpty.focus();
+          }, 150);
+        } else if (screenName === 'review') {
+          if (rzpScreenReview) rzpScreenReview.classList.add('active');
+          rzpScreenHeaderTitle.textContent = 'Review Order';
+          if (rzpSidebarNotice) rzpSidebarNotice.textContent = 'Please check your shipping address!';
+          rzpBackBtn.style.display = 'flex';
+
+          const rawPhone = state.checkout.rawPhone || '8826002574';
+          if (rzpUserPhoneDisplay) rzpUserPhoneDisplay.textContent = '+91 ' + rawPhone;
+          if (rzpAutofillAddressDetails) {
+            rzpAutofillAddressDetails.innerHTML = `
+              <div class="rzp-address-contact-line">+91 ${rawPhone} • ${state.checkout.email}</div>
+              <div>${state.checkout.name}, ${state.checkout.addressLine}, ${state.checkout.cityStatePin}</div>
+            `;
+          }
         } else if (screenName === 'payment') {
-          rzpScreenPayment.classList.add('active');
+          if (rzpScreenPayment) rzpScreenPayment.classList.add('active');
           rzpScreenHeaderTitle.textContent = 'Payment Options';
+          if (rzpSidebarNotice) rzpSidebarNotice.textContent = 'Choose your preferred payment method';
           rzpBackBtn.style.display = 'flex';
           startQrTimer();
         } else if (screenName === 'success') {
-          rzpScreenSuccess.classList.add('active');
+          if (rzpScreenSuccess) rzpScreenSuccess.classList.add('active');
           rzpScreenHeaderTitle.textContent = 'Order Confirmed';
+          if (rzpSidebarNotice) rzpSidebarNotice.textContent = 'Thank you for shopping with ZEVIX!';
           rzpBackBtn.style.display = 'none';
         }
 
@@ -4583,6 +4852,117 @@
         });
       });
 
+      // Step 1: Phone submission
+      if (rzpBtnSendOtp) {
+        rzpBtnSendOtp.addEventListener('click', () => {
+          let phoneVal = rzpInputPhone.value.replace(/\D/g, '');
+          if (phoneVal.length < 10) {
+            alert('Please enter a valid 10-digit mobile number.');
+            rzpInputPhone.focus();
+            return;
+          }
+          if (phoneVal.length > 10) phoneVal = phoneVal.slice(-10);
+
+          state.checkout.rawPhone = phoneVal;
+          state.checkout.phone = '+91 ' + phoneVal;
+          if (rzpOtpSentTo) rzpOtpSentTo.textContent = '+91 ' + phoneVal;
+
+          const originalText = rzpBtnSendOtp.innerHTML;
+          rzpBtnSendOtp.disabled = true;
+          rzpBtnSendOtp.innerHTML = '<span>Sending OTP...</span>';
+
+          setTimeout(() => {
+            rzpBtnSendOtp.disabled = false;
+            rzpBtnSendOtp.innerHTML = originalText;
+            showRzpScreen('otp');
+          }, 450);
+        });
+      }
+
+      if (rzpInputPhone) {
+        rzpInputPhone.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            if (rzpBtnSendOtp) rzpBtnSendOtp.click();
+          }
+        });
+      }
+
+      // Step 2: OTP input handling
+      otpBoxes.forEach((box, index) => {
+        if (!box) return;
+        box.addEventListener('input', (e) => {
+          const val = e.target.value.replace(/\D/g, '');
+          e.target.value = val ? val[val.length - 1] : '';
+
+          if (e.target.value && index < otpBoxes.length - 1) {
+            otpBoxes[index + 1].focus();
+          }
+
+          // If all 4 filled, auto-verify
+          const fullOtp = otpBoxes.map(b => b ? b.value : '').join('');
+          if (fullOtp.length === 4 && rzpBtnVerifyOtp) {
+            setTimeout(() => rzpBtnVerifyOtp.click(), 250);
+          }
+        });
+
+        box.addEventListener('keydown', (e) => {
+          if (e.key === 'Backspace' && !box.value && index > 0) {
+            otpBoxes[index - 1].focus();
+          }
+        });
+
+        box.addEventListener('paste', (e) => {
+          e.preventDefault();
+          const pastedData = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '');
+          if (pastedData) {
+            for (let i = 0; i < otpBoxes.length; i++) {
+              if (pastedData[i] && otpBoxes[i]) {
+                otpBoxes[i].value = pastedData[i];
+              }
+            }
+            const lastFilled = Math.min(pastedData.length, otpBoxes.length) - 1;
+            if (otpBoxes[lastFilled]) otpBoxes[lastFilled].focus();
+            if (pastedData.length >= 4 && rzpBtnVerifyOtp) {
+              setTimeout(() => rzpBtnVerifyOtp.click(), 250);
+            }
+          }
+        });
+      });
+
+      if (rzpBtnVerifyOtp) {
+        rzpBtnVerifyOtp.addEventListener('click', () => {
+          const otpVal = otpBoxes.map(b => b ? b.value : '').join('');
+          if (otpVal.length < 4) {
+            alert('Please enter the 4-digit OTP.');
+            return;
+          }
+
+          const originalText = rzpBtnVerifyOtp.innerHTML;
+          rzpBtnVerifyOtp.disabled = true;
+          rzpBtnVerifyOtp.innerHTML = '<span>⚡ Fetching Razorpay address...</span>';
+
+          setTimeout(() => {
+            rzpBtnVerifyOtp.disabled = false;
+            rzpBtnVerifyOtp.innerHTML = originalText;
+            showRzpScreen('review');
+          }, 650);
+        });
+      }
+
+      if (rzpBtnEditPhone) {
+        rzpBtnEditPhone.addEventListener('click', () => {
+          showRzpScreen('phone');
+        });
+      }
+
+      if (rzpBtnResendNow) {
+        rzpBtnResendNow.addEventListener('click', () => {
+          startOtpResendTimer();
+          alert('A new OTP has been sent to ' + (state.checkout.phone || '+91 88260 02574'));
+        });
+      }
+
       // Quantity adjustments in sidebar
       if (sidebarQtyMinus && sidebarQtyPlus) {
         sidebarQtyMinus.addEventListener('click', () => {
@@ -4604,7 +4984,7 @@
       // Open / Close Checkout Modal
       function openCheckoutModal() {
         closeCart();
-        showRzpScreen('review');
+        showRzpScreen('phone');
         checkoutModalBackdrop.classList.add('open');
         document.body.style.overflow = 'hidden';
       }
@@ -4626,6 +5006,10 @@
         rzpBackBtn.addEventListener('click', () => {
           if (state.checkout.currentScreen === 'payment') {
             showRzpScreen('review');
+          } else if (state.checkout.currentScreen === 'review') {
+            showRzpScreen('phone');
+          } else if (state.checkout.currentScreen === 'otp') {
+            showRzpScreen('phone');
           }
         });
       }
@@ -4664,15 +5048,18 @@
 
           state.checkout.name = name;
           state.checkout.phone = '+91 ' + phone;
+          state.checkout.rawPhone = phone;
           state.checkout.email = email;
           state.checkout.addressLine = line1;
           state.checkout.cityStatePin = city + ', ' + pin;
 
-          rzpAutofillAddressDetails.innerHTML = `
-            <div class="rzp-address-contact-line">+91 ${phone} • ${email}</div>
-            <div>${name}, ${line1}, ${city}, ${pin}</div>
-          `;
-          document.getElementById('rzpUserPhoneDisplay').textContent = '+91 ' + phone;
+          if (rzpAutofillAddressDetails) {
+            rzpAutofillAddressDetails.innerHTML = `
+              <div class="rzp-address-contact-line">+91 ${phone} • ${email}</div>
+              <div>${name}, ${line1}, ${city}, ${pin}</div>
+            `;
+          }
+          if (rzpUserPhoneDisplay) rzpUserPhoneDisplay.textContent = '+91 ' + phone;
 
           rzpAddressEditOverlay.classList.remove('open');
         },
