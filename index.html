@@ -151,15 +151,14 @@
 
     /* 11. GLOBAL PAGE CONTAINER & 12. MINIMUM SCREEN EDGE SPACING */
     .site-container,
-    .pdp-main-wrapper,
     .daily-relief-container,
     .reviews-container,
     .footer-container {
       width: 100%;
       max-width: 1440px;
       margin-inline: auto;
-      padding-left: clamp(16px, 4vw, 64px);
-      padding-right: clamp(16px, 4vw, 64px);
+      padding-left: clamp(14px, 3.5vw, 64px);
+      padding-right: clamp(14px, 3.5vw, 64px);
       box-sizing: border-box;
     }
 
@@ -319,9 +318,16 @@
     .pdp-main-wrapper {
       max-width: 1360px;
       margin: 0 auto;
-      padding: 0 0 40px 0;
+      padding: 0 0 36px 0;
       background-color: var(--bg-main);
       width: 100%;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+      .pdp-main-wrapper {
+        padding: 24px 24px 48px 24px;
+      }
     }
 
     @media (min-width: 1024px) {
@@ -536,13 +542,13 @@
        5. PRODUCT DETAILS & PURCHASE AREA
        ------------------------------------------------------------- */
     .pdp-purchase-container {
-      padding: 24px 16px 0 16px;
+      padding: 20px 14px 0 14px;
       background-color: transparent;
       width: 100%;
       box-sizing: border-box;
     }
 
-    @media (min-width: 1024px) {
+    @media (min-width: 768px) {
       .pdp-purchase-container {
         padding: 0;
       }
@@ -881,15 +887,30 @@
     .feature-highlights-row {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 8px;
-      margin-bottom: 28px;
+      gap: 6px;
+      margin-bottom: 24px;
       text-align: center;
       width: 100%;
+      box-sizing: border-box;
     }
 
     @media (max-width: 480px) {
       .feature-highlights-row {
-        gap: 4px;
+        gap: 3px;
+      }
+      .feature-icon-circle {
+        width: 38px;
+        height: 38px;
+      }
+      .feature-icon-circle svg {
+        width: 16px;
+        height: 16px;
+      }
+      .feature-label {
+        font-size: 8.5px;
+        line-height: 1.15;
+        white-space: normal;
+        word-break: break-word;
       }
     }
 
@@ -897,7 +918,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
+      min-width: 0;
     }
 
     .feature-icon-circle {
@@ -911,6 +933,7 @@
       justify-content: center;
       color: var(--metallic-silver);
       transition: all var(--transition-fast);
+      flex-shrink: 0;
     }
 
     @media (min-width: 768px) {
@@ -2447,7 +2470,7 @@
     }
 
     /* -------------------------------------------------------------
-       10. EXACT RAZORPAY CHECKOUT MODAL SYSTEM (FROM REFERENCE)
+       10. RAZORPAY CHECKOUT MODAL SYSTEM (MOBILE OPTIMIZED)
        ------------------------------------------------------------- */
     .checkout-modal-backdrop {
       position: fixed;
@@ -2466,6 +2489,7 @@
       align-items: center;
       justify-content: center;
       padding: 0;
+      box-sizing: border-box;
     }
 
     @media (min-width: 768px) {
@@ -2479,7 +2503,7 @@
       pointer-events: auto;
     }
 
-    /* Master Razorpay Container: 2-Columns */
+    /* Master Razorpay Container */
     .razorpay-checkout-modal {
       width: 100%;
       height: 100%;
@@ -2514,7 +2538,147 @@
       transform: translateY(0) scale(1);
     }
 
-    /* LEFT SIDEBAR (BRAND + ORDER SUMMARY + ARTWORK) */
+    /* MOBILE COMPACT ORDER SUMMARY BAR (REPLACES BULKY SIDEBAR ON MOBILE) */
+    .rzp-mobile-order-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: linear-gradient(135deg, #1B1B5F 0%, #11112E 100%);
+      border-bottom: 1px solid #2B2AA0;
+      color: #FFFFFF;
+      position: sticky;
+      top: 0;
+      z-index: 15;
+      flex-shrink: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+      .rzp-mobile-order-bar {
+        display: none !important;
+      }
+    }
+
+    .rzp-mobile-order-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .rzp-mobile-brand-pill {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .rzp-mobile-order-desc {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #FFFFFF;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .rzp-mobile-qty-tag {
+      font-size: 11px;
+      color: var(--metallic-bright);
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    .rzp-mobile-order-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .rzp-mobile-price {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+
+    .rzp-mobile-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--metallic-bright);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 3px 7px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .rzp-mobile-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .rzp-mobile-summary-collapse {
+      max-height: 0;
+      overflow: hidden;
+      background: #FAFAFC;
+      border-bottom: 1px solid #ECECF2;
+      transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .rzp-mobile-summary-collapse.open {
+      max-height: 120px;
+    }
+
+    .rzp-mobile-collapse-inner {
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .rzp-mobile-qty-ctrls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFFFFF;
+      border: 1px solid #DCDCED;
+      border-radius: 6px;
+      padding: 2px 6px;
+    }
+
+    .rzp-mobile-qty-btn {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: #2B2AA0;
+    }
+
+    /* DESKTOP LEFT SIDEBAR (BRAND + ORDER SUMMARY + ARTWORK) */
     .rzp-left-sidebar {
       width: 100%;
       background: #241638;
@@ -2527,6 +2691,13 @@
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 767px) {
+      .rzp-left-sidebar {
+        display: none !important;
+      }
     }
 
     @media (min-width: 768px) {
@@ -2733,11 +2904,13 @@
       flex-direction: column;
       overflow-y: auto;
       position: relative;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     /* Screen Top Header */
     .rzp-pane-header {
-      padding: 16px 20px;
+      padding: 14px 16px;
       border-bottom: 1px solid #ECECF2;
       display: flex;
       align-items: center;
@@ -2746,6 +2919,14 @@
       top: 0;
       background: #FFFFFF;
       z-index: 10;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+      .rzp-pane-header {
+        padding: 16px 20px;
+      }
     }
 
     .rzp-pane-header-title {
@@ -2799,9 +2980,11 @@
     .rzp-screen-view {
       display: none;
       flex-direction: column;
-      padding: 20px;
+      padding: 18px 14px 24px 14px;
       flex: 1;
       animation: rzpFadeIn 0.25s ease forwards;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .rzp-screen-view.active {
@@ -2822,17 +3005,18 @@
     /* STEP 1: PHONE & STEP 2: OTP SPECIFIC STYLES */
     .rzp-flow-hero-title {
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 16.5px;
       font-weight: 700;
       color: #1A1A24;
       margin-bottom: 4px;
+      line-height: 1.3;
     }
 
     .rzp-flow-hero-desc {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #717180;
       line-height: 1.45;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .rzp-phone-input-wrap {
@@ -2844,6 +3028,8 @@
       overflow: hidden;
       margin-bottom: 14px;
       transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .rzp-phone-input-wrap:focus-within {
@@ -2862,6 +3048,7 @@
       align-items: center;
       gap: 6px;
       user-select: none;
+      flex-shrink: 0;
     }
 
     .rzp-phone-input {
@@ -2870,10 +3057,11 @@
       border: none;
       outline: none;
       padding: 0 14px;
-      font-size: 15px;
+      font-size: 16px; /* 16px prevents iOS auto-zoom */
       font-weight: 600;
       color: #1A1A24;
       letter-spacing: 0.04em;
+      min-width: 0;
     }
 
     .rzp-trust-badge-row {
@@ -2884,22 +3072,24 @@
       border: 1px solid #E0E4F8;
       border-radius: 8px;
       padding: 10px 12px;
-      font-size: 12px;
+      font-size: 11.5px;
       color: #2B2AA0;
       font-weight: 600;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      line-height: 1.35;
     }
 
     .rzp-otp-digits-container {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin: 18px 0;
+      gap: 10px;
+      margin: 16px 0;
+      width: 100%;
     }
 
     .rzp-otp-box {
-      width: 52px;
-      height: 56px;
+      width: 50px;
+      height: 54px;
       border: 2px solid #DCDCED;
       border-radius: 10px;
       text-align: center;
@@ -2909,6 +3099,7 @@
       outline: none;
       background: #FAFAFC;
       transition: all var(--transition-fast);
+      box-sizing: border-box;
     }
 
     .rzp-otp-box:focus {
@@ -2921,7 +3112,7 @@
       background: #E8F5E9;
       border: 1px solid #C8E6C9;
       color: #1B5E20;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       padding: 8px 12px;
       border-radius: 6px;
@@ -2932,12 +3123,12 @@
     }
 
     .rzp-resend-row {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #717180;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .rzp-link-action {
@@ -2955,47 +3146,47 @@
     }
 
     /* STEP 3: REVIEW ORDER (AUTOFILLED ADDRESS FROM SCREENSHOT 2) */
-
-    /* 1. Logged In User Card */
     .rzp-user-card {
       background: #FFFFFF;
       border: 1px solid #E4E4EC;
       border-radius: 10px;
-      padding: 14px 16px;
+      padding: 12px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 14px;
-      font-size: 13.5px;
+      margin-bottom: 12px;
+      font-size: 13px;
     }
 
     .rzp-user-card-left {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       font-weight: 600;
       color: #1A1A24;
     }
 
     .rzp-user-card-right {
       color: #717180;
-      font-size: 12.5px;
+      font-size: 12px;
       display: flex;
       align-items: center;
       gap: 4px;
       font-style: italic;
     }
 
-    /* 2. Deliver to Address Card (Autofilled!) */
+    /* Deliver to Address Card */
     .rzp-address-card {
       background: #FFFFFF;
       border: 1px solid #E4E4EC;
       border-radius: 10px;
-      padding: 16px;
-      margin-bottom: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .rzp-address-card-header {
@@ -3008,7 +3199,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
       color: #1A1A24;
     }
@@ -3018,8 +3209,8 @@
     }
 
     .rzp-btn-change-addr {
-      color: #1A1A24;
-      font-size: 13px;
+      color: #2B2AA0;
+      font-size: 12.5px;
       font-weight: 700;
       cursor: pointer;
     }
@@ -3029,7 +3220,7 @@
     }
 
     .rzp-address-details-body {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #333340;
       line-height: 1.5;
     }
@@ -3037,26 +3228,28 @@
     .rzp-address-contact-line {
       font-weight: 600;
       color: #1A1A24;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
-    /* 3. Delivery Options Card */
+    /* Delivery Options Card */
     .rzp-delivery-opts-card {
       background: #FFFFFF;
       border: 1px solid #E4E4EC;
       border-radius: 10px;
-      padding: 16px;
-      margin-bottom: 18px;
+      padding: 14px;
+      margin-bottom: 16px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .rzp-delivery-opts-title {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
       color: #1A1A24;
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .rzp-delivery-opts-title svg {
@@ -3070,13 +3263,15 @@
       background: #FAFAFC;
       border: 1.5px solid #E6E6EE;
       border-radius: 8px;
-      padding: 12px 14px;
+      padding: 10px 12px;
+      gap: 8px;
     }
 
     .rzp-delivery-radio-left {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      min-width: 0;
     }
 
     .rzp-radio-dot-checked {
@@ -3085,38 +3280,41 @@
       border-radius: 50%;
       border: 5px solid #C026D3;
       background: #FFFFFF;
+      flex-shrink: 0;
     }
 
     .rzp-delivery-label-main {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       color: #1A1A24;
+      line-height: 1.3;
     }
 
     .rzp-delivery-label-sub {
-      font-size: 11.5px;
+      font-size: 11px;
       color: #717180;
       font-style: italic;
+      line-height: 1.3;
     }
 
     .rzp-free-badge {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #1E8E3E;
       background: #E6F4EA;
-      padding: 3px 8px;
+      padding: 2px 7px;
       border-radius: 4px;
       letter-spacing: 0.04em;
+      flex-shrink: 0;
     }
 
-    /* 4. Checkbox Consent */
     .rzp-checkbox-row {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 13px;
+      font-size: 12.5px;
       color: #333340;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       cursor: pointer;
     }
 
@@ -3129,51 +3327,58 @@
       align-items: center;
       justify-content: center;
       color: #FFFFFF;
+      font-size: 11px;
+      flex-shrink: 0;
     }
 
-    /* 5. Big Razorpay Black CTA Button */
+    /* Big Razorpay Action CTA Buttons */
     .rzp-btn-continue {
       width: 100%;
-      height: 48px;
+      height: 50px;
       background: #111111;
       color: #FFFFFF;
       font-family: var(--font-display);
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 700;
-      border-radius: 6px;
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
       transition: background-color var(--transition-fast);
       margin-top: auto;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }
 
     .rzp-btn-continue:hover {
       background: #2B2AA0;
     }
 
-    /* SCREEN 2: PAYMENT OPTIONS (FROM SCREENSHOT 1) */
+    /* SCREEN 4: PAYMENT OPTIONS (RESPONSIVE SPLIT GRID) */
     .rzp-payment-split-grid {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: column;
       flex: 1;
+      width: 100%;
+      box-sizing: border-box;
     }
 
-    @media (min-width: 640px) {
+    @media (min-width: 768px) {
       .rzp-payment-split-grid {
+        display: grid;
         grid-template-columns: 1.1fr 1.3fr;
       }
     }
 
-    /* Left Payment Method List */
+    /* Payment Method Items */
     .rzp-payment-methods-col {
       border-bottom: 1px solid #ECECF2;
       display: flex;
       flex-direction: column;
       background: #FFFFFF;
+      width: 100%;
     }
 
-    @media (min-width: 640px) {
+    @media (min-width: 768px) {
       .rzp-payment-methods-col {
         border-bottom: none;
         border-right: 1px solid #ECECF2;
@@ -3181,13 +3386,19 @@
     }
 
     .rzp-pay-method-item {
-      padding: 14px 18px;
+      padding: 12px 14px;
       border-bottom: 1px solid #F0F0F4;
       display: flex;
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
       transition: background-color var(--transition-fast);
+    }
+
+    @media (min-width: 768px) {
+      .rzp-pay-method-item {
+        padding: 14px 18px;
+      }
     }
 
     .rzp-pay-method-item:hover {
@@ -3202,17 +3413,17 @@
     .rzp-method-title-box {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2px;
     }
 
     .rzp-method-name {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
       color: #1A1A24;
     }
 
     .rzp-method-offer-pill {
-      font-size: 10.5px;
+      font-size: 10px;
       font-weight: 700;
       color: #1E8E3E;
       background: #E6F4EA;
@@ -3248,16 +3459,26 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
+      flex-shrink: 0;
     }
 
     /* Right Payment Content Area */
     .rzp-payment-content-col {
-      padding: 18px 20px;
+      padding: 16px 14px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
       background: #FFFFFF;
       overflow-y: auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+      .rzp-payment-content-col {
+        padding: 18px 20px;
+        gap: 16px;
+      }
     }
 
     /* Available Offers Banner */
@@ -3270,7 +3491,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      font-size: 12px;
+      font-size: 11.5px;
       color: #333340;
     }
 
@@ -3281,27 +3502,31 @@
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
+      min-width: 0;
     }
 
     .rzp-offer-view-all-pill {
       background: #FCE8E6;
       color: #D93025;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       padding: 2px 8px;
       border-radius: 12px;
       white-space: nowrap;
       cursor: pointer;
+      flex-shrink: 0;
     }
 
-    /* UPI QR Box Section (Exact from screenshot 1) */
+    /* UPI QR Box Section */
     .rzp-upi-qr-box {
       border: 1px solid #E6E6EE;
       border-radius: 10px;
-      padding: 16px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .rzp-upi-qr-header {
@@ -3312,13 +3537,13 @@
 
     .rzp-upi-qr-title {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #1A1A24;
     }
 
     .rzp-countdown-timer {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       color: #717180;
       display: flex;
@@ -3328,16 +3553,31 @@
 
     .rzp-qr-interactive-row {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       align-items: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 480px) {
+      .rzp-qr-interactive-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .rzp-qr-instructions-col {
+        align-items: center;
+      }
+      .rzp-qr-supported-logos {
+        justify-content: center;
+      }
     }
 
     .rzp-qr-code-frame {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 110px;
       border-radius: 8px;
       border: 1px solid #E0E0EA;
-      padding: 6px;
+      padding: 5px;
       background: #FFFFFF;
       flex-shrink: 0;
       display: flex;
@@ -3348,11 +3588,13 @@
     .rzp-qr-instructions-col {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 6px;
+      flex: 1;
+      min-width: 0;
     }
 
     .rzp-qr-scan-label {
-      font-size: 12.5px;
+      font-size: 12px;
       color: #555566;
       line-height: 1.35;
     }
@@ -3365,14 +3607,15 @@
     }
 
     .rzp-app-chip-icon {
-      width: 24px;
-      height: 24px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
       border: 1px solid #E6E6EE;
       display: flex;
       align-items: center;
       justify-content: center;
       background: #FFFFFF;
+      flex-shrink: 0;
     }
 
     /* COD Screen Content */
@@ -3380,14 +3623,16 @@
       border: 1px solid #FCE8E6;
       background: #FFF8F7;
       border-radius: 10px;
-      padding: 16px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .rzp-cod-title {
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
       color: #D93025;
       display: flex;
@@ -3396,9 +3641,9 @@
     }
 
     .rzp-cod-desc {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #444455;
-      line-height: 1.5;
+      line-height: 1.45;
     }
 
     .rzp-cod-breakdown {
@@ -3406,7 +3651,7 @@
       border: 1px solid #F0ECE4;
       border-radius: 8px;
       padding: 10px 12px;
-      font-size: 12.5px;
+      font-size: 12px;
     }
 
     /* Cards Input Form */
@@ -3414,17 +3659,20 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .rzp-text-input {
       width: 100%;
-      height: 42px;
+      height: 44px;
       border: 1px solid #DCDCED;
-      border-radius: 6px;
+      border-radius: var(--radius-md);
       padding: 0 12px;
-      font-size: 13.5px;
+      font-size: 14px;
       color: #1A1A24;
       outline: none;
+      box-sizing: border-box;
     }
 
     .rzp-text-input:focus {
@@ -3434,19 +3682,20 @@
     /* Payment Action Button at Bottom of Right Pane */
     .rzp-btn-pay-now {
       width: 100%;
-      height: 48px;
+      height: 50px;
       background: #2B2AA0;
       color: #FFFFFF;
       font-family: var(--font-display);
-      font-size: 14.5px;
+      font-size: 14px;
       font-weight: 700;
-      border-radius: 6px;
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       transition: background var(--transition-fast);
       margin-top: auto;
+      box-shadow: 0 4px 16px rgba(43, 42, 160, 0.4);
     }
 
     .rzp-btn-pay-now:hover {
@@ -3456,12 +3705,12 @@
     /* SCREEN 5: SUCCESS CELEBRATION (STRICTLY DISPLAY NONE UNLESS ACTIVE) */
     .rzp-screen-view.rzp-success-view {
       display: none !important;
-      padding: 36px 24px;
+      padding: 32px 20px;
       text-align: center;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .rzp-screen-view.rzp-success-view.active {
@@ -3469,8 +3718,8 @@
     }
 
     .rzp-success-circle {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       background: #E6F4EA;
       color: #1E8E3E;
@@ -3484,11 +3733,12 @@
       position: absolute;
       inset: 0;
       background: #FFFFFF;
-      z-index: 20;
-      padding: 20px;
+      z-index: 25;
+      padding: 18px 16px;
       display: none;
       flex-direction: column;
       overflow-y: auto;
+      box-sizing: border-box;
     }
 
     .rzp-address-edit-overlay.open {
@@ -3508,7 +3758,8 @@
       display: none;
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 16px;
+      box-sizing: border-box;
     }
 
     .lightbox-modal.open {
@@ -4223,6 +4474,42 @@
       <!-- RIGHT PANE (INTERACTIVE WHITE RAZORPAY SCREENS) -->
       <main class="rzp-right-pane">
         
+        <!-- MOBILE COMPACT ORDER SUMMARY BAR -->
+        <div class="rzp-mobile-order-bar" id="rzpMobileOrderBar">
+          <div class="rzp-mobile-order-left">
+            <span class="rzp-mobile-brand-pill">ZEVIX</span>
+            <div class="rzp-mobile-order-desc">
+              <span class="rzp-mobile-prod-name">ZEVIX EAZE</span>
+              <span class="rzp-mobile-qty-tag">Qty: <span id="mobileSummaryQty">1</span></span>
+            </div>
+          </div>
+          <div class="rzp-mobile-order-right">
+            <span class="rzp-mobile-price" id="mobileSummaryPrice">₹2,199</span>
+            <button type="button" class="rzp-mobile-toggle-btn" id="btnToggleMobileSummary" aria-label="Toggle order summary">
+              <span id="mobileToggleText">Details</span>
+              <svg id="mobileToggleIcon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Collapsible Mini Order Summary for Mobile -->
+        <div class="rzp-mobile-summary-collapse" id="rzpMobileSummaryCollapse">
+          <div class="rzp-mobile-collapse-inner">
+            <div class="rzp-summary-thumb" style="width:38px; height:38px;">
+              <img src="assets/images/product_1_white_bg.jpg" alt="ZEVIX EAZE">
+            </div>
+            <div style="flex:1; min-width:0;">
+              <div style="font-size:12px; font-weight:700; color:#1A1A24; line-height:1.2;">ZEVIX EAZE</div>
+              <div style="font-size:11px; color:#717180;">Neck &amp; Shoulder Massager with Heat</div>
+            </div>
+            <div class="rzp-mobile-qty-ctrls">
+              <button type="button" class="rzp-mobile-qty-btn" id="mobileQtyMinus">−</button>
+              <strong id="mobileQtyVal" style="font-size:13px; color:#1A1A24;">1</strong>
+              <button type="button" class="rzp-mobile-qty-btn" id="mobileQtyPlus">+</button>
+            </div>
+          </div>
+        </div>
+
         <!-- Screen Header -->
         <div class="rzp-pane-header">
           <div class="rzp-pane-header-title">
@@ -4716,6 +5003,16 @@
       const sidebarQtyPlus = document.getElementById('sidebarQtyPlus');
       const rzpPayNowLabel = document.getElementById('rzpPayNowLabel');
 
+      // Mobile checkout summary elements
+      const mobileSummaryQty = document.getElementById('mobileSummaryQty');
+      const mobileSummaryPrice = document.getElementById('mobileSummaryPrice');
+      const btnToggleMobileSummary = document.getElementById('btnToggleMobileSummary');
+      const rzpMobileSummaryCollapse = document.getElementById('rzpMobileSummaryCollapse');
+      const mobileToggleIcon = document.getElementById('mobileToggleIcon');
+      const mobileQtyMinus = document.getElementById('mobileQtyMinus');
+      const mobileQtyPlus = document.getElementById('mobileQtyPlus');
+      const mobileQtyVal = document.getElementById('mobileQtyVal');
+
       const rzpBtnContinueToPayment = document.getElementById('rzpBtnContinueToPayment');
       const rzpBtnChangeAddr = document.getElementById('rzpBtnChangeAddr');
       const rzpAddressEditOverlay = document.getElementById('rzpAddressEditOverlay');
@@ -4891,24 +5188,27 @@
       function updateCheckoutTotals() {
         const qty = state.quantity;
         const subtotal = qty * UNIT_PRICE;
-        sidebarQtyVal.textContent = qty;
+        if (sidebarQtyVal) sidebarQtyVal.textContent = qty;
+        if (mobileSummaryQty) mobileSummaryQty.textContent = qty;
+        if (mobileQtyVal) mobileQtyVal.textContent = qty;
 
         let finalPayable = subtotal;
         if (state.checkout.paymentMethod === 'upi') {
           const discount = Math.round(subtotal * UPI_DISCOUNT_PERCENT);
           finalPayable = subtotal - discount;
-          rzpPayNowLabel.textContent = 'Pay ₹' + finalPayable.toLocaleString('en-IN');
+          if (rzpPayNowLabel) rzpPayNowLabel.textContent = 'Pay ₹' + finalPayable.toLocaleString('en-IN');
         } else if (state.checkout.paymentMethod === 'cod') {
           finalPayable = subtotal + COD_EXTRA_CHARGE;
-          codBasePrice.textContent = '₹' + subtotal.toLocaleString('en-IN');
-          codFinalTotal.textContent = '₹' + finalPayable.toLocaleString('en-IN');
-          rzpPayNowLabel.textContent = 'Place COD Order (₹' + finalPayable.toLocaleString('en-IN') + ')';
+          if (codBasePrice) codBasePrice.textContent = '₹' + subtotal.toLocaleString('en-IN');
+          if (codFinalTotal) codFinalTotal.textContent = '₹' + finalPayable.toLocaleString('en-IN');
+          if (rzpPayNowLabel) rzpPayNowLabel.textContent = 'Place COD Order (₹' + finalPayable.toLocaleString('en-IN') + ')';
         } else {
           finalPayable = subtotal;
-          rzpPayNowLabel.textContent = 'Pay ₹' + finalPayable.toLocaleString('en-IN');
+          if (rzpPayNowLabel) rzpPayNowLabel.textContent = 'Pay ₹' + finalPayable.toLocaleString('en-IN');
         }
 
-        rzpSidebarPrice.textContent = '₹' + finalPayable.toLocaleString('en-IN');
+        if (rzpSidebarPrice) rzpSidebarPrice.textContent = '₹' + finalPayable.toLocaleString('en-IN');
+        if (mobileSummaryPrice) mobileSummaryPrice.textContent = '₹' + finalPayable.toLocaleString('en-IN');
       }
 
       let resendCountdownTimer = null;
@@ -5166,6 +5466,33 @@
           }
         });
         sidebarQtyPlus.addEventListener('click', () => {
+          if (state.quantity < 10) {
+            state.quantity++;
+            updatePricing();
+            updateCheckoutTotals();
+          }
+        });
+      }
+
+      // Mobile order summary toggle & quantity controls
+      if (btnToggleMobileSummary && rzpMobileSummaryCollapse) {
+        btnToggleMobileSummary.addEventListener('click', () => {
+          const isOpen = rzpMobileSummaryCollapse.classList.toggle('open');
+          if (mobileToggleIcon) {
+            mobileToggleIcon.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
+        });
+      }
+
+      if (mobileQtyMinus && mobileQtyPlus) {
+        mobileQtyMinus.addEventListener('click', () => {
+          if (state.quantity > 1) {
+            state.quantity--;
+            updatePricing();
+            updateCheckoutTotals();
+          }
+        });
+        mobileQtyPlus.addEventListener('click', () => {
           if (state.quantity < 10) {
             state.quantity++;
             updatePricing();
