@@ -47,7 +47,9 @@
       --badge-discount-text: #090921;
       --badge-brand-bg: #2B2AA0;
       --badge-brand-text: #FFFFFF;
-      --color-success: #5AD88B;
+      --color-success: #1E8E3E;
+      --color-success-bg: #E6F4EA;
+      --color-cod-charge: #D93025;
       
       /* Radii & Transitions */
       --radius-sm: 8px;
@@ -364,7 +366,6 @@
       -webkit-user-drag: none;
     }
 
-    /* Carousel Navigation Arrows */
     .gallery-nav-arrow {
       position: absolute;
       top: 50%;
@@ -400,7 +401,6 @@
       right: 12px;
     }
 
-    /* Thumbnail Selector Strip */
     .gallery-thumbnails-strip {
       display: flex;
       align-items: center;
@@ -502,7 +502,6 @@
       }
     }
 
-    /* Eyebrow / Bestseller Badge */
     .bestseller-badge {
       display: inline-block;
       background-color: var(--color-primary);
@@ -518,7 +517,6 @@
       border: 1px solid rgba(229, 231, 237, 0.15);
     }
 
-    /* Product Titles */
     .product-main-title {
       font-family: var(--font-display);
       font-size: clamp(24px, 5vw, 34px);
@@ -544,7 +542,6 @@
       }
     }
 
-    /* Rating & Social Proof */
     .rating-proof-row {
       display: flex;
       flex-wrap: wrap;
@@ -584,7 +581,6 @@
       font-weight: 500;
     }
 
-    /* Pricing Row */
     .pricing-main-row {
       display: flex;
       align-items: baseline;
@@ -628,9 +624,6 @@
       line-height: 1.5;
     }
 
-    /* -------------------------------------------------------------
-       PAYMENT OFFER BANNER (METALLIC / DARK BRAND)
-       ------------------------------------------------------------- */
     .payment-offer-card {
       background-color: var(--bg-card);
       border: 1px solid var(--border-steel);
@@ -721,7 +714,6 @@
       background-color: var(--border-steel);
     }
 
-    /* Quantity and CTA Row */
     .action-cta-row {
       display: flex;
       align-items: center;
@@ -805,7 +797,6 @@
       transform: translateY(0);
     }
 
-    /* 4-Column Delivery & Confidence Badges */
     .delivery-trust-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -847,7 +838,6 @@
       color: var(--text-secondary);
     }
 
-    /* 5 Feature Highlight Icons */
     .feature-highlights-row {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -911,7 +901,7 @@
     }
 
     /* -------------------------------------------------------------
-       6. MINIMAL EXPANDABLE PRODUCT DESCRIPTION SECTION
+       6. ACCORDION PRODUCT DESCRIPTION
        ------------------------------------------------------------- */
     .pdp-description-section {
       margin-top: 10px;
@@ -995,15 +985,10 @@
       line-height: 1.6;
     }
 
-    .accordion-content p:last-child {
-      margin-bottom: 0;
-    }
-
     .accordion-content strong {
       color: var(--text-primary);
     }
 
-    /* Mechanism Visual Box inside Accordion */
     .mechanism-card-preview {
       background: var(--bg-card);
       border: 1px solid var(--border-steel);
@@ -1029,11 +1014,6 @@
       line-height: 1.5;
     }
 
-    .mechanism-card-caption strong {
-      color: var(--text-primary);
-    }
-
-    /* Feature points list */
     .feature-bullet-list {
       list-style: none;
       display: flex;
@@ -1060,7 +1040,6 @@
       box-shadow: 0 0 8px var(--color-indigo-hover);
     }
 
-    /* Step Grid */
     .steps-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -1105,7 +1084,6 @@
       line-height: 1.5;
     }
 
-    /* Tech specs table */
     .specs-table {
       width: 100%;
       border-collapse: collapse;
@@ -1139,7 +1117,7 @@
     }
 
     /* -------------------------------------------------------------
-       7. DAILY RELIEF / BENEFITS SECTION (#daily-relief)
+       7. DAILY RELIEF & REVIEWS SECTIONS
        ------------------------------------------------------------- */
     .daily-relief-section {
       width: 100%;
@@ -1178,12 +1156,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    @media (min-width: 1024px) {
-      .daily-relief-intro {
-        margin-bottom: 56px;
-      }
     }
 
     .daily-relief-eyebrow {
@@ -1248,13 +1220,6 @@
       align-items: center;
       width: 100%;
       box-sizing: border-box;
-    }
-
-    @media (min-width: 1024px) {
-      .daily-relief-hero {
-        margin-bottom: 72px;
-        padding: 30px 20px 40px;
-      }
     }
 
     .daily-relief-hero-visual {
@@ -1365,12 +1330,6 @@
       }
     }
 
-    .daily-relief-benefit-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--color-indigo-hover);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-    }
-
     .benefit-card-content {
       padding: 32px 24px;
       display: flex;
@@ -1449,10 +1408,6 @@
       transition: transform 0.5s ease;
     }
 
-    .daily-relief-benefit-card:hover .benefit-card-media img {
-      transform: scale(1.03);
-    }
-
     .daily-relief-bottom-benefits {
       background: var(--bg-card);
       border: 1px solid var(--border-steel);
@@ -1493,30 +1448,6 @@
       position: relative;
     }
 
-    @media (min-width: 860px) {
-      .bottom-benefit-item:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 15%;
-        height: 70%;
-        width: 1px;
-        background-color: var(--border-steel);
-      }
-    }
-
-    @media (max-width: 859px) {
-      .bottom-benefit-item:nth-child(1),
-      .bottom-benefit-item:nth-child(2) {
-        border-bottom: 1px solid var(--border-steel);
-        padding-bottom: 18px;
-      }
-      .bottom-benefit-item:nth-child(1),
-      .bottom-benefit-item:nth-child(3) {
-        border-right: 1px solid var(--border-steel);
-      }
-    }
-
     .bottom-benefit-icon {
       color: var(--metallic-bright);
       margin-bottom: 12px;
@@ -1545,9 +1476,6 @@
       margin: 0;
     }
 
-    /* -------------------------------------------------------------
-       8. CUSTOMER REVIEWS & SOCIAL PROOF SECTION
-       ------------------------------------------------------------- */
     .pdp-reviews-section {
       max-width: 1360px;
       margin: 0 auto;
@@ -1560,12 +1488,6 @@
     @media (min-width: 768px) {
       .pdp-reviews-section {
         padding: 64px 28px 80px 28px;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .pdp-reviews-section {
-        padding: 72px 40px 96px 40px;
       }
     }
 
@@ -1706,12 +1628,6 @@
       }
     }
 
-    .ugc-card-item:hover {
-      transform: translateY(-2px);
-      border-color: var(--color-indigo-hover);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-
     .ugc-card-item img {
       width: 100%;
       height: 100%;
@@ -1736,10 +1652,6 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.5);
       pointer-events: none;
       border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    .ugc-play-badge svg {
-      margin-left: 2px;
     }
 
     .ugc-more-overlay {
@@ -1795,10 +1707,6 @@
       .review-card {
         padding: 24px;
       }
-    }
-
-    .review-card:hover {
-      border-color: var(--color-indigo-hover);
     }
 
     .review-card-top {
@@ -1913,24 +1821,6 @@
       transition: opacity var(--transition-fast), border-color var(--transition-fast);
     }
 
-    @media (min-width: 768px) {
-      .review-user-photo-thumb {
-        width: 64px;
-        height: 64px;
-      }
-    }
-
-    .review-user-photo-thumb:hover {
-      opacity: 0.9;
-      border-color: var(--color-indigo-hover);
-    }
-
-    .review-user-photo-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     .review-card-footer {
       display: flex;
       align-items: center;
@@ -1961,10 +1851,6 @@
       font-weight: 600;
       background-color: var(--color-primary);
       border-color: var(--color-primary-hover);
-    }
-
-    .helpful-vote-btn.voted svg {
-      fill: #FFFFFF;
     }
 
     .reviews-bottom-action {
@@ -1998,7 +1884,7 @@
     }
 
     /* -------------------------------------------------------------
-       9. BRAND FOOTER
+       8. BRAND FOOTER
        ------------------------------------------------------------- */
     .brand-footer {
       background-color: var(--bg-footer);
@@ -2143,10 +2029,6 @@
       flex-shrink: 0;
     }
 
-    .newsletter-submit-btn:hover {
-      background-color: var(--color-primary-hover);
-    }
-
     .footer-bottom-bar {
       border-top: 1px solid var(--border-steel);
       padding-top: 24px;
@@ -2178,12 +2060,8 @@
       transition: color var(--transition-fast);
     }
 
-    .footer-legal-links a:hover {
-      color: var(--metallic-grey);
-    }
-
     /* -------------------------------------------------------------
-       10. STICKY MOBILE BUY BAR
+       9. STICKY MOBILE BUY BAR & SLIDE-OVER CART
        ------------------------------------------------------------- */
     .sticky-mobile-bar {
       position: fixed;
@@ -2274,13 +2152,6 @@
       transition: background-color var(--transition-fast);
     }
 
-    .sticky-atc-btn:hover {
-      background-color: var(--color-primary-hover);
-    }
-
-    /* -------------------------------------------------------------
-       11. INTERACTIVE CART DRAWER
-       ------------------------------------------------------------- */
     .cart-drawer-backdrop {
       position: fixed;
       top: 0;
@@ -2353,11 +2224,6 @@
       border: 1px solid transparent;
     }
 
-    .cart-close-btn:hover {
-      background-color: var(--bg-indigo);
-      border-color: var(--border-steel);
-    }
-
     .cart-shipping-meter {
       background-color: var(--bg-indigo);
       padding: 12px 24px;
@@ -2372,7 +2238,7 @@
     }
 
     .cart-shipping-meter svg {
-      color: var(--color-success);
+      color: #5AD88B;
       flex-shrink: 0;
     }
 
@@ -2455,10 +2321,6 @@
       margin-bottom: 14px;
     }
 
-    .cart-subtotal-row span:last-child {
-      color: var(--metallic-bright);
-    }
-
     .btn-checkout {
       width: 100%;
       height: 50px;
@@ -2479,12 +2341,8 @@
       transition: background-color var(--transition-fast);
     }
 
-    .btn-checkout:hover {
-      background-color: var(--color-primary-hover);
-    }
-
     /* -------------------------------------------------------------
-       12. CUSTOM MULTI-STEP CHECKOUT POPUP SYSTEM (RAZORPAY STYLE)
+       10. EXACT RAZORPAY CHECKOUT MODAL SYSTEM (FROM REFERENCE)
        ------------------------------------------------------------- */
     .checkout-modal-backdrop {
       position: fixed;
@@ -2493,8 +2351,8 @@
       width: 100%;
       height: 100%;
       background: rgba(4, 4, 18, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       z-index: 150;
       opacity: 0;
       pointer-events: none;
@@ -2516,918 +2374,882 @@
       pointer-events: auto;
     }
 
-    .checkout-modal {
+    /* Master Razorpay Container: 2-Columns */
+    .razorpay-checkout-modal {
       width: 100%;
       height: 100%;
       max-height: 100vh;
-      background-color: var(--bg-secondary);
-      border: none;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      background: #FFFFFF;
       display: flex;
       flex-direction: column;
       overflow: hidden;
-      transform: translateY(20px) scale(0.98);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7);
+      transform: translateY(16px) scale(0.98);
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     @media (min-width: 768px) {
-      .checkout-modal {
-        width: min(84vw, 1080px);
-        height: min(78vh, 760px);
-        border: 1px solid var(--border-steel);
-        border-radius: 20px;
-        transform: scale(0.95);
+      .razorpay-checkout-modal {
+        width: min(86vw, 1040px);
+        height: min(78vh, 680px);
+        border-radius: 16px;
+        flex-direction: row;
+        transform: scale(0.96);
       }
     }
 
     @media (min-width: 1100px) {
-      .checkout-modal {
-        width: min(78vw, 1100px);
-        height: min(72vh, 750px);
-        border-radius: 24px;
+      .razorpay-checkout-modal {
+        width: min(80vw, 1080px);
+        height: min(74vh, 670px);
       }
     }
 
-    .checkout-modal-backdrop.open .checkout-modal {
+    .checkout-modal-backdrop.open .razorpay-checkout-modal {
       transform: translateY(0) scale(1);
     }
 
-    /* Checkout Header */
-    .checkout-top-header {
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border-steel);
-      padding: 14px 18px;
+    /* LEFT SIDEBAR (BRAND + ORDER SUMMARY + ARTWORK) */
+    .rzp-left-sidebar {
+      width: 100%;
+      background: #241638;
+      background: linear-gradient(175deg, #2A1744 0%, #190F2C 100%);
+      color: #FFFFFF;
+      padding: 24px 20px 20px 20px;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: space-between;
+      position: relative;
+      overflow: hidden;
       flex-shrink: 0;
-      z-index: 2;
     }
 
     @media (min-width: 768px) {
-      .checkout-top-header {
-        padding: 16px 28px;
+      .rzp-left-sidebar {
+        width: 330px;
+        padding: 32px 24px 24px 24px;
       }
     }
 
-    .checkout-header-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+    @media (min-width: 1024px) {
+      .rzp-left-sidebar {
+        width: 360px;
+      }
     }
 
-    .checkout-back-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-indigo);
-      border: 1px solid var(--border-steel);
-      color: var(--metallic-bright);
-      transition: all var(--transition-fast);
-    }
-
-    .checkout-back-btn:hover {
-      background: var(--color-primary);
-      border-color: var(--color-primary-hover);
-    }
-
-    .checkout-back-btn.hidden {
-      display: none;
-    }
-
-    .checkout-brand-title-box {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .checkout-brand-name {
+    .rzp-brand-heading {
       font-family: var(--font-display);
-      font-size: 17px;
+      font-size: 26px;
       font-weight: 800;
       letter-spacing: 0.16em;
       color: #FFFFFF;
       text-transform: uppercase;
+      margin-bottom: 12px;
     }
 
-    .razorpay-secure-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 10.5px;
-      font-weight: 700;
-      color: #9EC8FF;
-      background: rgba(43, 42, 160, 0.35);
-      border: 1px solid rgba(58, 56, 184, 0.4);
-      padding: 2px 8px;
-      border-radius: var(--radius-pill);
-      letter-spacing: 0.04em;
-    }
-
-    /* Step Progress Indicator Pills */
-    .checkout-steps-bar {
-      display: none;
-      align-items: center;
-      gap: 8px;
-    }
-
-    @media (min-width: 860px) {
-      .checkout-steps-bar {
-        display: flex;
-      }
-    }
-
-    .step-pill-indicator {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11.5px;
-      font-weight: 600;
-      color: var(--text-muted);
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: transparent;
-      border: 1px solid transparent;
-      transition: all var(--transition-fast);
-    }
-
-    .step-pill-num {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--border-steel);
-      color: var(--text-muted);
-      font-size: 10px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .step-pill-indicator.active {
-      color: #FFFFFF;
-      background: var(--bg-indigo);
-      border-color: var(--color-indigo-hover);
-    }
-
-    .step-pill-indicator.active .step-pill-num {
-      background: var(--color-primary);
-      color: #FFFFFF;
-      box-shadow: 0 0 8px var(--color-primary-hover);
-    }
-
-    .step-pill-indicator.completed {
-      color: var(--text-secondary);
-    }
-
-    .step-pill-indicator.completed .step-pill-num {
-      background: var(--color-success);
-      color: #090921;
-    }
-
-    .step-pill-divider {
-      width: 16px;
-      height: 1px;
-      background: var(--border-steel);
-    }
-
-    .checkout-close-btn {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-indigo);
-      border: 1px solid var(--border-steel);
-      color: var(--text-secondary);
-      transition: all var(--transition-fast);
-    }
-
-    .checkout-close-btn:hover {
-      background: #E84D4D;
-      color: #FFFFFF;
-      border-color: #E84D4D;
-    }
-
-    /* Modal Main Body (2 Columns on Desktop) */
-    .checkout-main-grid {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      min-height: 0;
-      overflow: hidden;
-    }
-
-    @media (min-width: 768px) {
-      .checkout-main-grid {
-        flex-direction: row;
-      }
-    }
-
-    /* Left Pane: Interactive Step Forms */
-    .checkout-flow-pane {
-      flex: 1 1 60%;
-      padding: 20px 18px 24px;
-      overflow-y: auto;
-      background-color: var(--bg-secondary);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    @media (min-width: 768px) {
-      .checkout-flow-pane {
-        padding: 32px 36px;
-      }
-    }
-
-    /* Mobile Collapsible Order Summary Accordion */
-    .mobile-summary-toggle-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 14px;
-      background: var(--bg-card-elevated);
-      border: 1px solid var(--border-steel);
-      border-radius: var(--radius-sm);
-      margin-bottom: 18px;
-      cursor: pointer;
-      font-size: 13px;
-    }
-
-    @media (min-width: 768px) {
-      .mobile-summary-toggle-bar {
-        display: none;
-      }
-    }
-
-    .mobile-summary-toggle-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--color-indigo-hover);
-      font-weight: 600;
-    }
-
-    .mobile-summary-toggle-right {
-      font-weight: 700;
-      color: var(--metallic-bright);
-    }
-
-    /* Step Container Views */
-    .checkout-step-view {
-      display: none;
-      flex-direction: column;
-      animation: checkoutFadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      width: 100%;
-    }
-
-    .checkout-step-view.active {
-      display: flex;
-    }
-
-    @keyframes checkoutFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .step-view-title {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text-primary);
-      margin-bottom: 6px;
-      line-height: 1.3;
-    }
-
-    @media (min-width: 768px) {
-      .step-view-title {
-        font-size: 22px;
-      }
-    }
-
-    .step-view-subtitle {
+    .rzp-sidebar-notice {
       font-size: 13.5px;
-      color: var(--text-secondary);
-      line-height: 1.5;
-      margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.85);
+      font-weight: 500;
+      margin-bottom: 20px;
+      line-height: 1.4;
     }
 
-    /* Form Fields Styling */
-    .form-group-block {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      margin-bottom: 18px;
-      width: 100%;
-    }
-
-    .form-label-text {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-
-    .input-wrapper-box {
-      position: relative;
+    /* Left Sidebar Cards (Order Summary & Offers) */
+    .rzp-summary-card {
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 12px 14px;
+      color: #1A1A24;
+      margin-bottom: 12px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
       display: flex;
       align-items: center;
-      width: 100%;
-    }
-
-    .phone-prefix-tag {
-      position: absolute;
-      left: 14px;
-      font-weight: 700;
-      font-size: 14px;
-      color: var(--metallic-bright);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      user-select: none;
-      pointer-events: none;
-    }
-
-    .checkout-text-input {
-      width: 100%;
-      height: 50px;
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-steel);
-      border-radius: var(--radius-sm);
-      padding: 0 16px;
-      color: #FFFFFF;
-      font-size: 14.5px;
-      font-family: inherit;
-      outline: none;
-      transition: all var(--transition-fast);
-      box-sizing: border-box;
-    }
-
-    .checkout-text-input.phone-input {
-      padding-left: 74px;
-      font-size: 16px;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-    }
-
-    .checkout-text-input:focus {
-      border-color: var(--color-indigo-hover);
-      box-shadow: 0 0 0 1px var(--color-indigo-hover), 0 0 12px rgba(58, 56, 184, 0.35);
-      background-color: var(--bg-card-elevated);
-    }
-
-    .checkout-text-input::placeholder {
-      color: var(--text-muted);
-      font-weight: 400;
-    }
-
-    /* Checkbox Row */
-    .custom-checkbox-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 24px;
+      justify-content: space-between;
       cursor: pointer;
-      user-select: none;
+      transition: transform var(--transition-fast);
     }
 
-    .custom-checkbox-input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-    }
-
-    .custom-checkbox-box {
-      width: 20px;
-      height: 20px;
-      border-radius: 5px;
-      background: var(--bg-card);
-      border: 1.5px solid var(--border-steel);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: all var(--transition-fast);
-      margin-top: 2px;
-    }
-
-    .custom-checkbox-input:checked ~ .custom-checkbox-box {
-      background: var(--color-primary);
-      border-color: var(--color-primary-hover);
-    }
-
-    .custom-checkbox-box svg {
-      display: none;
-      color: #FFFFFF;
-    }
-
-    .custom-checkbox-input:checked ~ .custom-checkbox-box svg {
-      display: block;
-    }
-
-    .checkbox-label-content {
-      font-size: 12.5px;
-      color: var(--text-secondary);
-      line-height: 1.45;
-    }
-
-    .whatsapp-badge-icon {
-      color: #25D366;
-      display: inline-flex;
-      vertical-align: middle;
-      margin-right: 4px;
-    }
-
-    /* Primary Checkout Action Button */
-    .btn-checkout-action {
-      width: 100%;
-      height: 52px;
-      background-color: var(--color-primary);
-      color: #FFFFFF;
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-radius: var(--radius-pill);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      box-shadow: 0 4px 20px rgba(43, 42, 160, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: all var(--transition-smooth);
-      margin-top: 8px;
-    }
-
-    .btn-checkout-action:hover {
-      background-color: var(--color-primary-hover);
+    .rzp-summary-card:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 24px rgba(58, 56, 184, 0.6);
     }
 
-    .btn-checkout-action:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    /* Footnote Security Badge */
-    .checkout-footer-security {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      font-size: 11.5px;
-      color: var(--text-muted);
-      margin-top: 18px;
-    }
-
-    .checkout-footer-security svg {
-      color: var(--color-success);
-    }
-
-    /* STEP 2: OTP Verification Boxes */
-    .otp-target-notice {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--bg-card);
-      border: 1px solid var(--border-steel);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      font-size: 13px;
-      color: var(--text-secondary);
-      margin-bottom: 22px;
-    }
-
-    .otp-target-notice strong {
-      color: #FFFFFF;
-    }
-
-    .btn-edit-phone {
-      color: var(--color-indigo-hover);
-      font-weight: 600;
-      font-size: 12px;
-      text-decoration: underline;
-      margin-left: auto;
-    }
-
-    .otp-inputs-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 20px;
-      width: 100%;
-      max-width: 360px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .otp-digit-field {
-      width: 52px;
-      height: 56px;
-      background: var(--bg-card);
-      border: 1.5px solid var(--border-steel);
-      border-radius: var(--radius-sm);
-      text-align: center;
-      font-size: 22px;
-      font-weight: 800;
-      color: #FFFFFF;
-      outline: none;
-      transition: all var(--transition-fast);
-      box-sizing: border-box;
-    }
-
-    .otp-digit-field:focus {
-      border-color: var(--color-indigo-hover);
-      background: var(--bg-card-elevated);
-      box-shadow: 0 0 0 1px var(--color-indigo-hover), 0 0 12px rgba(58, 56, 184, 0.4);
-    }
-
-    .otp-resend-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12.5px;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-
-    .btn-resend-otp {
-      color: var(--color-indigo-hover);
-      font-weight: 600;
-      font-size: 12.5px;
-    }
-
-    .btn-resend-otp:disabled {
-      color: var(--text-muted);
-      cursor: not-allowed;
-    }
-
-    /* STEP 3: Address Form 2-Column Inputs */
-    .address-inputs-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      width: 100%;
-    }
-
-    @media (min-width: 600px) {
-      .address-inputs-grid.two-col {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    /* STEP 4: Payment Methods List */
-    .payment-options-feed {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
-      width: 100%;
-    }
-
-    .payment-option-card {
-      background: var(--bg-card);
-      border: 1.5px solid var(--border-steel);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      cursor: pointer;
-      transition: all var(--transition-fast);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .payment-option-card:hover {
-      border-color: var(--color-indigo-hover);
-    }
-
-    .payment-option-card.selected {
-      border-color: var(--color-indigo-hover);
-      background: var(--bg-card-elevated);
-      box-shadow: 0 0 0 1px var(--color-indigo-hover), 0 4px 16px rgba(43, 42, 160, 0.3);
-    }
-
-    .payment-option-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-    }
-
-    .payment-radio-title-box {
+    .rzp-summary-card-inner {
       display: flex;
       align-items: center;
       gap: 12px;
+      flex: 1;
+      min-width: 0;
     }
 
-    .payment-radio-circle {
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      border: 2px solid var(--border-steel);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: all var(--transition-fast);
-    }
-
-    .payment-option-card.selected .payment-radio-circle {
-      border-color: var(--color-indigo-hover);
-    }
-
-    .payment-radio-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--color-indigo-hover);
-      display: none;
-    }
-
-    .payment-option-card.selected .payment-radio-dot {
-      display: block;
-    }
-
-    .payment-method-name {
-      font-family: var(--font-display);
-      font-size: 14.5px;
-      font-weight: 700;
-      color: #FFFFFF;
-    }
-
-    .payment-discount-tag {
-      background: rgba(90, 216, 139, 0.15);
-      color: var(--color-success);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(90, 216, 139, 0.3);
-    }
-
-    .payment-icons-strip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* Payment Sub-details (e.g. UPI Apps / Card Inputs) */
-    .payment-sub-content {
-      display: none;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-steel);
-    }
-
-    .payment-option-card.selected .payment-sub-content {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .upi-apps-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .upi-app-btn {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 12px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-steel);
-      border-radius: var(--radius-sm);
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      transition: all var(--transition-fast);
-    }
-
-    .upi-app-btn:hover, .upi-app-btn.active {
-      border-color: var(--color-indigo-hover);
-      color: #FFFFFF;
-      background: var(--bg-indigo);
-    }
-
-    /* STEP 5: Order Confirmation / Success View */
-    .success-celebration-box {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px 0;
-    }
-
-    .success-icon-ring {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: rgba(90, 216, 139, 0.15);
-      border: 2px solid var(--color-success);
-      color: var(--color-success);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      box-shadow: 0 0 24px rgba(90, 216, 139, 0.4);
-      animation: pulseSuccess 0.5s ease;
-    }
-
-    .order-id-badge {
-      display: inline-block;
-      background: var(--bg-card);
-      border: 1px solid var(--border-steel);
-      border-radius: var(--radius-pill);
-      padding: 4px 16px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--metallic-bright);
-      margin-bottom: 16px;
-      letter-spacing: 0.05em;
-    }
-
-    .order-details-card {
-      width: 100%;
-      background: var(--bg-card);
-      border: 1px solid var(--border-steel);
-      border-radius: var(--radius-md);
-      padding: 16px;
-      text-align: left;
-      margin-bottom: 20px;
-    }
-
-    /* Right Pane: Sticky Order Summary */
-    .checkout-summary-pane {
-      flex: 1 1 40%;
-      background-color: #0B0B24;
-      border-top: 1px solid var(--border-steel);
-      padding: 20px 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 20px;
-      overflow-y: auto;
-    }
-
-    @media (min-width: 768px) {
-      .checkout-summary-pane {
-        border-top: none;
-        border-left: 1px solid var(--border-steel);
-        padding: 28px 24px;
-      }
-    }
-
-    .summary-product-item {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-steel);
-    }
-
-    .summary-product-thumb {
-      width: 64px;
-      height: 64px;
-      border-radius: var(--radius-sm);
+    .rzp-summary-thumb {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: #F4F4F8;
+      border: 1px solid #E6E6EE;
       overflow: hidden;
-      background: var(--bg-card-elevated);
-      border: 1px solid var(--border-steel);
       flex-shrink: 0;
     }
 
-    .summary-product-thumb img {
+    .rzp-summary-thumb img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
 
-    .summary-product-info {
-      flex: 1;
+    .rzp-summary-info {
+      display: flex;
+      flex-direction: column;
       min-width: 0;
     }
 
-    .summary-product-name {
+    .rzp-summary-title {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 13.5px;
       font-weight: 700;
-      color: #FFFFFF;
-      margin-bottom: 2px;
+      color: #1A1A24;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      line-height: 1.3;
     }
 
-    .summary-product-spec {
+    .rzp-summary-qty-label {
       font-size: 11.5px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .summary-qty-pill {
-      display: inline-flex;
+      color: #717180;
+      display: flex;
       align-items: center;
-      gap: 8px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-steel);
-      border-radius: var(--radius-pill);
-      padding: 2px 8px;
-      font-size: 12px;
-      color: var(--text-secondary);
+      gap: 6px;
     }
 
-    .summary-qty-btn {
-      color: var(--metallic-bright);
-      font-weight: 700;
-      padding: 0 4px;
+    .rzp-sidebar-qty-btn {
+      color: #241638;
+      font-weight: 800;
+      padding: 0 2px;
     }
 
-    /* Price Table Breakdown */
-    .summary-price-table {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 13.5px;
-      color: var(--text-secondary);
-    }
-
-    .price-row-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .price-row-item.discount-row {
-      color: var(--color-success);
-      font-weight: 600;
-    }
-
-    .price-row-divider {
-      height: 1px;
-      background: var(--border-steel);
-      margin: 4px 0;
-    }
-
-    .price-total-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
+    .rzp-summary-price {
       font-family: var(--font-display);
       font-size: 16px;
       font-weight: 800;
-      color: #FFFFFF;
+      color: #1A1A24;
+      margin-left: 8px;
+      flex-shrink: 0;
     }
 
-    .price-total-val {
-      font-size: 20px;
-      color: var(--metallic-bright);
-    }
-
-    /* Guarantee Pill Cards */
-    .summary-trust-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      background: var(--bg-secondary);
-      border: 1px solid var(--border-steel);
-      border-radius: var(--radius-md);
+    /* Coupons and Offers Card */
+    .rzp-offers-card {
+      background: #FFFFFF;
+      border-radius: 12px;
       padding: 12px 14px;
+      color: #1A1A24;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      margin-bottom: 20px;
     }
 
-    .summary-trust-point {
+    .rzp-offers-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .rzp-offers-icon-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #E8F5E9;
+      color: #2E7D32;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .rzp-offers-headline {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1A1A24;
+      line-height: 1.2;
+    }
+
+    .rzp-offers-sub {
+      font-size: 11.5px;
+      color: #717180;
+      line-height: 1.3;
+    }
+
+    /* Shopping Bags Illustration Artwork */
+    .rzp-sidebar-graphic-box {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+    }
+
+    @media (min-width: 768px) {
+      .rzp-sidebar-graphic-box {
+        display: flex;
+      }
+    }
+
+    .rzp-sidebar-graphic-box svg {
+      width: 100%;
+      max-height: 140px;
+    }
+
+    /* Secured by Razorpay Watermark */
+    .rzp-secured-footer {
       display: flex;
       align-items: center;
       gap: 8px;
       font-size: 11.5px;
-      color: var(--text-secondary);
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: auto;
+      padding-top: 14px;
     }
 
-    .summary-trust-point svg {
-      color: var(--color-indigo-hover);
+    .rzp-secured-logo {
+      display: inline-flex;
+      align-items: center;
+      height: 18px;
+    }
+
+    /* RIGHT MAIN PANE (WHITE RAZORPAY SCREENS) */
+    .rzp-right-pane {
+      flex: 1;
+      background: #FFFFFF;
+      color: #1A1A24;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    /* Screen Top Header */
+    .rzp-pane-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #ECECF2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: #FFFFFF;
+      z-index: 10;
+    }
+
+    .rzp-pane-header-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: #1A1A24;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .rzp-back-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1A1A24;
+      border-radius: 50%;
+      transition: background-color var(--transition-fast);
+    }
+
+    .rzp-back-btn:hover {
+      background: #F0F0F4;
+    }
+
+    .rzp-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #555566;
+    }
+
+    .rzp-icon-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: background var(--transition-fast);
+    }
+
+    .rzp-icon-btn:hover {
+      background: #F0F0F4;
+      color: #1A1A24;
+    }
+
+    /* SCREEN 1: REVIEW ORDER (AUTOFILLED ADDRESS FROM SCREENSHOT 2) */
+    .rzp-screen-view {
+      display: none;
+      flex-direction: column;
+      padding: 20px;
+      flex: 1;
+      animation: rzpFadeIn 0.25s ease forwards;
+    }
+
+    .rzp-screen-view.active {
+      display: flex;
+    }
+
+    @keyframes rzpFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (min-width: 768px) {
+      .rzp-screen-view {
+        padding: 24px 28px 32px 28px;
+      }
+    }
+
+    /* 1. Logged In User Card */
+    .rzp-user-card {
+      background: #FFFFFF;
+      border: 1px solid #E4E4EC;
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      font-size: 13.5px;
+    }
+
+    .rzp-user-card-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: #1A1A24;
+    }
+
+    .rzp-user-card-right {
+      color: #717180;
+      font-size: 12.5px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-style: italic;
+    }
+
+    /* 2. Deliver to Address Card (Autofilled!) */
+    .rzp-address-card {
+      background: #FFFFFF;
+      border: 1px solid #E4E4EC;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rzp-address-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .rzp-address-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1A1A24;
+    }
+
+    .rzp-address-tag svg {
+      color: #C026D3;
+    }
+
+    .rzp-btn-change-addr {
+      color: #1A1A24;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .rzp-btn-change-addr:hover {
+      text-decoration: underline;
+    }
+
+    .rzp-address-details-body {
+      font-size: 13px;
+      color: #333340;
+      line-height: 1.5;
+    }
+
+    .rzp-address-contact-line {
+      font-weight: 600;
+      color: #1A1A24;
+      margin-bottom: 4px;
+    }
+
+    /* 3. Delivery Options Card */
+    .rzp-delivery-opts-card {
+      background: #FFFFFF;
+      border: 1px solid #E4E4EC;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+
+    .rzp-delivery-opts-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1A1A24;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .rzp-delivery-opts-title svg {
+      color: #C026D3;
+    }
+
+    .rzp-delivery-option-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #FAFAFC;
+      border: 1.5px solid #E6E6EE;
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+
+    .rzp-delivery-radio-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .rzp-radio-dot-checked {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      border: 5px solid #C026D3;
+      background: #FFFFFF;
+    }
+
+    .rzp-delivery-label-main {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1A1A24;
+    }
+
+    .rzp-delivery-label-sub {
+      font-size: 11.5px;
+      color: #717180;
+      font-style: italic;
+    }
+
+    .rzp-free-badge {
+      font-size: 11px;
+      font-weight: 800;
+      color: #1E8E3E;
+      background: #E6F4EA;
+      padding: 3px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    /* 4. Checkbox Consent */
+    .rzp-checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: #333340;
+      margin-bottom: 24px;
+      cursor: pointer;
+    }
+
+    .rzp-checkbox-custom {
+      width: 18px;
+      height: 18px;
+      background: #1A1A24;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+    }
+
+    /* 5. Big Razorpay Black CTA Button */
+    .rzp-btn-continue {
+      width: 100%;
+      height: 48px;
+      background: #111111;
+      color: #FFFFFF;
+      font-family: var(--font-display);
+      font-size: 14.5px;
+      font-weight: 700;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color var(--transition-fast);
+      margin-top: auto;
+    }
+
+    .rzp-btn-continue:hover {
+      background: #2B2AA0;
+    }
+
+    /* SCREEN 2: PAYMENT OPTIONS (FROM SCREENSHOT 1) */
+    .rzp-payment-split-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      flex: 1;
+    }
+
+    @media (min-width: 640px) {
+      .rzp-payment-split-grid {
+        grid-template-columns: 1.1fr 1.3fr;
+      }
+    }
+
+    /* Left Payment Method List */
+    .rzp-payment-methods-col {
+      border-bottom: 1px solid #ECECF2;
+      display: flex;
+      flex-direction: column;
+      background: #FFFFFF;
+    }
+
+    @media (min-width: 640px) {
+      .rzp-payment-methods-col {
+        border-bottom: none;
+        border-right: 1px solid #ECECF2;
+      }
+    }
+
+    .rzp-pay-method-item {
+      padding: 14px 18px;
+      border-bottom: 1px solid #F0F0F4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: background-color var(--transition-fast);
+    }
+
+    .rzp-pay-method-item:hover {
+      background: #F9F9FC;
+    }
+
+    .rzp-pay-method-item.active {
+      background: #F3F4F8;
+      border-left: 3px solid #2B2AA0;
+    }
+
+    .rzp-method-title-box {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .rzp-method-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1A1A24;
+    }
+
+    .rzp-method-offer-pill {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #1E8E3E;
+      background: #E6F4EA;
+      padding: 1px 6px;
+      border-radius: 4px;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .rzp-method-offer-pill.reward-pill {
+      color: #0284C7;
+      background: #E0F2FE;
+    }
+
+    .rzp-method-offer-pill.cod-charge-pill {
+      color: #D93025;
+      background: #FCE8E6;
+      font-weight: 800;
+    }
+
+    .rzp-method-logos-strip {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .rzp-mini-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #F0F0F4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Right Payment Content Area */
+    .rzp-payment-content-col {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      background: #FFFFFF;
+      overflow-y: auto;
+    }
+
+    /* Available Offers Banner */
+    .rzp-available-offers-card {
+      background: #FAF8F5;
+      border: 1px solid #F0ECE4;
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      color: #333340;
+    }
+
+    .rzp-offer-text-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    .rzp-offer-view-all-pill {
+      background: #FCE8E6;
+      color: #D93025;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 12px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    /* UPI QR Box Section (Exact from screenshot 1) */
+    .rzp-upi-qr-box {
+      border: 1px solid #E6E6EE;
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .rzp-upi-qr-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .rzp-upi-qr-title {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A1A24;
+    }
+
+    .rzp-countdown-timer {
+      font-size: 12px;
+      font-weight: 600;
+      color: #717180;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .rzp-qr-interactive-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .rzp-qr-code-frame {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      border: 1px solid #E0E0EA;
+      padding: 6px;
+      background: #FFFFFF;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* -------------------------------------------------------------
-       13. LIGHTBOX MODAL
-       ------------------------------------------------------------- */
+    .rzp-qr-instructions-col {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .rzp-qr-scan-label {
+      font-size: 12.5px;
+      color: #555566;
+      line-height: 1.35;
+    }
+
+    .rzp-qr-supported-logos {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .rzp-app-chip-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid #E6E6EE;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #FFFFFF;
+    }
+
+    /* COD Screen Content */
+    .rzp-cod-content-box {
+      border: 1px solid #FCE8E6;
+      background: #FFF8F7;
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rzp-cod-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #D93025;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rzp-cod-desc {
+      font-size: 13px;
+      color: #444455;
+      line-height: 1.5;
+    }
+
+    .rzp-cod-breakdown {
+      background: #FFFFFF;
+      border: 1px solid #F0ECE4;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 12.5px;
+    }
+
+    /* Cards Input Form */
+    .rzp-card-input-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rzp-text-input {
+      width: 100%;
+      height: 42px;
+      border: 1px solid #DCDCED;
+      border-radius: 6px;
+      padding: 0 12px;
+      font-size: 13.5px;
+      color: #1A1A24;
+      outline: none;
+    }
+
+    .rzp-text-input:focus {
+      border-color: #2B2AA0;
+    }
+
+    /* Payment Action Button at Bottom of Right Pane */
+    .rzp-btn-pay-now {
+      width: 100%;
+      height: 48px;
+      background: #2B2AA0;
+      color: #FFFFFF;
+      font-family: var(--font-display);
+      font-size: 14.5px;
+      font-weight: 700;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background var(--transition-fast);
+      margin-top: auto;
+    }
+
+    .rzp-btn-pay-now:hover {
+      background: #3A38B8;
+    }
+
+    /* SCREEN 3: SUCCESS CELEBRATION */
+    .rzp-success-view {
+      padding: 36px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .rzp-success-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #E6F4EA;
+      color: #1E8E3E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Address Edit Drawer / Overlay */
+    .rzp-address-edit-overlay {
+      position: absolute;
+      inset: 0;
+      background: #FFFFFF;
+      z-index: 20;
+      padding: 20px;
+      display: none;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .rzp-address-edit-overlay.open {
+      display: flex;
+    }
+
+    /* Lightbox modal */
     .lightbox-modal {
       position: fixed;
       top: 0;
@@ -3475,25 +3297,12 @@
       border-radius: var(--radius-pill);
       background: var(--bg-indigo);
       border: 1px solid var(--border-steel);
-      line-height: 1.4;
-    }
-
-    /* Micro Feedback Animation */
-    @keyframes pulseSuccess {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.03); }
-      100% { transform: scale(1); }
-    }
-
-    .btn-add-to-cart.pulse {
-      animation: pulseSuccess 0.4s ease;
     }
 
     @media (max-width: 767px) {
       .daily-relief-hero {
         flex-direction: column;
       }
-      
       .daily-relief-annotation {
         position: static;
         margin: 8px auto;
@@ -3509,17 +3318,6 @@
       }
       .annotation-arrow-svg {
         display: none;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .daily-relief-hero-visual,
-      .daily-relief-benefit-card,
-      .benefit-card-media img,
-      .checkout-step-view {
-        transition: none !important;
-        transform: none !important;
-        animation: none !important;
       }
     }
   </style>
@@ -3593,7 +3391,6 @@
       <section class="pdp-gallery-container" aria-label="Product Media Gallery">
         <div class="gallery-main-viewport" id="galleryViewport">
           
-          <!-- Slide Navigation Arrows -->
           <button class="gallery-nav-arrow prev" id="galleryPrevBtn" aria-label="Previous image">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M15 18l-6-6 6-6"/>
@@ -3653,16 +3450,13 @@
       <!-- RIGHT COLUMN: PRODUCT PURCHASE AREA & MINIMAL DESCRIPTION -->
       <section class="pdp-purchase-container" aria-label="Product Purchase Details">
         
-        <!-- Eyebrow / Bestseller Tag -->
         <div>
           <span class="bestseller-badge">BESTSELLER</span>
         </div>
 
-        <!-- Product Headings -->
         <h1 class="product-main-title" id="productTitle">ZEVIX EAZE</h1>
         <p class="product-subtitle">Neck &amp; Shoulder Massager with Heat + Kneading Relief</p>
 
-        <!-- Rating & Social Proof -->
         <div class="rating-proof-row">
           <div class="star-rating-box" aria-label="Rated 4.8 out of 5 stars">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -3677,7 +3471,6 @@
           <span class="customer-trust-count">Trusted by 50,000+ customers</span>
         </div>
 
-        <!-- Pricing Row -->
         <div class="pricing-main-row">
           <span class="current-price" id="displayCurrentPrice">₹2,199</span>
           <span class="original-price">₹4,000</span>
@@ -3702,9 +3495,8 @@
           </div>
 
           <div class="payment-offer-logos">
-            <!-- UPI Logo -->
             <div class="payment-logo-badge" title="UPI Payment">
-              <svg width="42" height="18" viewBox="0 0 60 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="42" height="18" viewBox="0 0 60 24" fill="none">
                 <path d="M4 18L10 6H15L9 18H4Z" fill="#D7D8DC"/>
                 <path d="M17 6H22L19 14C18.5 15.5 17 18 14 18H9L12 14H15L17 6Z" fill="#D7D8DC"/>
                 <path d="M24 6H29L26 18H21L24 6Z" fill="#D7D8DC"/>
@@ -3713,7 +3505,6 @@
               </svg>
             </div>
             <div class="payment-logo-divider"></div>
-            <!-- Mastercard Logo -->
             <div class="payment-logo-badge" title="Mastercard">
               <svg width="28" height="18" viewBox="0 0 32 20" fill="none">
                 <circle cx="11" cy="10" r="9" fill="#EB001B"/>
@@ -3721,7 +3512,6 @@
               </svg>
             </div>
             <div class="payment-logo-divider"></div>
-            <!-- VISA Logo -->
             <div class="payment-logo-badge" title="VISA">
               <svg width="32" height="14" viewBox="0 0 50 16" fill="none">
                 <path d="M19.6 1.1L12.9 15.2H8.5L5.2 3.6C5 2.9 4.8 2.6 4.2 2.3C3.3 1.8 1.5 1.4 0 1.1L0.1 0.6H7.1C8 0.6 8.8 1.2 9 2.2L10.7 11.2L15.3 0.6H19.6ZM37 10.3C37 6.4 31.5 6.2 31.5 4.5C31.5 3.9 32.1 3.3 33.3 3.1C33.9 3 35.5 2.9 37.3 3.8L38 0.8C37 0.4 35.7 0.1 34.1 0.1C29.9 0.1 27 2.3 27 5.5C27 7.9 29.1 9.2 30.7 10C32.4 10.8 33 11.3 33 12.1C33 13.2 31.6 13.7 30.3 13.7C28.1 13.7 26.9 13.3 25.8 12.8L25.1 15.9C26.3 16.4 28.3 16.8 30.3 16.8C34.8 16.8 37.7 14.6 37 10.3ZM47.8 15.2H51.6L48.2 0.6H44.7C43.9 0.6 43.2 1.1 42.9 1.8L36.6 15.2H41L41.9 12.7H47.3L47.8 15.2ZM43 9.7L45.2 3.7L46.4 9.7H43ZM26.3 0.6L22.9 15.2H18.8L22.2 0.6H26.3Z" fill="#FFFFFF"/>
@@ -3751,7 +3541,7 @@
         <div class="delivery-trust-grid">
           <div class="trust-item">
             <div class="trust-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <rect x="1" y="3" width="15" height="13"></rect>
                 <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
                 <circle cx="5.5" cy="18.5" r="2.5"></circle>
@@ -3763,10 +3553,9 @@
 
           <div class="trust-item">
             <div class="trust-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                 <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                <line x1="12" y1="22.08" x2="12" y2="12"></line>
               </svg>
             </div>
             <span class="trust-text">7 Days Easy Return</span>
@@ -3774,7 +3563,7 @@
 
           <div class="trust-item">
             <div class="trust-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 <polyline points="9 12 11 14 15 10"></polyline>
               </svg>
@@ -3784,7 +3573,7 @@
 
           <div class="trust-item">
             <div class="trust-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <rect x="2" y="5" width="20" height="14" rx="2"></rect>
                 <line x1="2" y1="10" x2="22" y2="10"></line>
                 <circle cx="12" cy="15" r="1.5"></circle>
@@ -3798,10 +3587,9 @@
         <div class="feature-highlights-row">
           <div class="feature-pill-item">
             <div class="feature-icon-circle">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <circle cx="12" cy="12" r="10"></circle>
                 <circle cx="12" cy="12" r="6"></circle>
-                <circle cx="12" cy="12" r="2"></circle>
               </svg>
             </div>
             <span class="feature-label">Targeted<br>Relief</span>
@@ -3809,12 +3597,9 @@
 
           <div class="feature-pill-item">
             <div class="feature-icon-circle">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <polyline points="20 12 20 22 4 22 4 12"></polyline>
                 <rect x="2" y="7" width="20" height="5"></rect>
-                <line x1="12" y1="22" x2="12" y2="7"></line>
-                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
               </svg>
             </div>
             <span class="feature-label">Perfect<br>Gift</span>
@@ -3822,7 +3607,7 @@
 
           <div class="feature-pill-item">
             <div class="feature-icon-circle">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M8 4c-1 2-1 4 0 6s1 4 0 6"></path>
                 <path d="M12 2c-1 3-1 6 0 9s1 6 0 9"></path>
                 <path d="M16 4c-1 2-1 4 0 6s1 4 0 6"></path>
@@ -3833,10 +3618,9 @@
 
           <div class="feature-pill-item">
             <div class="feature-icon-circle">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <circle cx="12" cy="5" r="2"></circle>
                 <path d="M9 22v-6l-2-4 2-3h6l2 3-2 4v6"></path>
-                <line x1="10" y1="13" x2="14" y2="13"></line>
               </svg>
             </div>
             <span class="feature-label">Multiple<br>Body Parts</span>
@@ -3844,7 +3628,7 @@
 
           <div class="feature-pill-item">
             <div class="feature-icon-circle">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
                 <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
               </svg>
             </div>
@@ -3852,18 +3636,16 @@
           </div>
         </div>
 
-        <!-- MINIMAL EXPANDABLE PRODUCT DESCRIPTION SECTION -->
+        <!-- ACCORDIONS OVERVIEW & SPECS -->
         <section class="pdp-description-section" aria-label="Product Description and Details">
           <h2 class="description-section-heading">Product Overview &amp; Specifications</h2>
           
           <div class="accordion-group" id="productAccordions">
-            
-            <!-- Tab 1: Overview & Biomimetic Kneading -->
             <div class="accordion-item active">
               <button class="accordion-header" aria-expanded="true">
                 <span>6D Deep Kneading &amp; Thermal Relief</span>
                 <span class="accordion-icon-toggle">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                     <path d="M6 9l6 6 6-6"/>
                   </svg>
                 </span>
@@ -3875,7 +3657,7 @@
                   </p>
                   
                   <div class="mechanism-card-preview">
-                    <img src="assets/images/product_1_white_bg.jpg" alt="ZEVIX 6D Multi-Finger Ergonomic Kneading Nodes with Thermal Heating" loading="lazy">
+                    <img src="assets/images/product_1_white_bg.jpg" alt="ZEVIX 6D Kneading Nodes" loading="lazy">
                     <div class="mechanism-card-caption">
                       <strong>Anatomical 6D Massage Head:</strong> Dual multi-tier finger nodes provide 360° deep tissue grip and 42°C constant soothing heat.
                     </div>
@@ -3884,27 +3666,26 @@
                   <ul class="feature-bullet-list">
                     <li class="feature-bullet-item">
                       <span class="bullet-dot"></span>
-                      <span><strong>Hands-Free Back Buckle:</strong> Secure around your chest and continue working, reading, or relaxing without holding the straps.</span>
+                      <span><strong>Hands-Free Back Buckle:</strong> Secure around your chest and continue working or relaxing.</span>
                     </li>
                     <li class="feature-bullet-item">
                       <span class="bullet-dot"></span>
-                      <span><strong>Constant 42°C Thermal Therapy:</strong> Stimulates blood circulation to loosen tight, locked muscles instantly.</span>
+                      <span><strong>Constant 42°C Thermal Therapy:</strong> Stimulates blood circulation to loosen tight muscles.</span>
                     </li>
                     <li class="feature-bullet-item">
                       <span class="bullet-dot"></span>
-                      <span><strong>Whisper-Quiet Pure Copper Motor:</strong> Operates at under 45dB for peaceful relaxation anywhere.</span>
+                      <span><strong>Whisper-Quiet Copper Motor:</strong> Operates at under 45dB for peaceful relaxation.</span>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            <!-- Tab 2: How To Use (3 Simple Steps) -->
             <div class="accordion-item">
               <button class="accordion-header" aria-expanded="false">
                 <span>How To Use (3 Simple Steps)</span>
                 <span class="accordion-icon-toggle">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                     <path d="M6 9l6 6 6-6"/>
                   </svg>
                 </span>
@@ -3915,29 +3696,28 @@
                     <div class="step-box">
                       <div class="step-num">Step 01</div>
                       <div class="step-title">Position &amp; Strap</div>
-                      <div class="step-desc">Drape comfortably over your neck and shoulders, or fasten the hands-free back strap.</div>
+                      <div class="step-desc">Drape comfortably over neck and shoulders or fasten back strap.</div>
                     </div>
                     <div class="step-box">
                       <div class="step-num">Step 02</div>
                       <div class="step-title">Power On</div>
-                      <div class="step-desc">Press and hold the power button for 2 seconds. Tap the heat button for warm relief.</div>
+                      <div class="step-desc">Press power for 2 seconds. Tap heat button for soothing warmth.</div>
                     </div>
                     <div class="step-box">
                       <div class="step-num">Step 03</div>
                       <div class="step-title">Relax &amp; Unwind</div>
-                      <div class="step-desc">Enjoy a 15-minute auto-timed session. Massager reverses direction automatically every 60s.</div>
+                      <div class="step-desc">Enjoy a 15-minute auto-timed session anywhere.</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Tab 3: Technical Specifications -->
             <div class="accordion-item">
               <button class="accordion-header" aria-expanded="false">
                 <span>Technical Specifications</span>
                 <span class="accordion-icon-toggle">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
                     <path d="M6 9l6 6 6-6"/>
                   </svg>
                 </span>
@@ -3946,74 +3726,17 @@
                 <div class="accordion-content">
                   <table class="specs-table">
                     <tbody>
-                      <tr>
-                        <td class="spec-name">Model</td>
-                        <td class="spec-val">ZEVIX EAZE-N1 Pro</td>
-                      </tr>
-                      <tr>
-                        <td class="spec-name">Battery Capacity</td>
-                        <td class="spec-val">2,000 mAh High-Density Lithium-Ion</td>
-                      </tr>
-                      <tr>
-                        <td class="spec-name">Battery Runtime</td>
-                        <td class="spec-val">8–10 Full 15-Min Sessions per charge</td>
-                      </tr>
-                      <tr>
-                        <td class="spec-name">Charging Port</td>
-                        <td class="spec-val">Universal USB-C Fast Charge (5V / 2A)</td>
-                      </tr>
-                      <tr>
-                        <td class="spec-name">Heating Temp</td>
-                        <td class="spec-val">42°C ± 2°C Constant Thermostat</td>
-                      </tr>
-                      <tr>
-                        <td class="spec-name">Weight</td>
-                        <td class="spec-val">1.18 kg (Ultra-Lightweight Ergonomic)</td>
-                      </tr>
-                      <tr>
-                        <td class="spec-name">Auto Shut-off</td>
-                        <td class="spec-val">15 Minutes Intelligent Safety Timer</td>
-                      </tr>
+                      <tr><td class="spec-name">Model</td><td class="spec-val">ZEVIX EAZE-N1 Pro</td></tr>
+                      <tr><td class="spec-name">Battery</td><td class="spec-val">2,000 mAh High-Density Li-Ion</td></tr>
+                      <tr><td class="spec-name">Runtime</td><td class="spec-val">8–10 Full 15-Min Sessions</td></tr>
+                      <tr><td class="spec-name">Port</td><td class="spec-val">USB-C Fast Charge (5V / 2A)</td></tr>
+                      <tr><td class="spec-name">Heat Temp</td><td class="spec-val">42°C ± 2°C Constant Thermostat</td></tr>
+                      <tr><td class="spec-name">Timer</td><td class="spec-val">15 Minutes Intelligent Safety Timer</td></tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
-
-            <!-- Tab 4: What's In The Box -->
-            <div class="accordion-item">
-              <button class="accordion-header" aria-expanded="false">
-                <span>What's In The Box</span>
-                <span class="accordion-icon-toggle">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M6 9l6 6 6-6"/>
-                  </svg>
-                </span>
-              </button>
-              <div class="accordion-collapse">
-                <div class="accordion-content">
-                  <ul class="feature-bullet-list">
-                    <li class="feature-bullet-item">
-                      <span class="bullet-dot"></span>
-                      <span>1× ZEVIX EAZE Cordless Neck &amp; Shoulder Massager</span>
-                    </li>
-                    <li class="feature-bullet-item">
-                      <span class="bullet-dot"></span>
-                      <span>1× Hands-Free Adjustable Elastic Back Strap</span>
-                    </li>
-                    <li class="feature-bullet-item">
-                      <span class="bullet-dot"></span>
-                      <span>1× Braided USB Type-C Fast Charging Cable</span>
-                    </li>
-                    <li class="feature-bullet-item">
-                      <span class="bullet-dot"></span>
-                      <span>1× User Manual &amp; 1-Year Official Warranty Card</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
           </div>
         </section>
 
@@ -4021,473 +3744,72 @@
     </div>
   </main>
 
-  <!-- =============================================================
-       4. DAILY RELIEF / BENEFITS SECTION (#daily-relief)
-       ============================================================= -->
+  <!-- DAILY RELIEF & REVIEWS SECTIONS -->
   <section class="daily-relief-section" id="daily-relief" aria-label="Daily Relief and Benefits">
     <div class="daily-relief-container">
-      
-      <!-- 1. Editorial Introduction -->
       <div class="daily-relief-intro">
         <span class="daily-relief-eyebrow">YOUR DAILY DOSE OF RELIEF</span>
-        <h2 class="daily-relief-heading">
-          Relief that feels<br>like real hands.
-        </h2>
-        <p class="daily-relief-intro-p">
-          Long hours, screen time, stress, and everyday movement can leave your neck and shoulders feeling tense and tired.
-        </p>
-        <p class="daily-relief-product-desc">
-          <strong class="brand-strong">ZEVIX EAZE</strong> combines deep kneading massage with soothing heat to help relax tired muscles and melt away everyday tension — whenever you need it.
-        </p>
-        <p class="daily-relief-closing">
-          No appointments. No complicated setup.<br>Just press, relax, and EAZE into comfort.
-        </p>
+        <h2 class="daily-relief-heading">Relief that feels<br>like real hands.</h2>
+        <p class="daily-relief-intro-p">Long hours and stress leave neck and shoulders feeling tense.</p>
+        <p class="daily-relief-product-desc"><strong class="brand-strong">ZEVIX EAZE</strong> combines deep kneading massage with soothing heat whenever you need it.</p>
       </div>
 
-      <!-- 2. Main Product Showcase with Editorial Annotations -->
       <div class="daily-relief-hero">
-        
-        <!-- Left Editorial Annotation -->
-        <div class="daily-relief-annotation annotation-left" aria-hidden="true">
+        <div class="daily-relief-annotation annotation-left">
           <span class="annotation-text">Your reset,<br>anytime.</span>
-          <svg class="annotation-underline" viewBox="0 0 100 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M2 8C25 3 70 2 98 9" stroke="#3A38B8" stroke-width="2.5" stroke-linecap="round"/>
-          </svg>
         </div>
-
-        <!-- Center Product Hero Visual -->
         <div class="daily-relief-hero-visual">
-          <img 
-            src="assets/images/zevix-main-product.webp" 
-            alt="ZEVIX EAZE 6D Kneading Neck and Shoulder Massager with Heated Nodes" 
-            class="daily-relief-hero-img"
-            loading="lazy"
-            width="680"
-            height="500"
-          >
+          <img src="assets/images/zevix-main-product.webp" alt="ZEVIX EAZE" class="daily-relief-hero-img" loading="lazy" width="680" height="500">
         </div>
-
-        <!-- Right Editorial Annotation -->
-        <div class="daily-relief-annotation annotation-right" aria-hidden="true">
+        <div class="daily-relief-annotation annotation-right">
           <span class="annotation-text">Deep relief,<br>warm comfort.</span>
-          <svg class="annotation-arrow-svg" viewBox="0 0 65 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M6 10C24 6 52 14 56 34" stroke="#3A38B8" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M47 31L56 35L58 25" stroke="#3A38B8" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-
-      </div>
-
-      <!-- 3. Three Large Editorial Benefit Cards -->
-      <div class="daily-relief-cards-stack">
-        
-        <!-- Benefit Card 01 — Deep Kneading -->
-        <article class="daily-relief-benefit-card" id="daily-card-kneading">
-          <div class="benefit-card-content">
-            <div class="benefit-icon-circle" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7 11V7a2 2 0 0 1 4 0v4"/>
-                <path d="M11 7a2 2 0 0 1 4 0v4"/>
-                <path d="M15 8a2 2 0 0 1 4 0v4"/>
-                <path d="M3 13a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-2a2 2 0 0 0-4 0v2H7V9a2 2 0 0 0-4 0z"/>
-              </svg>
-            </div>
-            <span class="benefit-card-eyebrow">DEEP KNEADING</span>
-            <h3 class="benefit-card-heading">
-              Massage that<br>goes deeper.
-            </h3>
-            <p class="benefit-card-desc">
-              Human-like kneading nodes work into tight areas to help release built-up neck and shoulder tension.
-            </p>
-          </div>
-          <div class="benefit-card-media">
-            <img 
-              src="assets/images/zevix-deep-kneading-closeup.webp" 
-              alt="ZEVIX EAZE Deep Kneading 6D Multi-Point Nodes" 
-              loading="lazy"
-              width="600"
-              height="400"
-            >
-          </div>
-        </article>
-
-        <!-- Benefit Card 02 — Soothing Heat -->
-        <article class="daily-relief-benefit-card reversed" id="daily-card-heat">
-          <div class="benefit-card-content">
-            <div class="benefit-icon-circle" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 5c-1 2-1 4 0 6s1 4 0 6"/>
-                <path d="M12 3c-1 3-1 6 0 9s1 6 0 9"/>
-                <path d="M16 5c-1 2-1 4 0 6s1 4 0 6"/>
-              </svg>
-            </div>
-            <span class="benefit-card-eyebrow">SOOTHING HEAT</span>
-            <h3 class="benefit-card-heading">
-              Warmth where<br>you need it.
-            </h3>
-            <p class="benefit-card-desc">
-              Gentle heat enhances your massage experience and helps tired muscles feel relaxed and comfortable.
-            </p>
-          </div>
-          <div class="benefit-card-media">
-            <img 
-              src="assets/images/zevix-soothing-heat-closeup.webp" 
-              alt="ZEVIX EAZE Warm Glowing Heated Surface Massage Nodes" 
-              loading="lazy"
-              width="600"
-              height="400"
-            >
-          </div>
-        </article>
-
-        <!-- Benefit Card 03 — Designed for Daily Relief -->
-        <article class="daily-relief-benefit-card" id="daily-card-daily">
-          <div class="benefit-card-content">
-            <div class="benefit-icon-circle" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="7" r="4"/>
-                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
-                <path d="M12 11c1.5 0 3-1 3-2.5"/>
-              </svg>
-            </div>
-            <span class="benefit-card-eyebrow">DESIGNED FOR DAILY RELIEF</span>
-            <h3 class="benefit-card-heading">
-              Your reset,<br>anytime.
-            </h3>
-            <p class="benefit-card-desc">
-              From long workdays to post-workout fatigue, enjoy a relaxing massage whenever your body needs a break.
-            </p>
-          </div>
-          <div class="benefit-card-media">
-            <img 
-              src="assets/images/zevix-daily-relief-lifestyle.webp" 
-              alt="Peaceful everyday relaxation at home with ZEVIX EAZE neck massager" 
-              loading="lazy"
-              width="600"
-              height="400"
-            >
-          </div>
-        </article>
-
-      </div>
-
-      <!-- 4. Bottom Lifestyle Benefits Strip -->
-      <div class="daily-relief-bottom-benefits" aria-label="Lifestyle Benefits Summary">
-        <div class="bottom-benefits-grid">
-          
-          <div class="bottom-benefit-item">
-            <div class="bottom-benefit-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <h4 class="bottom-benefit-title">QUICK &amp; EASY<br>TO USE</h4>
-            <p class="bottom-benefit-text">Relax in minutes</p>
-          </div>
-
-          <div class="bottom-benefit-item">
-            <div class="bottom-benefit-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-              </svg>
-            </div>
-            <h4 class="bottom-benefit-title">RELIEVES STRESS<br>&amp; FATIGUE</h4>
-            <p class="bottom-benefit-text">Feel better, every day</p>
-          </div>
-
-          <div class="bottom-benefit-item">
-            <div class="bottom-benefit-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                <polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-            </div>
-            <h4 class="bottom-benefit-title">GREAT FOR<br>WORK &amp; HOME</h4>
-            <p class="bottom-benefit-text">Your wellness companion</p>
-          </div>
-
-          <div class="bottom-benefit-item">
-            <div class="bottom-benefit-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="20 12 20 22 4 22 4 12"/>
-                <rect x="2" y="7" width="20" height="5"></rect>
-                <line x1="12" y1="22" x2="12" y2="7"></line>
-                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-              </svg>
-            </div>
-            <h4 class="bottom-benefit-title">A THOUGHTFUL<br>GIFT</h4>
-            <p class="bottom-benefit-text">Care for the ones you love</p>
-          </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- =============================================================
-       5. CUSTOMER REVIEWS & SOCIAL PROOF SECTION
-       ============================================================= -->
+  <!-- CUSTOMER REVIEWS -->
   <section class="pdp-reviews-section" id="customerReviewsSection" aria-label="Customer Reviews">
     <div class="reviews-container">
-      
-      <!-- 1. Header with Eyebrow, Title & Rating Pill Box -->
       <div class="reviews-header-block">
         <div class="reviews-header-left">
           <span class="reviews-eyebrow">REAL PEOPLE. REAL RELIEF.</span>
           <h2 class="reviews-title">Customer Reviews</h2>
           <p class="reviews-subtitle">Thousands of happy customers are feeling the difference with ZEVIX EAZE.</p>
         </div>
-
         <div class="reviews-score-pill-card">
-          <div class="score-stars-row">
-            <span class="score-stars">★★★★★</span>
-            <span class="score-number">4.8/5</span>
-          </div>
+          <div class="score-stars-row"><span class="score-stars">★★★★★</span><span class="score-number">4.8/5</span></div>
           <div class="score-caption">Based on 2,500+ verified reviews</div>
         </div>
       </div>
 
-      <!-- 2. Customer UGC Stories & Video Reels Strip -->
-      <div class="ugc-media-strip" role="region" aria-label="Customer UGC Stories">
-        <div class="ugc-card-item" data-media-src="assets/images/lifestyle_woman.jpg" data-caption="Ananya enjoying evening relief with ZEVIX EAZE">
-          <img src="assets/images/ugc_1_woman.png" alt="Customer Video Review - Ananya">
-          <div class="ugc-play-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
-          </div>
-        </div>
-
-        <div class="ugc-card-item" data-media-src="assets/images/product_2_pedestal.jpg" data-caption="6D Biomimetic heated kneading node demonstration">
-          <img src="assets/images/ugc_2_nodes.png" alt="Customer Video Review - Heat Nodes">
-          <div class="ugc-play-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
-          </div>
-        </div>
-
-        <div class="ugc-card-item" data-media-src="assets/images/product_3_neck_closeup.jpg" data-caption="4 Massage Modes in action">
-          <img src="assets/images/ugc_3_back.png" alt="Customer Photo Review - Ergonomic fit">
-        </div>
-
-        <div class="ugc-card-item" data-media-src="assets/images/ugc_man_relaxing.jpg" data-caption="Rohit relaxing after 8+ hours desk work">
-          <img src="assets/images/ugc_4_man.png" alt="Customer Video Review - Rohit">
-          <div class="ugc-play-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
-          </div>
-        </div>
-
-        <div class="ugc-card-item ugc-more-card" id="openUgcGalleryBtn" data-media-src="assets/images/product_5_yoga_woman.jpg">
-          <img src="assets/images/ugc_5_more.png" alt="+50 More Customer Reviews">
-          <div class="ugc-more-overlay">
-            <span class="ugc-more-count">+50</span>
-            <span class="ugc-more-label">More</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 3. Review Cards List -->
       <div class="review-cards-feed" id="reviewCardsFeed">
-        
-        <!-- Review Card 1: Ananya S. -->
-        <article class="review-card" data-review-id="1">
+        <article class="review-card">
           <div class="review-card-top">
             <div class="review-author-box">
               <div class="author-avatar-circle">A</div>
               <div class="author-meta-info">
-                <div class="author-name-row">
-                  <strong class="author-name">Ananya S.</strong>
-                  <span class="verified-buyer-badge">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Verified Buyer
-                  </span>
-                </div>
-                <div class="review-stars-row">
-                  <span class="review-card-stars">★★★★★</span>
-                </div>
+                <div class="author-name-row"><strong class="author-name">Ananya S.</strong><span class="verified-buyer-badge">Verified Buyer</span></div>
+                <div class="review-stars-row"><span class="review-card-stars">★★★★★</span></div>
               </div>
             </div>
             <span class="review-timestamp">2 days ago</span>
           </div>
-
           <h3 class="review-headline">Instant relief after long work hours!</h3>
-          <p class="review-body-text">
-            I sit at a desk for 8+ hours and my neck and shoulders always feel stiff. ZEVIX EAZE has been a game changer. The massage feels so real and the heat is so soothing. I use it every evening!
-          </p>
-
-          <!-- Customer Photo Thumbnails -->
-          <div class="review-user-photos-strip">
-            <div class="review-user-photo-thumb" data-full-src="assets/images/product_5_yoga_woman.jpg">
-              <img src="assets/images/thumb_product_5_yoga_woman.jpg" alt="Customer review photo 1">
-            </div>
-            <div class="review-user-photo-thumb" data-full-src="assets/images/product_2_pedestal.jpg">
-              <img src="assets/images/thumb_product_2_pedestal.jpg" alt="Customer review photo 2">
-            </div>
-            <div class="review-user-photo-thumb" data-full-src="assets/images/product_3_neck_closeup.jpg">
-              <img src="assets/images/thumb_product_3_neck_closeup.jpg" alt="Customer review photo 3">
-            </div>
-          </div>
-
-          <div class="review-card-footer">
-            <button class="helpful-vote-btn" data-count="24" aria-label="Mark review as helpful">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-              </svg>
-              <span class="helpful-label">Helpful</span>
-              <span class="helpful-count">(24)</span>
-            </button>
-          </div>
+          <p class="review-body-text">I sit at a desk for 8+ hours and my neck and shoulders always feel stiff. ZEVIX EAZE has been a game changer. The massage feels so real and heat is super soothing.</p>
         </article>
-
-        <!-- Review Card 2: Rohit M. -->
-        <article class="review-card" data-review-id="2">
-          <div class="review-card-top">
-            <div class="review-author-box">
-              <div class="author-avatar-circle">R</div>
-              <div class="author-meta-info">
-                <div class="author-name-row">
-                  <strong class="author-name">Rohit M.</strong>
-                  <span class="verified-buyer-badge">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Verified Buyer
-                  </span>
-                </div>
-                <div class="review-stars-row">
-                  <span class="review-card-stars">★★★★★</span>
-                </div>
-              </div>
-            </div>
-            <span class="review-timestamp">5 days ago</span>
-          </div>
-
-          <h3 class="review-headline">Feels like a real massage</h3>
-          <p class="review-body-text">
-            The kneading is super relaxing and the heat adds so much comfort. Really helps with my shoulder tension. Highly recommended!
-          </p>
-
-          <!-- Customer Photo Thumbnails -->
-          <div class="review-user-photos-strip">
-            <div class="review-user-photo-thumb" data-full-src="assets/images/ugc_man_relaxing.jpg">
-              <img src="assets/images/ugc_4_man.png" alt="Customer review photo by Rohit">
-            </div>
-            <div class="review-user-photo-thumb" data-full-src="assets/images/product_3_neck_closeup.jpg">
-              <img src="assets/images/thumb_product_3_neck_closeup.jpg" alt="Customer review photo 2">
-            </div>
-            <div class="review-user-photo-thumb" data-full-src="assets/images/product_2_pedestal.jpg">
-              <img src="assets/images/thumb_product_2_pedestal.jpg" alt="Customer review photo 3">
-            </div>
-          </div>
-
-          <div class="review-card-footer">
-            <button class="helpful-vote-btn" data-count="18" aria-label="Mark review as helpful">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-              </svg>
-              <span class="helpful-label">Helpful</span>
-              <span class="helpful-count">(18)</span>
-            </button>
-          </div>
-        </article>
-
-        <!-- Review Card 3: Priya K. -->
-        <article class="review-card" data-review-id="3">
-          <div class="review-card-top">
-            <div class="review-author-box">
-              <div class="author-avatar-circle">P</div>
-              <div class="author-meta-info">
-                <div class="author-name-row">
-                  <strong class="author-name">Priya K.</strong>
-                  <span class="verified-buyer-badge">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Verified Buyer
-                  </span>
-                </div>
-                <div class="review-stars-row">
-                  <span class="review-card-stars">★★★★★</span>
-                </div>
-              </div>
-            </div>
-            <span class="review-timestamp">1 week ago</span>
-          </div>
-
-          <h3 class="review-headline">Best purchase for self-care</h3>
-          <p class="review-body-text">
-            Compact, easy to use and works amazingly well. I love using it while watching TV. It has really reduced my neck pain and helps me unwind.
-          </p>
-
-          <!-- Customer Photo Thumbnails -->
-          <div class="review-user-photos-strip">
-            <div class="review-user-photo-thumb" data-full-src="assets/images/product_5_yoga_woman.jpg">
-              <img src="assets/images/thumb_product_5_yoga_woman.jpg" alt="Customer review photo by Priya">
-            </div>
-            <div class="review-user-photo-thumb" data-full-src="assets/images/product_2_pedestal.jpg">
-              <img src="assets/images/thumb_product_2_pedestal.jpg" alt="Customer review photo 2">
-            </div>
-            <div class="review-user-photo-thumb" data-full-src="assets/images/product_4_infocard.jpg">
-              <img src="assets/images/thumb_product_4_infocard.jpg" alt="Customer review photo 3">
-            </div>
-          </div>
-
-          <div class="review-card-footer">
-            <button class="helpful-vote-btn" data-count="31" aria-label="Mark review as helpful">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-              </svg>
-              <span class="helpful-label">Helpful</span>
-              <span class="helpful-count">(31)</span>
-            </button>
-          </div>
-        </article>
-
       </div>
-
-      <!-- 4. View All Reviews Action Button -->
-      <div class="reviews-bottom-action">
-        <button class="btn-view-all-reviews" id="viewAllReviewsBtn">
-          <span>View All Reviews (2,500+)</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 18l6-6-6-6"/>
-          </svg>
-        </button>
-      </div>
-
     </div>
   </section>
 
-  <!-- =============================================================
-       6. BRAND FOOTER
-       ============================================================= -->
+  <!-- BRAND FOOTER -->
   <footer class="brand-footer" aria-label="Site Footer">
     <div class="footer-container">
       <div class="footer-top-grid">
-        
-        <!-- Col 1: Brand Info -->
         <div class="footer-brand-col">
           <span class="footer-brand-logo">ZEVIX</span>
-          <p class="footer-brand-desc">
-            Redefining daily wellness through high-precision ergonomic engineering, intelligent thermal therapy, and biomimetic kneading technology.
-          </p>
+          <p class="footer-brand-desc">Redefining daily wellness through high-precision ergonomic engineering, intelligent thermal therapy, and biomimetic kneading technology.</p>
         </div>
-
-        <!-- Col 2: Quick Links -->
-        <div>
-          <h4 class="footer-col-title">Shop &amp; Explore</h4>
-          <ul class="footer-links-list">
-            <li><a href="#" class="footer-link">ZEVIX EAZE Pro</a></li>
-            <li><a href="#daily-relief" class="footer-link">Daily Relief Technology</a></li>
-            <li><a href="#customerReviewsSection" class="footer-link">Customer Reviews</a></li>
-            <li><a href="#" class="footer-link">User Manual &amp; Guides</a></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Customer Care -->
         <div>
           <h4 class="footer-col-title">Customer Care</h4>
           <ul class="footer-links-list">
@@ -4497,33 +3819,14 @@
             <li><a href="#" class="footer-link">Contact Support</a></li>
           </ul>
         </div>
-
-        <!-- Col 4: Stay Updated -->
-        <div class="footer-newsletter-box">
-          <h4 class="footer-col-title">Stay Updated</h4>
-          <p class="footer-link" style="color:var(--text-secondary);">Subscribe for wellness tips and exclusive member offers.</p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to ZEVIX.');">
-            <input type="email" class="newsletter-input" placeholder="Enter your email" required aria-label="Email address">
-            <button type="submit" class="newsletter-submit-btn">Join</button>
-          </form>
-        </div>
-
       </div>
-
-      <!-- Bottom Bar -->
       <div class="footer-bottom-bar">
         <p>&copy; 2026 ZEVIX. All rights reserved. Live Better Everyday.</p>
-        <div class="footer-legal-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Shipping &amp; Delivery</a>
-          <a href="#">Security &amp; Compliance</a>
-        </div>
       </div>
     </div>
   </footer>
 
-  <!-- 7. STICKY MOBILE BUY BAR -->
+  <!-- STICKY MOBILE BUY BAR -->
   <aside class="sticky-mobile-bar" id="stickyMobileBar" aria-label="Quick Buy">
     <div class="sticky-price-info">
       <span class="sticky-title">ZEVIX EAZE</span>
@@ -4532,36 +3835,23 @@
         <span class="sticky-strike-price">₹4,000</span>
       </div>
     </div>
-    <button class="sticky-atc-btn" id="stickyAtcBtn">
-      ADD TO CART
-    </button>
+    <button class="sticky-atc-btn" id="stickyAtcBtn">ADD TO CART</button>
   </aside>
 
-  <!-- 8. SLIDE-OVER CART DRAWER -->
+  <!-- SLIDE-OVER CART DRAWER -->
   <div class="cart-drawer-backdrop" id="cartDrawerBackdrop">
     <div class="cart-drawer" role="dialog" aria-modal="true" aria-label="Your Cart">
       <div class="cart-drawer-header">
         <h3 class="cart-drawer-title">YOUR CART (<span id="cartDrawerCount">1</span>)</h3>
-        <button class="cart-close-btn" id="closeCartBtn" aria-label="Close Cart">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        </button>
+        <button class="cart-close-btn" id="closeCartBtn" aria-label="Close Cart">✕</button>
       </div>
-
       <div class="cart-shipping-meter">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="20 6 9 17 4 12"></polyline>
-        </svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
         <span>Congratulations! You've unlocked <strong>FREE Shipping</strong></span>
       </div>
-
       <div class="cart-drawer-body">
         <div class="cart-item-card">
-          <div class="cart-item-thumb">
-            <img src="assets/images/product_1_white_bg.jpg" alt="ZEVIX EAZE Massager">
-          </div>
+          <div class="cart-item-thumb"><img src="assets/images/product_1_white_bg.jpg" alt="ZEVIX EAZE"></div>
           <div class="cart-item-info">
             <h4 class="cart-item-title">ZEVIX EAZE</h4>
             <div class="cart-item-variant">Neck &amp; Shoulder Massager with Heat</div>
@@ -4572,529 +3862,449 @@
           </div>
         </div>
       </div>
-
       <div class="cart-drawer-footer">
-        <div class="cart-subtotal-row">
-          <span>Subtotal</span>
-          <span id="cartSubtotal">₹2,199</span>
-        </div>
-        <button class="btn-checkout" id="btnProceedCheckout">
-          PROCEED TO CHECKOUT
-        </button>
+        <div class="cart-subtotal-row"><span>Subtotal</span><span id="cartSubtotal">₹2,199</span></div>
+        <button class="btn-checkout" id="btnProceedCheckout">PROCEED TO CHECKOUT</button>
       </div>
     </div>
   </div>
 
   <!-- =============================================================
-       9. CUSTOM MULTI-STEP CHECKOUT POPUP SYSTEM (RAZORPAY STYLE)
+       10. RAZORPAY CUSTOM MULTI-STEP CHECKOUT POPUP (EXACT REF MATCH)
        ============================================================= -->
-  <div class="checkout-modal-backdrop" id="checkoutModalBackdrop" role="dialog" aria-modal="true" aria-label="ZEVIX Secure Checkout">
-    <div class="checkout-modal" id="checkoutModal">
+  <div class="checkout-modal-backdrop" id="checkoutModalBackdrop" role="dialog" aria-modal="true" aria-label="ZEVIX Razorpay Checkout">
+    <div class="razorpay-checkout-modal" id="checkoutModal">
       
-      <!-- Top Checkout Bar -->
-      <header class="checkout-top-header">
-        <div class="checkout-header-left">
-          <button class="checkout-back-btn hidden" id="checkoutBackBtn" aria-label="Go back to previous step">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="19" y1="12" x2="5" y2="12"></line>
-              <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-          </button>
+      <!-- LEFT SIDEBAR: BRAND, SUMMARY & OFFERS (AS IN SCREENSHOTS 1 & 2) -->
+      <aside class="rzp-left-sidebar">
+        <div>
+          <div class="rzp-brand-heading">ZEVIX</div>
+          <p class="rzp-sidebar-notice" id="rzpSidebarNotice">Please check your shipping address!</p>
 
-          <div class="checkout-brand-title-box">
-            <span class="checkout-brand-name">ZEVIX</span>
-            <span class="razorpay-secure-tag">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-              Razorpay Trusted
-            </span>
+          <!-- Order Summary Card -->
+          <div class="rzp-summary-card" id="rzpSummaryCard">
+            <div class="rzp-summary-card-inner">
+              <div class="rzp-summary-thumb">
+                <img src="assets/images/product_1_white_bg.jpg" alt="ZEVIX EAZE">
+              </div>
+              <div class="rzp-summary-info">
+                <div style="font-size:11px; color:#717180; font-weight:600; text-transform:uppercase;">Order summary</div>
+                <div class="rzp-summary-title">ZEVIX EAZE</div>
+                <div class="rzp-summary-qty-label">
+                  <span>Qty.</span>
+                  <button type="button" class="rzp-sidebar-qty-btn" id="sidebarQtyMinus">−</button>
+                  <strong id="sidebarQtyVal" style="color:#1A1A24;">1</strong>
+                  <button type="button" class="rzp-sidebar-qty-btn" id="sidebarQtyPlus">+</button>
+                </div>
+              </div>
+            </div>
+            <div class="rzp-summary-price" id="rzpSidebarPrice">₹2,199</div>
+          </div>
+
+          <!-- Coupons & Offers Card -->
+          <div class="rzp-offers-card" id="rzpOffersCard">
+            <div class="rzp-offers-left">
+              <div class="rzp-offers-icon-badge">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M21.41 11.58l-9-9C12.05 2.22 11.55 2 11 2H4c-1.1 0-2 .9-2 2v7c0 .55.22 1.05.59 1.42l9 9c.36.36.86.58 1.41.58s1.05-.22 1.41-.59l7-7c.37-.36.59-.86.59-1.41s-.23-1.06-.59-1.42zM5.5 7C4.67 7 4 6.33 4 5.5S4.67 4 5.5 4 7 4.67 7 5.5 6.33 7 5.5 7z"/>
+                </svg>
+              </div>
+              <div>
+                <div class="rzp-offers-headline">Coupons and offers</div>
+                <div class="rzp-offers-sub" id="rzpOffersSubText">12 offers available</div>
+              </div>
+            </div>
+            <div style="color:#8E8E9F; font-size:16px;">›</div>
           </div>
         </div>
 
-        <!-- Step Indicator Pills (Desktop) -->
-        <div class="checkout-steps-bar">
-          <div class="step-pill-indicator active" id="stepPill1">
-            <span class="step-pill-num">1</span>
-            <span>Mobile</span>
-          </div>
-          <div class="step-pill-divider"></div>
-          <div class="step-pill-indicator" id="stepPill2">
-            <span class="step-pill-num">2</span>
-            <span>OTP</span>
-          </div>
-          <div class="step-pill-divider"></div>
-          <div class="step-pill-indicator" id="stepPill3">
-            <span class="step-pill-num">3</span>
-            <span>Address</span>
-          </div>
-          <div class="step-pill-divider"></div>
-          <div class="step-pill-indicator" id="stepPill4">
-            <span class="step-pill-num">4</span>
-            <span>Payment</span>
-          </div>
-        </div>
-
-        <button class="checkout-close-btn" id="checkoutCloseBtn" aria-label="Close Checkout">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
+        <!-- Center Shopping Bags Graphic -->
+        <div class="rzp-sidebar-graphic-box">
+          <svg viewBox="0 0 200 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="35" width="60" height="75" rx="6" fill="#A21CAF" fill-opacity="0.85"/>
+            <path d="M40 35V24C40 18.4772 44.4772 14 50 14h10c5.5228 0 10 4.4772 10 10v11" stroke="#E879F9" stroke-width="4"/>
+            <rect x="75" y="45" width="70" height="65" rx="6" fill="#F43F5E" fill-opacity="0.9"/>
+            <path d="M92 45V36C92 31.5817 95.5817 28 100 28h20c4.418 0 8 3.5817 8 8v9" stroke="#FDA4AF" stroke-width="4"/>
+            <circle cx="155" cy="40" r="14" fill="#E11D48"/>
+            <text x="150" y="45" fill="#FFFFFF" font-family="sans-serif" font-size="12" font-weight="bold">%</text>
           </svg>
-        </button>
-      </header>
+        </div>
 
-      <!-- Main Modal Split Body -->
-      <div class="checkout-main-grid">
+        <!-- Secured by Razorpay Logo Badge -->
+        <div class="rzp-secured-footer">
+          <span>Secured by</span>
+          <div class="rzp-secured-logo">
+            <svg width="84" height="20" viewBox="0 0 120 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.2 24.5L14.7 3.5H5.8L0 24.5H8.2Z" fill="#3395FF"/>
+              <path d="M16.5 3.5L12 18.2L18.8 11.5L25.2 3.5H16.5Z" fill="#0C2340"/>
+              <path d="M12.5 24.5H20.7L23.4 15.6L16.2 22.8L12.5 24.5Z" fill="#0C2340"/>
+              <text x="32" y="19" fill="#0C2340" font-family="Inter, sans-serif" font-size="16" font-weight="800" letter-spacing="-0.02em">Razorpay</text>
+            </svg>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT PANE (INTERACTIVE WHITE RAZORPAY SCREENS) -->
+      <main class="rzp-right-pane">
         
-        <!-- LEFT COLUMN: MULTI-STEP FLOWS -->
-        <div class="checkout-flow-pane">
-          
-          <!-- Mobile Summary Dropdown Bar -->
-          <div class="mobile-summary-toggle-bar" id="mobileSummaryToggle">
-            <div class="mobile-summary-toggle-left">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                <line x1="3" y1="6" x2="21" y2="6"></line>
-                <path d="M16 10a4 4 0 0 1-8 0"></path>
-              </svg>
-              <span>Order Summary (<span id="mobileSummaryQty">1</span> item) ▾</span>
-            </div>
-            <div class="mobile-summary-toggle-right" id="mobileSummaryTotal">₹2,199</div>
-          </div>
-
-          <!-- STEP 1: PHONE NUMBER & WHATSAPP CONSENT -->
-          <div class="checkout-step-view active" id="stepPhoneView">
-            <h2 class="step-view-title">Enter Mobile Number</h2>
-            <p class="step-view-subtitle">Enter your 10-digit number for express checkout, order tracking and verification.</p>
-
-            <form id="phoneStepForm" onsubmit="event.preventDefault(); window.checkoutController.submitPhoneStep();">
-              <div class="form-group-block">
-                <label class="form-label-text" for="checkoutPhoneInput">Mobile Number</label>
-                <div class="input-wrapper-box">
-                  <span class="phone-prefix-tag">
-                    <span>🇮🇳</span>
-                    <span>+91</span>
-                  </span>
-                  <input 
-                    type="tel" 
-                    id="checkoutPhoneInput" 
-                    class="checkout-text-input phone-input" 
-                    placeholder="98765 43210" 
-                    maxlength="10" 
-                    pattern="[0-9]{10}" 
-                    inputmode="numeric" 
-                    required 
-                    autocomplete="tel-national"
-                    autofocus
-                  >
-                </div>
-              </div>
-
-              <!-- WhatsApp & 1-Click Consent -->
-              <label class="custom-checkbox-row">
-                <input type="checkbox" id="whatsappConsent" class="custom-checkbox-input" checked>
-                <div class="custom-checkbox-box">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div class="checkbox-label-content">
-                  <span class="whatsapp-badge-icon">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12C2 13.85 2.5 15.58 3.38 17.07L2 22L7.09 20.66C8.54 21.5 10.22 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM16.46 16.92C16.23 17.57 15.34 18.06 14.63 18.22C14.15 18.32 13.52 18.4 11.41 17.52C8.72 16.41 6.98 13.68 6.84 13.5C6.71 13.32 5.75 12.04 5.75 10.71C5.75 9.38 6.42 8.74 6.69 8.46C6.92 8.22 7.3 8.11 7.64 8.11C7.75 8.11 7.86 8.12 7.95 8.12C8.22 8.13 8.36 8.15 8.54 8.58C8.76 9.12 9.3 10.44 9.36 10.58C9.43 10.72 9.49 10.91 9.4 11.09C9.31 11.28 9.24 11.35 9.1 11.51C8.97 11.67 8.83 11.8 8.69 11.96C8.54 12.12 8.38 12.29 8.54 12.57C8.71 12.85 9.29 13.8 10.15 14.56C11.26 15.55 12.16 15.87 12.48 16C12.72 16.1 12.99 16.08 13.17 15.89C13.4 15.64 13.68 15.24 13.97 14.84C14.17 14.55 14.43 14.51 14.71 14.62C15 14.72 16.54 15.48 16.86 15.64C17.18 15.8 17.39 15.88 17.47 16.02C17.54 16.16 17.54 16.7 16.46 16.92Z"/></svg>
-                  </span>
-                  Get instant tracking and delivery updates on <strong>WhatsApp</strong>.
-                </div>
-              </label>
-
-              <button type="submit" class="btn-checkout-action" id="btnSubmitPhone">
-                <span>Continue to OTP</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </button>
-            </form>
-
-            <div class="checkout-footer-security">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-              <span>100% Verified Express Checkout with 256-Bit Bank Grade Encryption</span>
-            </div>
-          </div>
-
-          <!-- STEP 2: OTP VERIFICATION -->
-          <div class="checkout-step-view" id="stepOtpView">
-            <h2 class="step-view-title">Verify with OTP</h2>
-            <p class="step-view-subtitle">Enter the 4-digit code sent to your phone to automatically verify your identity.</p>
-
-            <div class="otp-target-notice">
-              <span>Code sent to <strong id="otpDisplayTargetNumber">+91 98765 43210</strong></span>
-              <button type="button" class="btn-edit-phone" id="btnEditPhone">Edit</button>
-            </div>
-
-            <form id="otpStepForm" onsubmit="event.preventDefault(); window.checkoutController.submitOtpStep();">
-              <div class="otp-inputs-grid">
-                <input type="text" class="otp-digit-field" maxlength="1" pattern="[0-9]" inputmode="numeric" required id="otpBox1" autocomplete="one-time-code">
-                <input type="text" class="otp-digit-field" maxlength="1" pattern="[0-9]" inputmode="numeric" required id="otpBox2">
-                <input type="text" class="otp-digit-field" maxlength="1" pattern="[0-9]" inputmode="numeric" required id="otpBox3">
-                <input type="text" class="otp-digit-field" maxlength="1" pattern="[0-9]" inputmode="numeric" required id="otpBox4">
-              </div>
-
-              <div class="otp-resend-row">
-                <span>Didn't receive code?</span>
-                <button type="button" class="btn-resend-otp" id="btnResendOtp" disabled>Resend in <span id="resendCountdown">25s</span></button>
-              </div>
-
-              <button type="submit" class="btn-checkout-action" id="btnVerifyOtp">
-                <span>Verify &amp; Continue</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </button>
-            </form>
-
-            <div class="checkout-footer-security">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-              <span>Instant Verification &bull; Saved Addresses Loaded Safely</span>
-            </div>
-          </div>
-
-          <!-- STEP 3: ADDRESS & DELIVERY DETAILS -->
-          <div class="checkout-step-view" id="stepAddressView">
-            <h2 class="step-view-title">Delivery Address</h2>
-            <p class="step-view-subtitle">Where should we deliver your ZEVIX EAZE? Free Express Delivery included.</p>
-
-            <form id="addressStepForm" onsubmit="event.preventDefault(); window.checkoutController.submitAddressStep();">
-              <div class="address-inputs-grid two-col">
-                <div class="form-group-block">
-                  <label class="form-label-text" for="addrFullName">Full Name *</label>
-                  <input type="text" id="addrFullName" class="checkout-text-input" placeholder="e.g. Rahul Sharma" required autocomplete="name">
-                </div>
-                <div class="form-group-block">
-                  <label class="form-label-text" for="addrEmail">Email (Optional)</label>
-                  <input type="email" id="addrEmail" class="checkout-text-input" placeholder="rahul@gmail.com" autocomplete="email">
-                </div>
-              </div>
-
-              <div class="address-inputs-grid two-col">
-                <div class="form-group-block">
-                  <label class="form-label-text" for="addrPincode">PIN Code *</label>
-                  <input type="text" id="addrPincode" class="checkout-text-input" placeholder="6-digit Pincode" maxlength="6" pattern="[0-9]{6}" inputmode="numeric" required autocomplete="postal-code">
-                </div>
-                <div class="form-group-block">
-                  <label class="form-label-text" for="addrCity">City &amp; State *</label>
-                  <input type="text" id="addrCity" class="checkout-text-input" placeholder="e.g. Bengaluru, Karnataka" required>
-                </div>
-              </div>
-
-              <div class="form-group-block">
-                <label class="form-label-text" for="addrLine1">Flat / House No. / Building Name *</label>
-                <input type="text" id="addrLine1" class="checkout-text-input" placeholder="e.g. Flat 402, Palm Heights" required autocomplete="address-line1">
-              </div>
-
-              <div class="form-group-block">
-                <label class="form-label-text" for="addrLine2">Street / Area / Landmark *</label>
-                <input type="text" id="addrLine2" class="checkout-text-input" placeholder="e.g. 100ft Road, Near Metro Station" required autocomplete="address-line2">
-              </div>
-
-              <label class="custom-checkbox-row">
-                <input type="checkbox" id="saveAddressCheck" class="custom-checkbox-input" checked>
-                <div class="custom-checkbox-box">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </div>
-                <div class="checkbox-label-content">
-                  Save this address for fast 1-click checkout in future orders.
-                </div>
-              </label>
-
-              <button type="submit" class="btn-checkout-action" id="btnContinueToPayment">
-                <span>Continue to Payment</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </button>
-            </form>
-          </div>
-
-          <!-- STEP 4: PAYMENT OPTIONS -->
-          <div class="checkout-step-view" id="stepPaymentView">
-            <h2 class="step-view-title">Select Payment Method</h2>
-            <p class="step-view-subtitle">All transactions are encrypted with 256-bit bank-level security.</p>
-
-            <div class="payment-options-feed" id="paymentOptionsFeed">
-              
-              <!-- 1. UPI Payment Option (Default & Recommended) -->
-              <div class="payment-option-card selected" data-payment-method="upi" id="payOptionUpi">
-                <div class="payment-option-header">
-                  <div class="payment-radio-title-box">
-                    <div class="payment-radio-circle">
-                      <div class="payment-radio-dot"></div>
-                    </div>
-                    <div>
-                      <div class="payment-method-name">UPI (GPay / PhonePe / Paytm / QR)</div>
-                      <div style="font-size:12px; color:var(--color-success); font-weight:600;">Instant 10% Extra OFF Applied</div>
-                    </div>
-                  </div>
-                  <span class="payment-discount-tag">EXTRA 10% OFF</span>
-                </div>
-
-                <div class="payment-sub-content">
-                  <div class="upi-apps-row">
-                    <button type="button" class="upi-app-btn active" data-upi-app="gpay">
-                      <span>Google Pay</span>
-                    </button>
-                    <button type="button" class="upi-app-btn" data-upi-app="phonepe">
-                      <span>PhonePe</span>
-                    </button>
-                    <button type="button" class="upi-app-btn" data-upi-app="paytm">
-                      <span>Paytm</span>
-                    </button>
-                    <button type="button" class="upi-app-btn" data-upi-app="cred">
-                      <span>CRED</span>
-                    </button>
-                    <button type="button" class="upi-app-btn" data-upi-app="qr">
-                      <span>Scan QR</span>
-                    </button>
-                  </div>
-
-                  <div class="form-group-block" style="margin-top:4px; margin-bottom:0;">
-                    <label class="form-label-text" for="upiCustomId">Or Enter Custom UPI ID</label>
-                    <input type="text" id="upiCustomId" class="checkout-text-input" placeholder="e.g. yourname@okhdfcbank">
-                  </div>
-                </div>
-              </div>
-
-              <!-- 2. Cards Option -->
-              <div class="payment-option-card" data-payment-method="card" id="payOptionCard">
-                <div class="payment-option-header">
-                  <div class="payment-radio-title-box">
-                    <div class="payment-radio-circle">
-                      <div class="payment-radio-dot"></div>
-                    </div>
-                    <div class="payment-method-name">Credit / Debit Card</div>
-                  </div>
-                  <div class="payment-icons-strip">
-                    <svg width="28" height="18" viewBox="0 0 50 16" fill="none"><path d="M19.6 1.1L12.9 15.2H8.5L5.2 3.6C5 2.9 4.8 2.6 4.2 2.3C3.3 1.8 1.5 1.4 0 1.1L0.1 0.6H7.1C8 0.6 8.8 1.2 9 2.2L10.7 11.2L15.3 0.6H19.6ZM37 10.3C37 6.4 31.5 6.2 31.5 4.5C31.5 3.9 32.1 3.3 33.3 3.1C33.9 3 35.5 2.9 37.3 3.8L38 0.8C37 0.4 35.7 0.1 34.1 0.1C29.9 0.1 27 2.3 27 5.5C27 7.9 29.1 9.2 30.7 10C32.4 10.8 33 11.3 33 12.1C33 13.2 31.6 13.7 30.3 13.7C28.1 13.7 26.9 13.3 25.8 12.8L25.1 15.9C26.3 16.4 28.3 16.8 30.3 16.8C34.8 16.8 37.7 14.6 37 10.3ZM47.8 15.2H51.6L48.2 0.6H44.7C43.9 0.6 43.2 1.1 42.9 1.8L36.6 15.2H41L41.9 12.7H47.3L47.8 15.2ZM43 9.7L45.2 3.7L46.4 9.7H43ZM26.3 0.6L22.9 15.2H18.8L22.2 0.6H26.3Z" fill="#FFFFFF"/></svg>
-                    <svg width="24" height="16" viewBox="0 0 32 20" fill="none"><circle cx="11" cy="10" r="9" fill="#EB001B"/><circle cx="21" cy="10" r="9" fill="#F79E1B" fill-opacity="0.92"/></svg>
-                  </div>
-                </div>
-
-                <div class="payment-sub-content">
-                  <div class="form-group-block">
-                    <label class="form-label-text" for="cardNumInput">Card Number</label>
-                    <input type="text" id="cardNumInput" class="checkout-text-input" placeholder="4111 2222 3333 4444" maxlength="19">
-                  </div>
-                  <div class="address-inputs-grid two-col" style="margin-bottom:0;">
-                    <div class="form-group-block">
-                      <label class="form-label-text" for="cardExpiryInput">Expiry (MM/YY)</label>
-                      <input type="text" id="cardExpiryInput" class="checkout-text-input" placeholder="12/28" maxlength="5">
-                    </div>
-                    <div class="form-group-block">
-                      <label class="form-label-text" for="cardCvvInput">CVV</label>
-                      <input type="password" id="cardCvvInput" class="checkout-text-input" placeholder="•••" maxlength="4">
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 3. Net Banking Option -->
-              <div class="payment-option-card" data-payment-method="netbanking" id="payOptionNetbanking">
-                <div class="payment-option-header">
-                  <div class="payment-radio-title-box">
-                    <div class="payment-radio-circle">
-                      <div class="payment-radio-dot"></div>
-                    </div>
-                    <div class="payment-method-name">Net Banking</div>
-                  </div>
-                </div>
-                <div class="payment-sub-content">
-                  <div class="upi-apps-row">
-                    <button type="button" class="upi-app-btn active"><span>HDFC</span></button>
-                    <button type="button" class="upi-app-btn"><span>ICICI</span></button>
-                    <button type="button" class="upi-app-btn"><span>SBI</span></button>
-                    <button type="button" class="upi-app-btn"><span>Axis</span></button>
-                    <button type="button" class="upi-app-btn"><span>Kotak</span></button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- 4. Cash On Delivery (COD) -->
-              <div class="payment-option-card" data-payment-method="cod" id="payOptionCod">
-                <div class="payment-option-header">
-                  <div class="payment-radio-title-box">
-                    <div class="payment-radio-circle">
-                      <div class="payment-radio-dot"></div>
-                    </div>
-                    <div>
-                      <div class="payment-method-name">Cash on Delivery (COD)</div>
-                      <div style="font-size:12px; color:var(--text-muted);">Pay cash or scan QR when delivery arrives</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <button type="button" class="btn-checkout-action" id="btnExecutePayment" onclick="window.checkoutController.executeFinalPayment();">
-              <span id="finalPayBtnLabel">Pay ₹1,979</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
+        <!-- Screen Header -->
+        <div class="rzp-pane-header">
+          <div class="rzp-pane-header-title">
+            <button type="button" class="rzp-back-btn" id="rzpBackBtn" style="display:none;" aria-label="Go back">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
             </button>
+            <span id="rzpScreenHeaderTitle">Review Order</span>
+          </div>
+          <div class="rzp-header-actions">
+            <button type="button" class="rzp-icon-btn" aria-label="More options">···</button>
+            <button type="button" class="rzp-icon-btn" id="rzpCloseModalBtn" aria-label="Close">✕</button>
+          </div>
+        </div>
 
-            <div class="checkout-footer-security">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-              <span>Bank-grade 256-bit SSL encryption &bull; 100% Buyer Protection</span>
+        <!-- SCREEN 1: REVIEW ORDER (AUTOFILLED ADDRESS AS IN SCREENSHOT 2) -->
+        <div class="rzp-screen-view active" id="rzpScreenReview">
+          
+          <!-- 1. Logged in Contact Card -->
+          <div class="rzp-user-card">
+            <div class="rzp-user-card-left">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C026D3" stroke-width="2.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              <span id="rzpUserPhoneDisplay">+91 88260 02574</span>
             </div>
+            <div class="rzp-user-card-right">logged in ›</div>
           </div>
 
-          <!-- STEP 5: ORDER SUCCESS / CONFIRMATION -->
-          <div class="checkout-step-view" id="stepSuccessView">
-            <div class="success-celebration-box">
-              <div class="success-icon-ring">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
+          <!-- 2. Deliver to Address Card (Autofilled!) -->
+          <div class="rzp-address-card">
+            <div class="rzp-address-card-header">
+              <div class="rzp-address-tag">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
+                <span>Deliver to Primary</span>
+              </div>
+              <button type="button" class="rzp-btn-change-addr" id="rzpBtnChangeAddr">Add/Change</button>
+            </div>
+            <div class="rzp-address-details-body" id="rzpAutofillAddressDetails">
+              <div class="rzp-address-contact-line">+91 88260 02574 • singhritesh882626@gmail.com</div>
+              <div>Ritesh Singh, 581, Sector 22, Gurgaon, Haryana, 122015</div>
+            </div>
+          </div>
+
+          <!-- 3. Delivery Options Card -->
+          <div class="rzp-delivery-opts-card">
+            <div class="rzp-delivery-opts-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <span>Delivery Options</span>
+            </div>
+            <div class="rzp-delivery-option-row">
+              <div class="rzp-delivery-radio-left">
+                <div class="rzp-radio-dot-checked"></div>
+                <div>
+                  <div class="rzp-delivery-label-main">Free Shipping</div>
+                  <div class="rzp-delivery-label-sub">Enjoy free shipping on your order</div>
+                </div>
+              </div>
+              <span class="rzp-free-badge">FREE</span>
+            </div>
+          </div>
+
+          <!-- 4. Checkbox Consent -->
+          <label class="rzp-checkbox-row">
+            <div class="rzp-checkbox-custom">✓</div>
+            <span>Send me offers and order updates</span>
+          </label>
+
+          <!-- 5. Continue Button -->
+          <button type="button" class="rzp-btn-continue" id="rzpBtnContinueToPayment">
+            Continue
+          </button>
+        </div>
+
+        <!-- SCREEN 2: PAYMENT OPTIONS (AS IN SCREENSHOT 1) -->
+        <div class="rzp-screen-view" id="rzpScreenPayment" style="padding:0;">
+          <div class="rzp-payment-split-grid">
+            
+            <!-- Left Payment Methods Navigation Column -->
+            <div class="rzp-payment-methods-col">
+              
+              <!-- 1. UPI -->
+              <div class="rzp-pay-method-item active" data-method="upi" id="methodUpiItem">
+                <div class="rzp-method-title-box">
+                  <div class="rzp-method-name">UPI</div>
+                  <span class="rzp-method-offer-pill">5 Offers</span>
+                </div>
+                <div class="rzp-method-logos-strip">
+                  <span class="rzp-mini-icon" title="Google Pay"><svg width="12" height="12" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg></span>
+                  <span class="rzp-mini-icon" title="PhonePe" style="background:#5F259F;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M18.5 7.5c-1.2-1-3-1.5-4.8-1.5H9.5v12h3.2v-3.7h1.4c3.5 0 5.8-1.8 5.8-4.7 0-.9-.3-1.6-.9-2.1zm-4.7 4.5h-1.1V8.6h1.1c1.6 0 2.6.7 2.6 1.7s-1 1.7-2.6 1.7z"/></svg></span>
+                  <span class="rzp-mini-icon" title="Paytm" style="background:#002E6E;"><svg width="12" height="12" viewBox="0 0 24 24" fill="#00BAF2"><circle cx="12" cy="12" r="8"/></svg></span>
+                </div>
               </div>
 
-              <span class="order-id-badge" id="successOrderIdBadge">ORDER #ZVX-94821</span>
-              <h2 class="step-view-title" style="margin-bottom: 8px;">Order Placed Successfully!</h2>
-              <p class="step-view-subtitle" style="margin-bottom: 20px;">
-                Thank you for choosing <strong>ZEVIX</strong>. We've sent an order confirmation with live GPS tracking details to your mobile &amp; WhatsApp.
-              </p>
-
-              <div class="order-details-card">
-                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                  <span style="color:var(--text-muted); font-size:13px;">Estimated Delivery:</span>
-                  <strong style="color:var(--color-success); font-size:13px;" id="successEstDelivery">3–5 Business Days</strong>
+              <!-- 2. Cards -->
+              <div class="rzp-pay-method-item" data-method="cards" id="methodCardsItem">
+                <div class="rzp-method-title-box">
+                  <div class="rzp-method-name">Cards</div>
+                  <span class="rzp-method-offer-pill reward-pill">Get 5%* Reward P...</span>
                 </div>
-                <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
-                  <span style="color:var(--text-muted); font-size:13px;">Shipping Address:</span>
-                  <strong style="color:#FFFFFF; font-size:13px; text-align:right; max-width:200px;" id="successAddressSummary">Bengaluru, Karnataka</strong>
-                </div>
-                <div style="display:flex; justify-content:space-between;">
-                  <span style="color:var(--text-muted); font-size:13px;">Total Amount Paid:</span>
-                  <strong style="color:var(--metallic-bright); font-size:14px;" id="successTotalPaid">₹1,979</strong>
+                <div class="rzp-method-logos-strip">
+                  <span class="rzp-mini-icon" title="Mastercard"><svg width="14" height="10" viewBox="0 0 32 20"><circle cx="11" cy="10" r="9" fill="#EB001B"/><circle cx="21" cy="10" r="9" fill="#F79E1B" fill-opacity="0.9"/></svg></span>
+                  <span class="rzp-mini-icon" title="Visa"><svg width="14" height="8" viewBox="0 0 50 16"><path d="M19.6 1.1L12.9 15.2H8.5L5.2 3.6C5 2.9 4.8 2.6 4.2 2.3C3.3 1.8 1.5 1.4 0 1.1L0.1 0.6H7.1C8 0.6 8.8 1.2 9 2.2L10.7 11.2L15.3 0.6H19.6Z" fill="#1A1F71"/></svg></span>
                 </div>
               </div>
 
-              <button type="button" class="btn-checkout-action" onclick="window.checkoutController.closeModal();">
-                <span>Continue Shopping</span>
+              <!-- 3. EMI -->
+              <div class="rzp-pay-method-item" data-method="emi" id="methodEmiItem">
+                <div class="rzp-method-title-box">
+                  <div class="rzp-method-name">EMI</div>
+                  <span class="rzp-method-offer-pill">Upto 1.5% savings with Ne...</span>
+                </div>
+                <div class="rzp-method-logos-strip">
+                  <span class="rzp-mini-icon" style="color:#C026D3; font-weight:800; font-size:10px;">%</span>
+                </div>
+              </div>
+
+              <!-- 4. Cash on Delivery (+₹50 Extra Charge Highlighted) -->
+              <div class="rzp-pay-method-item" data-method="cod" id="methodCodItem">
+                <div class="rzp-method-title-box">
+                  <div class="rzp-method-name">Cash on Delivery</div>
+                  <span class="rzp-method-offer-pill cod-charge-pill">+₹50 extra charge</span>
+                </div>
+                <div class="rzp-method-logos-strip">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D93025" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2.5"></circle></svg>
+                </div>
+              </div>
+
+              <!-- 5. Netbanking -->
+              <div class="rzp-pay-method-item" data-method="netbanking" id="methodNetbankingItem">
+                <div class="rzp-method-title-box">
+                  <div class="rzp-method-name">Netbanking</div>
+                </div>
+                <div class="rzp-method-logos-strip">
+                  <span class="rzp-mini-icon" style="background:#004C8F; color:#FFFFFF; font-size:8px; font-weight:700;">H</span>
+                  <span class="rzp-mini-icon" style="background:#B02A30; color:#FFFFFF; font-size:8px; font-weight:700;">I</span>
+                  <span class="rzp-mini-icon" style="background:#224488; color:#FFFFFF; font-size:8px; font-weight:700;">S</span>
+                </div>
+              </div>
+
+              <!-- 6. Wallet -->
+              <div class="rzp-pay-method-item" data-method="wallet" id="methodWalletItem">
+                <div class="rzp-method-title-box">
+                  <div class="rzp-method-name">Wallet</div>
+                </div>
+                <div class="rzp-method-logos-strip">
+                  <span class="rzp-mini-icon" style="background:#00BAF2; color:#FFFFFF; font-size:8px; font-weight:700;">P</span>
+                  <span class="rzp-mini-icon" style="background:#E61937; color:#FFFFFF; font-size:8px; font-weight:700;">M</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Right Payment Detail/Form Column -->
+            <div class="rzp-payment-content-col" id="rzpPaymentContentCol">
+              
+              <!-- Available Offers Banner (From Screenshot 1) -->
+              <div class="rzp-available-offers-card">
+                <div class="rzp-offer-text-row">
+                  <span class="rzp-mini-icon" style="background:#002E6E; flex-shrink:0;"><svg width="10" height="10" viewBox="0 0 24 24" fill="#00BAF2"><circle cx="12" cy="12" r="8"/></svg></span>
+                  <span>Assured cashback up to ₹200 on P...</span>
+                </div>
+                <span class="rzp-offer-view-all-pill">+3 View all</span>
+              </div>
+
+              <!-- DYNAMIC CONTENT AREA -->
+              <!-- 1. UPI QR View (Default) -->
+              <div class="rzp-upi-qr-box" id="viewUpiQr">
+                <div class="rzp-upi-qr-header">
+                  <span class="rzp-upi-qr-title">UPI QR</span>
+                  <span class="rzp-countdown-timer">⏱ <span id="rzpQrCountdown">11:46</span></span>
+                </div>
+
+                <div class="rzp-qr-interactive-row">
+                  <div class="rzp-qr-code-frame">
+                    <!-- Accurate Razorpay UPI QR Code SVG -->
+                    <svg viewBox="0 0 100 100" width="100%" height="100%">
+                      <rect width="100" height="100" fill="#FFFFFF"/>
+                      <!-- QR Positional Marks -->
+                      <rect x="6" y="6" width="26" height="26" fill="#111111"/>
+                      <rect x="10" y="10" width="18" height="18" fill="#FFFFFF"/>
+                      <rect x="14" y="14" width="10" height="10" fill="#111111"/>
+                      
+                      <rect x="68" y="6" width="26" height="26" fill="#111111"/>
+                      <rect x="72" y="10" width="18" height="18" fill="#FFFFFF"/>
+                      <rect x="76" y="14" width="10" height="10" fill="#111111"/>
+                      
+                      <rect x="6" y="68" width="26" height="26" fill="#111111"/>
+                      <rect x="10" y="72" width="18" height="18" fill="#FFFFFF"/>
+                      <rect x="14" y="76" width="10" height="10" fill="#111111"/>
+
+                      <!-- QR Matrix Dots Pattern -->
+                      <rect x="36" y="8" width="6" height="6" fill="#111111"/>
+                      <rect x="48" y="8" width="6" height="6" fill="#111111"/>
+                      <rect x="58" y="16" width="6" height="6" fill="#111111"/>
+                      <rect x="36" y="24" width="6" height="6" fill="#111111"/>
+                      <rect x="44" y="32" width="6" height="6" fill="#111111"/>
+                      <rect x="54" y="36" width="8" height="8" fill="#111111"/>
+                      <rect x="8" y="42" width="6" height="6" fill="#111111"/>
+                      <rect x="22" y="46" width="6" height="6" fill="#111111"/>
+                      <rect x="36" y="48" width="6" height="6" fill="#111111"/>
+                      <rect x="48" y="48" width="6" height="6" fill="#111111"/>
+                      <rect x="64" y="44" width="6" height="6" fill="#111111"/>
+                      <rect x="76" y="42" width="6" height="6" fill="#111111"/>
+                      <rect x="88" y="48" width="6" height="6" fill="#111111"/>
+                      <rect x="36" y="64" width="6" height="6" fill="#111111"/>
+                      <rect x="48" y="64" width="6" height="6" fill="#111111"/>
+                      <rect x="58" y="72" width="6" height="6" fill="#111111"/>
+                      <rect x="72" y="64" width="6" height="6" fill="#111111"/>
+                      <rect x="84" y="72" width="6" height="6" fill="#111111"/>
+                      <rect x="44" y="84" width="6" height="6" fill="#111111"/>
+                      <rect x="60" y="84" width="6" height="6" fill="#111111"/>
+                      <rect x="78" y="84" width="6" height="6" fill="#111111"/>
+                      <rect x="88" y="88" width="6" height="6" fill="#111111"/>
+                    </svg>
+                  </div>
+                  <div class="rzp-qr-instructions-col">
+                    <span class="rzp-qr-scan-label">Scan the QR using any UPI App</span>
+                    <div class="rzp-qr-supported-logos">
+                      <span class="rzp-app-chip-icon" title="POP"><svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#FF4757"/><text x="8" y="16" fill="#FFF" font-size="10" font-weight="bold">P</text></svg></span>
+                      <span class="rzp-app-chip-icon" title="Google Pay"><svg width="14" height="14" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.98 0 12s.45 3.82 1.25 5.42l4.03-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg></span>
+                      <span class="rzp-app-chip-icon" title="CRED"><svg width="14" height="14" viewBox="0 0 24 24"><rect width="24" height="24" rx="4" fill="#111"/><path d="M7 6h10v12H7z" fill="#FFF"/></svg></span>
+                      <span class="rzp-app-chip-icon" title="PhonePe"><svg width="14" height="14" viewBox="0 0 24 24" fill="#5F259F"><circle cx="12" cy="12" r="10"/><text x="8" y="16" fill="#FFF" font-size="11" font-weight="bold">Pe</text></svg></span>
+                      <span class="rzp-app-chip-icon" title="Paytm"><svg width="14" height="14" viewBox="0 0 24 24" fill="#002E6E"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="5" fill="#00BAF2"/></svg></span>
+                    </div>
+                    <span class="rzp-method-offer-pill" style="margin-top:2px;">5 Offers</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 2. COD View (With +₹50 charge clearly noted) -->
+              <div class="rzp-cod-content-box" id="viewCodContent" style="display:none;">
+                <div class="rzp-cod-title">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                  <span>Cash on Delivery Handling Fee</span>
+                </div>
+                <p class="rzp-cod-desc">
+                  An extra <strong>+₹50 handling charge</strong> applies for COD orders. Pay in cash or scan QR when delivery agent arrives.
+                </p>
+                <div class="rzp-cod-breakdown">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                    <span>Product Retail:</span>
+                    <strong id="codBasePrice">₹2,199</strong>
+                  </div>
+                  <div style="display:flex; justify-content:space-between; color:#D93025; font-weight:700;">
+                    <span>COD Extra Charge:</span>
+                    <span>+₹50</span>
+                  </div>
+                  <div style="border-top:1px solid #E6E6EE; margin-top:6px; padding-top:6px; display:flex; justify-content:space-between; font-weight:800; font-size:13.5px;">
+                    <span>Total Amount:</span>
+                    <span id="codFinalTotal">₹2,249</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3. Cards View -->
+              <div class="rzp-card-input-box" id="viewCardsContent" style="display:none;">
+                <input type="text" class="rzp-text-input" placeholder="Card Number" maxlength="19" id="rzpCardNumber">
+                <div style="display:flex; gap:10px;">
+                  <input type="text" class="rzp-text-input" placeholder="MM/YY" maxlength="5" id="rzpCardExpiry">
+                  <input type="password" class="rzp-text-input" placeholder="CVV" maxlength="4" id="rzpCardCvv">
+                </div>
+                <input type="text" class="rzp-text-input" placeholder="Cardholder Name" id="rzpCardName">
+              </div>
+
+              <!-- 4. Netbanking View -->
+              <div class="rzp-card-input-box" id="viewNetbankingContent" style="display:none;">
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+                  <button type="button" class="rzp-text-input" style="font-weight:700; text-align:center;">HDFC</button>
+                  <button type="button" class="rzp-text-input" style="font-weight:700; text-align:center;">ICICI</button>
+                  <button type="button" class="rzp-text-input" style="font-weight:700; text-align:center;">SBI</button>
+                  <button type="button" class="rzp-text-input" style="font-weight:700; text-align:center;">Axis</button>
+                  <button type="button" class="rzp-text-input" style="font-weight:700; text-align:center;">Kotak</button>
+                  <button type="button" class="rzp-text-input" style="font-weight:700; text-align:center;">PNB</button>
+                </div>
+              </div>
+
+              <!-- 5. Wallet View -->
+              <div class="rzp-card-input-box" id="viewWalletContent" style="display:none;">
+                <div style="display:flex; gap:10px;">
+                  <button type="button" class="rzp-text-input" style="font-weight:700; text-align:center;">Paytm Wallet</button>
+                  <button type="button" class="rzp-text-input" style="font-weight:700; text-align:center;">Mobikwik</button>
+                </div>
+              </div>
+
+              <!-- Pay Now / Place Order Action Button -->
+              <button type="button" class="rzp-btn-pay-now" id="rzpBtnPayNow" onclick="window.razorpayCheckoutController.executePayment();">
+                <span id="rzpPayNowLabel">Pay ₹1,979</span>
               </button>
-            </div>
-          </div>
 
-        </div>
-
-        <!-- RIGHT COLUMN: ORDER SUMMARY & TRUST GUARANTEE -->
-        <div class="checkout-summary-pane" id="checkoutSummaryPane">
-          <div>
-            <h3 style="font-family:var(--font-display); font-size:14px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:#FFFFFF; margin-bottom:16px;">
-              Order Summary
-            </h3>
-
-            <!-- Product Card -->
-            <div class="summary-product-item">
-              <div class="summary-product-thumb">
-                <img src="assets/images/product_1_white_bg.jpg" alt="ZEVIX EAZE Massager">
-              </div>
-              <div class="summary-product-info">
-                <h4 class="summary-product-name">ZEVIX EAZE</h4>
-                <div class="summary-product-spec">Neck &amp; Shoulder Massager with Heat</div>
-                <div class="summary-qty-pill">
-                  <span>Qty:</span>
-                  <button type="button" class="summary-qty-btn" id="sumQtyMinus">−</button>
-                  <strong id="sumQtyCount" style="color:#FFFFFF;">1</strong>
-                  <button type="button" class="summary-qty-btn" id="sumQtyPlus">+</button>
-                </div>
-              </div>
-              <div style="font-weight:700; font-size:14px; color:var(--metallic-bright);" id="sumProductSubtotal">₹2,199</div>
             </div>
 
-            <!-- Price Breakdown Table -->
-            <div class="summary-price-table" style="margin-top:16px;">
-              <div class="price-row-item">
-                <span>Total MRP (Incl. Taxes)</span>
-                <span id="sumTotalMrp">₹4,000</span>
-              </div>
-              <div class="price-row-item discount-row">
-                <span>Product Discount (45% OFF)</span>
-                <span id="sumProductDiscount">-₹1,801</span>
-              </div>
-              <div class="price-row-item">
-                <span>Express Shipping</span>
-                <span style="color:var(--color-success); font-weight:700;">FREE</span>
-              </div>
-              <div class="price-row-item discount-row" id="upiDiscountRow">
-                <span>Extra 10% UPI Discount</span>
-                <span id="sumUpiDiscount">-₹220</span>
-              </div>
-              <div class="price-row-divider"></div>
-              <div class="price-total-row">
-                <span>Total Payable</span>
-                <span class="price-total-val" id="sumFinalTotal">₹1,979</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Trust Guarantees -->
-          <div class="summary-trust-stack">
-            <div class="summary-trust-point">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-              <span><strong>1-Year Warranty</strong> with instant replacement</span>
-            </div>
-            <div class="summary-trust-point">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              <span><strong>7-Day Easy Returns</strong> &amp; money back guarantee</span>
-            </div>
-            <div class="summary-trust-point">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="1" y="3" width="15" height="13"></rect>
-                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-              </svg>
-              <span><strong>Free Delivery</strong> in 3–5 business days</span>
-            </div>
           </div>
         </div>
 
-      </div>
+        <!-- SCREEN 3: ORDER SUCCESS CONFIRMATION -->
+        <div class="rzp-screen-view rzp-success-view" id="rzpScreenSuccess">
+          <div class="rzp-success-circle">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
+          <div style="font-size:12px; font-weight:800; color:#2B2AA0; letter-spacing:0.08em; text-transform:uppercase;" id="successOrderId">ORDER #ZVX-98241</div>
+          <h2 style="font-family:var(--font-display); font-size:22px; font-weight:800; color:#1A1A24; margin:0;">Order Placed Successfully!</h2>
+          <p style="font-size:13.5px; color:#555566; max-width:340px; margin:0; line-height:1.5;">
+            Thank you for ordering with <strong>ZEVIX</strong>. Order details &amp; live GPS tracking sent to <strong>+91 88260 02574</strong>.
+          </p>
+          <div style="background:#F8F8FC; border:1px solid #E6E6EE; border-radius:8px; padding:12px 16px; width:100%; max-width:360px; font-size:13px; text-align:left;">
+            <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
+              <span style="color:#717180;">Delivery To:</span>
+              <strong style="color:#1A1A24;">Ritesh Singh, Gurgaon</strong>
+            </div>
+            <div style="display:flex; justify-content:space-between;">
+              <span style="color:#717180;">Total Amount:</span>
+              <strong style="color:#2B2AA0; font-size:14px;" id="successFinalPaid">₹1,979</strong>
+            </div>
+          </div>
+          <button type="button" class="rzp-btn-continue" onclick="window.razorpayCheckoutController.closeModal();" style="max-width:260px;">
+            Continue Shopping
+          </button>
+        </div>
+
+        <!-- ADDRESS EDIT OVERLAY MODAL -->
+        <div class="rzp-address-edit-overlay" id="rzpAddressEditOverlay">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+            <h3 style="font-family:var(--font-display); font-size:16px; font-weight:700;">Edit Delivery Address</h3>
+            <button type="button" id="rzpCloseAddressEditBtn" style="font-size:18px; color:#555566;">✕</button>
+          </div>
+          <form id="rzpEditAddressForm" onsubmit="event.preventDefault(); window.razorpayCheckoutController.saveCustomAddress();" style="display:flex; flex-direction:column; gap:12px;">
+            <input type="text" class="rzp-text-input" placeholder="Full Name" id="editName" value="Ritesh Singh" required>
+            <input type="tel" class="rzp-text-input" placeholder="Mobile Number" id="editPhone" value="8826002574" required>
+            <input type="email" class="rzp-text-input" placeholder="Email" id="editEmail" value="singhritesh882626@gmail.com">
+            <input type="text" class="rzp-text-input" placeholder="House / Flat / Building No." id="editLine1" value="581, Sector 22" required>
+            <input type="text" class="rzp-text-input" placeholder="City, State" id="editCity" value="Gurgaon, Haryana" required>
+            <input type="text" class="rzp-text-input" placeholder="PIN Code" id="editPin" value="122015" maxlength="6" required>
+            <button type="submit" class="rzp-btn-continue" style="margin-top:10px;">Save &amp; Deliver Here</button>
+          </form>
+        </div>
+
+      </main>
 
     </div>
   </div>
 
-  <!-- 10. LIGHTBOX MODAL FOR IMAGES & UGC PREVIEWS -->
+  <!-- 11. LIGHTBOX MODAL -->
   <div class="lightbox-modal" id="lightboxModal">
     <div class="lightbox-content-box">
-      <button class="lightbox-close-btn" id="lightboxCloseBtn">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-        <span>Close</span>
-      </button>
+      <button class="lightbox-close-btn" id="lightboxCloseBtn">✕ Close</button>
       <img id="lightboxImg" src="assets/images/product_1_white_bg.jpg" alt="Expanded Product View">
     </div>
   </div>
 
-  <!-- 11. VANILLA JAVASCRIPT LOGIC -->
+  <!-- 12. VANILLA JAVASCRIPT LOGIC -->
   <script>
     (function () {
       'use strict';
 
-      // --- STORE STATE & CONSTANTS ---
-      const UNIT_MRP = 4000;
+      // --- STATE & CONSTANTS ---
       const UNIT_PRICE = 2199;
       const UPI_DISCOUNT_PERCENT = 0.10;
+      const COD_EXTRA_CHARGE = 50;
 
       let state = {
         quantity: 1,
@@ -5102,17 +4312,13 @@
         totalSlides: 5,
         cartCount: 0,
         checkout: {
-          currentStep: 1,
-          phoneNumber: '',
-          otp: '',
-          fullName: '',
-          email: '',
-          pincode: '',
-          city: '',
-          addressLine1: '',
-          addressLine2: '',
-          paymentMethod: 'upi', // 'upi', 'card', 'netbanking', 'cod'
-          upiApp: 'gpay'
+          currentScreen: 'review', // 'review', 'payment', 'success'
+          paymentMethod: 'upi', // 'upi', 'cards', 'emi', 'cod', 'netbanking', 'wallet'
+          phone: '+91 88260 02574',
+          email: 'singhritesh882626@gmail.com',
+          name: 'Ritesh Singh',
+          addressLine: '581, Sector 22',
+          cityStatePin: 'Gurgaon, Haryana, 122015'
         }
       };
 
@@ -5138,74 +4344,39 @@
       const cartItemPrice = document.getElementById('cartItemPrice');
       const cartSubtotal = document.getElementById('cartSubtotal');
       const btnProceedCheckout = document.getElementById('btnProceedCheckout');
-
-      const mainCtaAnchor = document.getElementById('mainCtaAnchor');
       const stickyMobileBar = document.getElementById('stickyMobileBar');
+      const mainCtaAnchor = document.getElementById('mainCtaAnchor');
 
-      const accordionHeaders = document.querySelectorAll('.accordion-header');
-      const openMoreGalleryBtn = document.getElementById('openMoreGalleryBtn');
-      const lightboxModal = document.getElementById('lightboxModal');
-      const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
-      const lightboxImg = document.getElementById('lightboxImg');
-
-      const productImagesList = [
-        'assets/images/product_1_white_bg.jpg',
-        'assets/images/product_2_pedestal.jpg',
-        'assets/images/product_3_neck_closeup.jpg',
-        'assets/images/product_4_infocard.jpg',
-        'assets/images/product_5_yoga_woman.jpg'
-      ];
-
-      // --- CHECKOUT DOM ELEMENTS ---
+      // --- RAZORPAY CHECKOUT POPUP ELEMENTS ---
       const checkoutModalBackdrop = document.getElementById('checkoutModalBackdrop');
-      const checkoutBackBtn = document.getElementById('checkoutBackBtn');
-      const checkoutCloseBtn = document.getElementById('checkoutCloseBtn');
+      const rzpCloseModalBtn = document.getElementById('rzpCloseModalBtn');
+      const rzpBackBtn = document.getElementById('rzpBackBtn');
+      const rzpScreenHeaderTitle = document.getElementById('rzpScreenHeaderTitle');
+      const rzpScreenReview = document.getElementById('rzpScreenReview');
+      const rzpScreenPayment = document.getElementById('rzpScreenPayment');
+      const rzpScreenSuccess = document.getElementById('rzpScreenSuccess');
 
-      const stepPills = [
-        document.getElementById('stepPill1'),
-        document.getElementById('stepPill2'),
-        document.getElementById('stepPill3'),
-        document.getElementById('stepPill4')
-      ];
+      const rzpSidebarPrice = document.getElementById('rzpSidebarPrice');
+      const sidebarQtyVal = document.getElementById('sidebarQtyVal');
+      const sidebarQtyMinus = document.getElementById('sidebarQtyMinus');
+      const sidebarQtyPlus = document.getElementById('sidebarQtyPlus');
+      const rzpPayNowLabel = document.getElementById('rzpPayNowLabel');
 
-      const stepViews = {
-        1: document.getElementById('stepPhoneView'),
-        2: document.getElementById('stepOtpView'),
-        3: document.getElementById('stepAddressView'),
-        4: document.getElementById('stepPaymentView'),
-        5: document.getElementById('stepSuccessView')
-      };
+      const rzpBtnContinueToPayment = document.getElementById('rzpBtnContinueToPayment');
+      const rzpBtnChangeAddr = document.getElementById('rzpBtnChangeAddr');
+      const rzpAddressEditOverlay = document.getElementById('rzpAddressEditOverlay');
+      const rzpCloseAddressEditBtn = document.getElementById('rzpCloseAddressEditBtn');
+      const rzpAutofillAddressDetails = document.getElementById('rzpAutofillAddressDetails');
 
-      const checkoutPhoneInput = document.getElementById('checkoutPhoneInput');
-      const otpDisplayTargetNumber = document.getElementById('otpDisplayTargetNumber');
-      const btnEditPhone = document.getElementById('btnEditPhone');
-      const otpBoxes = [
-        document.getElementById('otpBox1'),
-        document.getElementById('otpBox2'),
-        document.getElementById('otpBox3'),
-        document.getElementById('otpBox4')
-      ];
-      const resendCountdown = document.getElementById('resendCountdown');
-      const btnResendOtp = document.getElementById('btnResendOtp');
+      const payMethodItems = document.querySelectorAll('.rzp-pay-method-item');
+      const viewUpiQr = document.getElementById('viewUpiQr');
+      const viewCodContent = document.getElementById('viewCodContent');
+      const viewCardsContent = document.getElementById('viewCardsContent');
+      const viewNetbankingContent = document.getElementById('viewNetbankingContent');
+      const viewWalletContent = document.getElementById('viewWalletContent');
 
-      const addrPincode = document.getElementById('addrPincode');
-      const addrCity = document.getElementById('addrCity');
-      const paymentOptions = document.querySelectorAll('.payment-option-card');
-      const upiAppButtons = document.querySelectorAll('.upi-app-btn');
-      const finalPayBtnLabel = document.getElementById('finalPayBtnLabel');
-
-      // Checkout Summary Elements
-      const sumQtyCount = document.getElementById('sumQtyCount');
-      const sumQtyMinus = document.getElementById('sumQtyMinus');
-      const sumQtyPlus = document.getElementById('sumQtyPlus');
-      const sumProductSubtotal = document.getElementById('sumProductSubtotal');
-      const sumTotalMrp = document.getElementById('sumTotalMrp');
-      const sumProductDiscount = document.getElementById('sumProductDiscount');
-      const upiDiscountRow = document.getElementById('upiDiscountRow');
-      const sumUpiDiscount = document.getElementById('sumUpiDiscount');
-      const sumFinalTotal = document.getElementById('sumFinalTotal');
-      const mobileSummaryQty = document.getElementById('mobileSummaryQty');
-      const mobileSummaryTotal = document.getElementById('mobileSummaryTotal');
+      const codBasePrice = document.getElementById('codBasePrice');
+      const codFinalTotal = document.getElementById('codFinalTotal');
 
       // --- GALLERY LOGIC ---
       function goToSlide(index) {
@@ -5238,28 +4409,6 @@
         });
       });
 
-      // Swipe Gestures for Mobile Gallery
-      let touchStartX = 0;
-      let touchEndX = 0;
-      const galleryViewport = document.getElementById('galleryViewport');
-
-      if (galleryViewport) {
-        galleryViewport.addEventListener('touchstart', (e) => {
-          touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        galleryViewport.addEventListener('touchend', (e) => {
-          touchEndX = e.changedTouches[0].screenX;
-          const swipeThreshold = 40;
-          if (touchEndX < touchStartX - swipeThreshold) {
-            goToSlide(state.activeSlide + 1);
-          }
-          if (touchEndX > touchStartX + swipeThreshold) {
-            goToSlide(state.activeSlide - 1);
-          }
-        }, { passive: true });
-      }
-
       // --- QUANTITY & PRICING ---
       function updatePricing() {
         qtyDisplay.textContent = state.quantity;
@@ -5274,7 +4423,6 @@
             updatePricing();
           }
         });
-
         qtyPlusBtn.addEventListener('click', () => {
           if (state.quantity < 10) {
             state.quantity++;
@@ -5328,114 +4476,140 @@
         });
       }
 
-      // --- MULTI-STEP CHECKOUT SYSTEM ---
-      let otpTimerInterval = null;
+      // --- RAZORPAY MULTI-STEP CHECKOUT SYSTEM ---
+      let qrCountdownTimer = null;
 
-      function updateCheckoutSummary() {
+      function updateCheckoutTotals() {
         const qty = state.quantity;
         const subtotal = qty * UNIT_PRICE;
-        const mrpTotal = qty * UNIT_MRP;
-        const mrpDiscount = mrpTotal - subtotal;
-        
-        const isUpi = (state.checkout.paymentMethod === 'upi');
-        const upiDiscount = isUpi ? Math.round(subtotal * UPI_DISCOUNT_PERCENT) : 0;
-        const finalPayable = subtotal - upiDiscount;
+        sidebarQtyVal.textContent = qty;
 
-        sumQtyCount.textContent = qty;
-        sumProductSubtotal.textContent = '₹' + subtotal.toLocaleString('en-IN');
-        sumTotalMrp.textContent = '₹' + mrpTotal.toLocaleString('en-IN');
-        sumProductDiscount.textContent = '-₹' + mrpDiscount.toLocaleString('en-IN');
-        
-        if (isUpi) {
-          upiDiscountRow.style.display = 'flex';
-          sumUpiDiscount.textContent = '-₹' + upiDiscount.toLocaleString('en-IN');
+        let finalPayable = subtotal;
+        if (state.checkout.paymentMethod === 'upi') {
+          const discount = Math.round(subtotal * UPI_DISCOUNT_PERCENT);
+          finalPayable = subtotal - discount;
+          rzpPayNowLabel.textContent = 'Pay ₹' + finalPayable.toLocaleString('en-IN');
+        } else if (state.checkout.paymentMethod === 'cod') {
+          finalPayable = subtotal + COD_EXTRA_CHARGE;
+          codBasePrice.textContent = '₹' + subtotal.toLocaleString('en-IN');
+          codFinalTotal.textContent = '₹' + finalPayable.toLocaleString('en-IN');
+          rzpPayNowLabel.textContent = 'Place COD Order (₹' + finalPayable.toLocaleString('en-IN') + ')';
         } else {
-          upiDiscountRow.style.display = 'none';
+          finalPayable = subtotal;
+          rzpPayNowLabel.textContent = 'Pay ₹' + finalPayable.toLocaleString('en-IN');
         }
 
-        const finalFormatted = '₹' + finalPayable.toLocaleString('en-IN');
-        sumFinalTotal.textContent = finalFormatted;
-        mobileSummaryQty.textContent = qty;
-        mobileSummaryTotal.textContent = finalFormatted;
-
-        if (finalPayBtnLabel) {
-          finalPayBtnLabel.textContent = (state.checkout.paymentMethod === 'cod')
-            ? 'Confirm Order (' + finalFormatted + ')'
-            : 'Pay ' + finalFormatted;
-        }
+        rzpSidebarPrice.textContent = '₹' + finalPayable.toLocaleString('en-IN');
       }
 
-      function goToStep(step) {
-        state.checkout.currentStep = step;
+      function showRzpScreen(screenName) {
+        state.checkout.currentScreen = screenName;
+        rzpScreenReview.classList.remove('active');
+        rzpScreenPayment.classList.remove('active');
+        rzpScreenSuccess.classList.remove('active');
 
-        // Hide all views, activate target view
-        Object.keys(stepViews).forEach((key) => {
-          if (parseInt(key, 10) === step) {
-            stepViews[key].classList.add('active');
-          } else {
-            stepViews[key].classList.remove('active');
-          }
-        });
-
-        // Update top step indicators (1 to 4)
-        stepPills.forEach((pill, idx) => {
-          const pillStep = idx + 1;
-          pill.classList.remove('active', 'completed');
-          if (pillStep === step) {
-            pill.classList.add('active');
-          } else if (pillStep < step) {
-            pill.classList.add('completed');
-          }
-        });
-
-        // Back button visibility
-        if (step > 1 && step < 5) {
-          checkoutBackBtn.classList.remove('hidden');
-        } else {
-          checkoutBackBtn.classList.add('hidden');
+        if (screenName === 'review') {
+          rzpScreenReview.classList.add('active');
+          rzpScreenHeaderTitle.textContent = 'Review Order';
+          rzpBackBtn.style.display = 'none';
+        } else if (screenName === 'payment') {
+          rzpScreenPayment.classList.add('active');
+          rzpScreenHeaderTitle.textContent = 'Payment Options';
+          rzpBackBtn.style.display = 'flex';
+          startQrTimer();
+        } else if (screenName === 'success') {
+          rzpScreenSuccess.classList.add('active');
+          rzpScreenHeaderTitle.textContent = 'Order Confirmed';
+          rzpBackBtn.style.display = 'none';
         }
 
-        // Focus relevant inputs
-        if (step === 1 && checkoutPhoneInput) {
-          setTimeout(() => checkoutPhoneInput.focus(), 150);
-        } else if (step === 2 && otpBoxes[0]) {
-          setTimeout(() => otpBoxes[0].focus(), 150);
-          startOtpTimer();
-        } else if (step === 3) {
-          const nameInput = document.getElementById('addrFullName');
-          if (nameInput) setTimeout(() => nameInput.focus(), 150);
-        }
-
-        updateCheckoutSummary();
+        updateCheckoutTotals();
       }
 
-      function startOtpTimer() {
-        if (otpTimerInterval) clearInterval(otpTimerInterval);
-        let secondsLeft = 25;
-        btnResendOtp.disabled = true;
-        resendCountdown.textContent = secondsLeft + 's';
-
-        otpTimerInterval = setInterval(() => {
-          secondsLeft--;
-          if (secondsLeft <= 0) {
-            clearInterval(otpTimerInterval);
-            btnResendOtp.disabled = false;
-            btnResendOtp.textContent = 'Resend OTP';
+      function startQrTimer() {
+        if (qrCountdownTimer) clearInterval(qrCountdownTimer);
+        let seconds = 706; // 11:46
+        const countdownEl = document.getElementById('rzpQrCountdown');
+        
+        qrCountdownTimer = setInterval(() => {
+          seconds--;
+          if (seconds <= 0) {
+            clearInterval(qrCountdownTimer);
+            if (countdownEl) countdownEl.textContent = '00:00';
           } else {
-            resendCountdown.textContent = secondsLeft + 's';
+            const m = Math.floor(seconds / 60);
+            const s = seconds % 60;
+            if (countdownEl) countdownEl.textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
           }
         }, 1000);
       }
 
-      function openCheckout() {
+      function selectPaymentMethod(method) {
+        state.checkout.paymentMethod = method;
+        payMethodItems.forEach(item => {
+          if (item.getAttribute('data-method') === method) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+
+        // Hide all views
+        viewUpiQr.style.display = 'none';
+        viewCodContent.style.display = 'none';
+        viewCardsContent.style.display = 'none';
+        viewNetbankingContent.style.display = 'none';
+        viewWalletContent.style.display = 'none';
+
+        if (method === 'upi') {
+          viewUpiQr.style.display = 'flex';
+        } else if (method === 'cod') {
+          viewCodContent.style.display = 'flex';
+        } else if (method === 'cards' || method === 'emi') {
+          viewCardsContent.style.display = 'flex';
+        } else if (method === 'netbanking') {
+          viewNetbankingContent.style.display = 'flex';
+        } else if (method === 'wallet') {
+          viewWalletContent.style.display = 'flex';
+        }
+
+        updateCheckoutTotals();
+      }
+
+      payMethodItems.forEach(item => {
+        item.addEventListener('click', function () {
+          const method = this.getAttribute('data-method');
+          selectPaymentMethod(method);
+        });
+      });
+
+      // Quantity adjustments in sidebar
+      if (sidebarQtyMinus && sidebarQtyPlus) {
+        sidebarQtyMinus.addEventListener('click', () => {
+          if (state.quantity > 1) {
+            state.quantity--;
+            updatePricing();
+            updateCheckoutTotals();
+          }
+        });
+        sidebarQtyPlus.addEventListener('click', () => {
+          if (state.quantity < 10) {
+            state.quantity++;
+            updatePricing();
+            updateCheckoutTotals();
+          }
+        });
+      }
+
+      // Open / Close Checkout Modal
+      function openCheckoutModal() {
         closeCart();
-        updateCheckoutSummary();
-        goToStep(1);
+        showRzpScreen('review');
         checkoutModalBackdrop.classList.add('open');
         document.body.style.overflow = 'hidden';
       }
 
-      function closeCheckout() {
+      function closeCheckoutModal() {
         checkoutModalBackdrop.classList.remove('open');
         document.body.style.overflow = '';
       }
@@ -5443,239 +4617,94 @@
       if (btnProceedCheckout) {
         btnProceedCheckout.addEventListener('click', (e) => {
           e.preventDefault();
-          openCheckout();
+          openCheckoutModal();
         });
       }
 
-      if (checkoutCloseBtn) checkoutCloseBtn.addEventListener('click', closeCheckout);
-      if (checkoutBackBtn) {
-        checkoutBackBtn.addEventListener('click', () => {
-          if (state.checkout.currentStep > 1) {
-            goToStep(state.checkout.currentStep - 1);
+      if (rzpCloseModalBtn) rzpCloseModalBtn.addEventListener('click', closeCheckoutModal);
+      if (rzpBackBtn) {
+        rzpBackBtn.addEventListener('click', () => {
+          if (state.checkout.currentScreen === 'payment') {
+            showRzpScreen('review');
           }
         });
       }
 
-      if (btnEditPhone) {
-        btnEditPhone.addEventListener('click', () => {
-          goToStep(1);
+      if (rzpBtnContinueToPayment) {
+        rzpBtnContinueToPayment.addEventListener('click', () => {
+          showRzpScreen('payment');
         });
       }
 
-      // Quantity buttons inside checkout summary
-      if (sumQtyMinus && sumQtyPlus) {
-        sumQtyMinus.addEventListener('click', () => {
-          if (state.quantity > 1) {
-            state.quantity--;
-            updatePricing();
-            updateCheckoutSummary();
-          }
-        });
-        sumQtyPlus.addEventListener('click', () => {
-          if (state.quantity < 10) {
-            state.quantity++;
-            updatePricing();
-            updateCheckoutSummary();
-          }
+      // Address Change Overlay
+      if (rzpBtnChangeAddr && rzpAddressEditOverlay) {
+        rzpBtnChangeAddr.addEventListener('click', () => {
+          rzpAddressEditOverlay.classList.add('open');
         });
       }
 
-      // Mobile summary toggle accordion
-      const mobileSummaryToggle = document.getElementById('mobileSummaryToggle');
-      const checkoutSummaryPane = document.getElementById('checkoutSummaryPane');
-      if (mobileSummaryToggle && checkoutSummaryPane) {
-        mobileSummaryToggle.addEventListener('click', () => {
-          checkoutSummaryPane.scrollIntoView({ behavior: 'smooth' });
+      if (rzpCloseAddressEditBtn && rzpAddressEditOverlay) {
+        rzpCloseAddressEditBtn.addEventListener('click', () => {
+          rzpAddressEditOverlay.classList.remove('open');
         });
       }
 
-      // --- STEP 1: Phone input formatting & submit ---
-      if (checkoutPhoneInput) {
-        checkoutPhoneInput.addEventListener('input', (e) => {
-          e.target.value = e.target.value.replace(/\D/g, '').slice(0, 10);
-        });
-      }
+      // --- CONTROLLER API ---
+      window.razorpayCheckoutController = {
+        openModal: openCheckoutModal,
+        closeModal: closeCheckoutModal,
 
-      // --- STEP 2: OTP Box Auto-tabbing & Paste ---
-      otpBoxes.forEach((box, index) => {
-        box.addEventListener('input', (e) => {
-          const val = e.target.value.replace(/\D/g, '');
-          e.target.value = val ? val[0] : '';
-          if (val && index < otpBoxes.length - 1) {
-            otpBoxes[index + 1].focus();
-          }
-          // Auto submit if all filled
-          const fullOtp = otpBoxes.map(b => b.value).join('');
-          if (fullOtp.length === 4) {
-            setTimeout(() => window.checkoutController.submitOtpStep(), 200);
-          }
-        });
+        saveCustomAddress: function () {
+          const name = document.getElementById('editName').value.trim();
+          const phone = document.getElementById('editPhone').value.trim();
+          const email = document.getElementById('editEmail').value.trim();
+          const line1 = document.getElementById('editLine1').value.trim();
+          const city = document.getElementById('editCity').value.trim();
+          const pin = document.getElementById('editPin').value.trim();
 
-        box.addEventListener('keydown', (e) => {
-          if (e.key === 'Backspace' && !box.value && index > 0) {
-            otpBoxes[index - 1].focus();
-          }
-        });
+          state.checkout.name = name;
+          state.checkout.phone = '+91 ' + phone;
+          state.checkout.email = email;
+          state.checkout.addressLine = line1;
+          state.checkout.cityStatePin = city + ', ' + pin;
 
-        box.addEventListener('paste', (e) => {
-          e.preventDefault();
-          const pastedData = (e.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '');
-          if (pastedData) {
-            for (let i = 0; i < otpBoxes.length; i++) {
-              otpBoxes[i].value = pastedData[i] || '';
-            }
-            if (pastedData.length >= 4) {
-              setTimeout(() => window.checkoutController.submitOtpStep(), 200);
-            }
-          }
-        });
-      });
+          rzpAutofillAddressDetails.innerHTML = `
+            <div class="rzp-address-contact-line">+91 ${phone} • ${email}</div>
+            <div>${name}, ${line1}, ${city}, ${pin}</div>
+          `;
+          document.getElementById('rzpUserPhoneDisplay').textContent = '+91 ' + phone;
 
-      if (btnResendOtp) {
-        btnResendOtp.addEventListener('click', () => {
-          startOtpTimer();
-          alert('A new 4-digit OTP has been sent to +91 ' + state.checkout.phoneNumber);
-        });
-      }
-
-      // --- STEP 3: PIN Code Lookup Simulation ---
-      if (addrPincode) {
-        addrPincode.addEventListener('input', (e) => {
-          const pin = e.target.value.replace(/\D/g, '').slice(0, 6);
-          e.target.value = pin;
-          if (pin.length === 6 && addrCity && !addrCity.value) {
-            // Simulated smart pincode lookup
-            if (pin.startsWith('560')) addrCity.value = 'Bengaluru, Karnataka';
-            else if (pin.startsWith('110')) addrCity.value = 'New Delhi, Delhi';
-            else if (pin.startsWith('400')) addrCity.value = 'Mumbai, Maharashtra';
-            else if (pin.startsWith('600')) addrCity.value = 'Chennai, Tamil Nadu';
-            else if (pin.startsWith('700')) addrCity.value = 'Kolkata, West Bengal';
-            else if (pin.startsWith('500')) addrCity.value = 'Hyderabad, Telangana';
-            else addrCity.value = 'Selected City, India';
-          }
-        });
-      }
-
-      // --- STEP 4: Payment Option Toggles ---
-      paymentOptions.forEach((card) => {
-        card.addEventListener('click', function () {
-          paymentOptions.forEach(c => c.classList.remove('selected'));
-          this.classList.add('selected');
-          state.checkout.paymentMethod = this.getAttribute('data-payment-method');
-          updateCheckoutSummary();
-        });
-      });
-
-      upiAppButtons.forEach((btn) => {
-        btn.addEventListener('click', function (e) {
-          e.stopPropagation();
-          upiAppButtons.forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
-          state.checkout.upiApp = this.getAttribute('data-upi-app');
-        });
-      });
-
-      // Card number formatter
-      const cardNumInput = document.getElementById('cardNumInput');
-      if (cardNumInput) {
-        cardNumInput.addEventListener('input', (e) => {
-          let val = e.target.value.replace(/\D/g, '').slice(0, 16);
-          e.target.value = val.replace(/(\d{4})/g, '$1 ').trim();
-        });
-      }
-
-      const cardExpiryInput = document.getElementById('cardExpiryInput');
-      if (cardExpiryInput) {
-        cardExpiryInput.addEventListener('input', (e) => {
-          let val = e.target.value.replace(/\D/g, '').slice(0, 4);
-          if (val.length >= 2) val = val.slice(0, 2) + '/' + val.slice(2);
-          e.target.value = val;
-        });
-      }
-
-      // --- CONTROLLER API (Exposed to inline onsubmit handlers) ---
-      window.checkoutController = {
-        openModal: openCheckout,
-        closeModal: closeCheckout,
-        
-        submitPhoneStep: function () {
-          const phone = checkoutPhoneInput.value.trim();
-          if (phone.length !== 10) {
-            alert('Please enter a valid 10-digit mobile number.');
-            return;
-          }
-          state.checkout.phoneNumber = phone;
-          otpDisplayTargetNumber.textContent = '+91 ' + phone.slice(0, 5) + ' ' + phone.slice(5);
-          goToStep(2);
+          rzpAddressEditOverlay.classList.remove('open');
         },
 
-        submitOtpStep: function () {
-          const fullOtp = otpBoxes.map(b => b.value).join('');
-          if (fullOtp.length < 4) {
-            alert('Please enter the 4-digit OTP.');
-            return;
-          }
-          state.checkout.otp = fullOtp;
-          goToStep(3);
-        },
-
-        submitAddressStep: function () {
-          const name = document.getElementById('addrFullName').value.trim();
-          const pin = document.getElementById('addrPincode').value.trim();
-          const city = document.getElementById('addrCity').value.trim();
-          const line1 = document.getElementById('addrLine1').value.trim();
-
-          if (!name || pin.length !== 6 || !city || !line1) {
-            alert('Please fill in all required address fields.');
-            return;
-          }
-
-          state.checkout.fullName = name;
-          state.checkout.pincode = pin;
-          state.checkout.city = city;
-          state.checkout.addressLine1 = line1;
-          state.checkout.addressLine2 = document.getElementById('addrLine2').value.trim();
-
-          goToStep(4);
-        },
-
-        executeFinalPayment: function () {
-          const btn = document.getElementById('btnExecutePayment');
+        executePayment: function () {
+          const btn = document.getElementById('rzpBtnPayNow');
           const originalText = btn.innerHTML;
           btn.disabled = true;
-          btn.innerHTML = `
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="spinner" style="animation:spin 0.8s linear infinite;">
-              <circle cx="12" cy="12" r="10" stroke-opacity="0.25"></circle>
-              <path d="M12 2a10 10 0 0 1 10 10"></path>
-            </svg>
-            <span>Processing Secure Payment...</span>
-          `;
+          btn.innerHTML = `<span>Processing on Razorpay...</span>`;
 
           setTimeout(() => {
             btn.disabled = false;
             btn.innerHTML = originalText;
 
-            // Generate Random Order ID
-            const randomOrderNum = Math.floor(10000 + Math.random() * 90000);
-            document.getElementById('successOrderIdBadge').textContent = 'ORDER #ZVX-' + randomOrderNum;
-            document.getElementById('successAddressSummary').textContent = state.checkout.city || 'Bengaluru, Karnataka';
-            
-            const isUpi = (state.checkout.paymentMethod === 'upi');
-            const total = (state.quantity * UNIT_PRICE) - (isUpi ? Math.round(state.quantity * UNIT_PRICE * UPI_DISCOUNT_PERCENT) : 0);
-            document.getElementById('successTotalPaid').textContent = '₹' + total.toLocaleString('en-IN');
+            const randomId = Math.floor(10000 + Math.random() * 90000);
+            document.getElementById('successOrderId').textContent = 'ORDER #ZVX-' + randomId;
 
-            // Reset cart
-            state.cartCount = 0;
-            cartCountBadge.textContent = '0';
-            cartDrawerCount.textContent = '0';
+            let total = state.quantity * UNIT_PRICE;
+            if (state.checkout.paymentMethod === 'upi') {
+              total = total - Math.round(total * UPI_DISCOUNT_PERCENT);
+            } else if (state.checkout.paymentMethod === 'cod') {
+              total = total + COD_EXTRA_CHARGE;
+            }
+            document.getElementById('successFinalPaid').textContent = '₹' + total.toLocaleString('en-IN');
 
-            goToStep(5);
-          }, 1400);
+            showRzpScreen('success');
+          }, 1200);
         }
       };
 
-      // --- ACCORDION SYSTEM ---
-      accordionHeaders.forEach((header) => {
+      // Accordion toggles
+      document.querySelectorAll('.accordion-header').forEach((header) => {
         header.addEventListener('click', function () {
           const item = this.parentElement;
           const collapse = item.querySelector('.accordion-collapse');
@@ -5693,7 +4722,7 @@
         });
       });
 
-      // --- STICKY MOBILE BUY BAR OBSERVER ---
+      // Sticky mobile buy bar observer
       if ('IntersectionObserver' in window && mainCtaAnchor && stickyMobileBar) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
@@ -5708,7 +4737,11 @@
         observer.observe(mainCtaAnchor);
       }
 
-      // --- LIGHTBOX MODAL ---
+      // Lightbox
+      const lightboxModal = document.getElementById('lightboxModal');
+      const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+      const lightboxImg = document.getElementById('lightboxImg');
+
       function openLightbox(src) {
         if (lightboxImg && lightboxModal) {
           lightboxImg.src = src;
@@ -5724,140 +4757,13 @@
         }
       }
 
-      if (openMoreGalleryBtn) {
-        openMoreGalleryBtn.addEventListener('click', () => {
-          openLightbox(productImagesList[state.activeSlide] || productImagesList[0]);
-        });
-      }
-
+      document.getElementById('openMoreGalleryBtn')?.addEventListener('click', () => {
+        openLightbox('assets/images/product_1_white_bg.jpg');
+      });
       if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
       if (lightboxModal) {
         lightboxModal.addEventListener('click', (e) => {
           if (e.target === lightboxModal) closeLightbox();
-        });
-      }
-
-      // --- REVIEWS SECTION INTERACTIONS ---
-      const ugcCards = document.querySelectorAll('.ugc-card-item');
-      ugcCards.forEach((card) => {
-        card.addEventListener('click', () => {
-          const mediaSrc = card.getAttribute('data-media-src') || card.querySelector('img').src;
-          openLightbox(mediaSrc);
-        });
-      });
-
-      const reviewThumbs = document.querySelectorAll('.review-user-photo-thumb');
-      reviewThumbs.forEach((thumb) => {
-        thumb.addEventListener('click', () => {
-          const fullSrc = thumb.getAttribute('data-full-src') || thumb.querySelector('img').src;
-          openLightbox(fullSrc);
-        });
-      });
-
-      const helpfulButtons = document.querySelectorAll('.helpful-vote-btn');
-      helpfulButtons.forEach((btn) => {
-        btn.addEventListener('click', function () {
-          let count = parseInt(this.getAttribute('data-count'), 10);
-          const countSpan = this.querySelector('.helpful-count');
-          const isVoted = this.classList.contains('voted');
-
-          if (isVoted) {
-            count--;
-            this.classList.remove('voted');
-          } else {
-            count++;
-            this.classList.add('voted');
-          }
-
-          this.setAttribute('data-count', count);
-          countSpan.textContent = `(${count})`;
-        });
-      });
-
-      const viewAllReviewsBtn = document.getElementById('viewAllReviewsBtn');
-      const reviewCardsFeed = document.getElementById('reviewCardsFeed');
-
-      if (viewAllReviewsBtn && reviewCardsFeed) {
-        let moreReviewsLoaded = false;
-        viewAllReviewsBtn.addEventListener('click', () => {
-          if (moreReviewsLoaded) {
-            alert('All 2,500+ verified customer reviews loaded!');
-            return;
-          }
-
-          const additionalReview = document.createElement('article');
-          additionalReview.className = 'review-card';
-          additionalReview.innerHTML = `
-            <div class="review-card-top">
-              <div class="review-author-box">
-                <div class="author-avatar-circle">V</div>
-                <div class="author-meta-info">
-                  <div class="author-name-row">
-                    <strong class="author-name">Vikram R.</strong>
-                    <span class="verified-buyer-badge">
-                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      Verified Buyer
-                    </span>
-                  </div>
-                  <div class="review-stars-row">
-                    <span class="review-card-stars">★★★★★</span>
-                  </div>
-                </div>
-              </div>
-              <span class="review-timestamp">2 weeks ago</span>
-            </div>
-            <h3 class="review-headline">Worth every rupee — feels like a personal spa</h3>
-            <p class="review-body-text">
-              I gifted this to my mother who has persistent cervical stiffness. Within 3 days of use, she said her neck feels so much lighter. The hands-free strap is thoughtful and very easy for seniors to use.
-            </p>
-            <div class="review-user-photos-strip">
-              <div class="review-user-photo-thumb" data-full-src="assets/images/product_2_pedestal.jpg">
-                <img src="assets/images/thumb_product_2_pedestal.jpg" alt="Customer review photo by Vikram">
-              </div>
-              <div class="review-user-photo-thumb" data-full-src="assets/images/product_3_neck_closeup.jpg">
-                <img src="assets/images/thumb_product_3_neck_closeup.jpg" alt="Neck mode photo">
-              </div>
-            </div>
-            <div class="review-card-footer">
-              <button class="helpful-vote-btn" data-count="14" aria-label="Mark review as helpful">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
-                </svg>
-                <span class="helpful-label">Helpful</span>
-                <span class="helpful-count">(14)</span>
-              </button>
-            </div>
-          `;
-
-          reviewCardsFeed.appendChild(additionalReview);
-          
-          const newHelpfulBtn = additionalReview.querySelector('.helpful-vote-btn');
-          newHelpfulBtn.addEventListener('click', function() {
-            let count = parseInt(this.getAttribute('data-count'), 10);
-            const countSpan = this.querySelector('.helpful-count');
-            if (this.classList.contains('voted')) {
-              count--;
-              this.classList.remove('voted');
-            } else {
-              count++;
-              this.classList.add('voted');
-            }
-            this.setAttribute('data-count', count);
-            countSpan.textContent = `(${count})`;
-          });
-
-          const newThumbs = additionalReview.querySelectorAll('.review-user-photo-thumb');
-          newThumbs.forEach(thumb => {
-            thumb.addEventListener('click', () => {
-              const fullSrc = thumb.getAttribute('data-full-src');
-              openLightbox(fullSrc);
-            });
-          });
-
-          viewAllReviewsBtn.querySelector('span').textContent = 'Showing All Reviews (2,500+)';
-          moreReviewsLoaded = true;
         });
       }
 
