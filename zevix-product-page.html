@@ -12,61 +12,92 @@
 
   <style>
     /* -------------------------------------------------------------
-       1. DESIGN TOKENS & RESET — ZEVIX DARK METALLIC THEME
+       1. GLOBAL DESIGN TOKENS & RESET — OFFICIAL ZEVIX DESIGN SYSTEM
        ------------------------------------------------------------- */
     :root {
-      /* Background Colors */
-      --bg-main: #090921;
-      --bg-secondary: #11112E;
-      --bg-card: #11112E;
+      /* 2. GLOBAL COLOR SYSTEM (OFFICIAL ZEVIX PALETTE) */
+      --zevix-black: #090921;
+      --zevix-navy: #11112E;
+      --zevix-indigo-dark: #1B1B5F;
+      --zevix-primary: #2B2AA0;
+      --zevix-primary-hover: #3A38B8;
+
+      --zevix-white: #FFFFFF;
+      --zevix-silver-light: #E5E7ED;
+      --zevix-silver: #D7D8DC;
+      --zevix-metal: #B3B6C4;
+      --zevix-grey: #9397A6;
+
+      --zevix-border: #34364A;
+
+      /* Structural Aliases */
+      --bg-main: var(--zevix-black);
+      --bg-secondary: var(--zevix-navy);
+      --bg-card: var(--zevix-navy);
       --bg-card-elevated: #161638;
-      --bg-indigo: #1B1B5F;
+      --bg-indigo: var(--zevix-indigo-dark);
       --bg-indigo-light: #242475;
       --bg-footer: #070716;
-      
-      /* Primary Brand Colors */
-      --color-primary: #2B2AA0;
-      --color-primary-hover: #3A38B8;
-      --color-indigo-hover: #3A38B8;
-      
+
+      /* Brand Action Colors */
+      --color-primary: var(--zevix-primary);
+      --color-primary-hover: var(--zevix-primary-hover);
+      --color-indigo-hover: var(--zevix-primary-hover);
+
       /* Text Colors */
-      --text-primary: #FFFFFF;
-      --text-secondary: #D7D8DC;
-      --text-muted: #9397A6;
-      
-      /* Metallic Colors & Borders */
-      --metallic-bright: #E5E7ED;
-      --metallic-silver: #D7D8DC;
-      --metallic-grey: #B3B6C4;
-      --border-steel: #34364A;
+      --text-primary: var(--zevix-white);
+      --text-secondary: var(--zevix-silver);
+      --text-muted: var(--zevix-grey);
+
+      /* Metallic Accents & Borders */
+      --metallic-bright: var(--zevix-silver-light);
+      --metallic-silver: var(--zevix-silver);
+      --metallic-grey: var(--zevix-metal);
+      --border-steel: var(--zevix-border);
       --border-subtle: #20203D;
-      
-      /* Accents & Special States */
-      --accent-star: #F5B041;
-      --badge-discount-bg: #E5E7ED;
-      --badge-discount-text: #090921;
-      --badge-brand-bg: #2B2AA0;
-      --badge-brand-text: #FFFFFF;
+
+      /* Functional UI Colors */
       --color-success: #1E8E3E;
       --color-success-bg: #E6F4EA;
       --color-cod-charge: #D93025;
-      
-      /* Radii & Transitions */
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --radius-pill: 9999px;
-      
+      --accent-star: #F5B041;
+      --badge-discount-bg: var(--zevix-silver-light);
+      --badge-discount-text: var(--zevix-black);
+      --badge-brand-bg: var(--zevix-primary);
+      --badge-brand-text: var(--zevix-white);
+
+      /* 20. BORDER RADIUS SYSTEM */
+      --radius-sm: 6px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-pill: 8px; /* Standardized to clean 8px radius per Rule 20 */
+
+      /* 6. TYPOGRAPHY SYSTEM */
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --font-script: 'Caveat', cursive, sans-serif;
-      
-      --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-      --transition-smooth: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.35);
-      --shadow-card: 0 4px 24px rgba(4, 4, 18, 0.45);
-      --shadow-float: 0 12px 36px rgba(0, 0, 0, 0.6);
-      --shadow-glow: 0 0 25px rgba(43, 42, 160, 0.4);
+
+      /* 9. SPACING SYSTEM SCALE */
+      --space-4: 4px;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-48: 48px;
+      --space-64: 64px;
+      --space-80: 80px;
+      --space-96: 96px;
+      --space-120: 120px;
+
+      /* 22. SUBTLE SHADOWS & 48. TRANSITIONS */
+      --transition-fast: 200ms ease;
+      --transition-smooth: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-subtle: 0 8px 30px rgba(0, 0, 0, 0.18);
+      --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.18);
+      --shadow-float: 0 16px 48px rgba(0, 0, 0, 0.5);
     }
 
     *, *::before, *::after {
@@ -89,7 +120,7 @@
       background-color: var(--bg-main);
       color: var(--text-primary);
       font-family: var(--font-body);
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
       width: 100%;
@@ -115,6 +146,21 @@
     a {
       color: inherit;
       text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    /* 11. GLOBAL PAGE CONTAINER & 12. MINIMUM SCREEN EDGE SPACING */
+    .site-container,
+    .pdp-main-wrapper,
+    .daily-relief-container,
+    .reviews-container,
+    .footer-container {
+      width: 100%;
+      max-width: 1440px;
+      margin-inline: auto;
+      padding-left: clamp(16px, 4vw, 64px);
+      padding-right: clamp(16px, 4vw, 64px);
+      box-sizing: border-box;
     }
 
     /* -------------------------------------------------------------
@@ -504,42 +550,37 @@
 
     .bestseller-badge {
       display: inline-block;
-      background-color: var(--color-primary);
-      color: #FFFFFF;
-      font-size: 10.5px;
+      background-color: var(--zevix-primary);
+      color: var(--zevix-white);
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      padding: 4px 14px;
-      border-radius: var(--radius-pill);
-      margin-bottom: 12px;
-      line-height: 1.5;
+      padding: 4px 12px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      line-height: 1.4;
       border: 1px solid rgba(229, 231, 237, 0.15);
     }
 
     .product-main-title {
       font-family: var(--font-display);
-      font-size: clamp(24px, 5vw, 34px);
-      font-weight: 800;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
       letter-spacing: -0.01em;
-      line-height: 1.3;
+      line-height: 1.15;
       color: var(--text-primary);
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
 
     .product-subtitle {
-      font-size: 14.5px;
+      font-size: 16px;
       color: var(--text-secondary);
       font-weight: 400;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    @media (min-width: 768px) {
-      .product-subtitle {
-        font-size: 15.5px;
-      }
+      line-height: 1.5;
+      margin-bottom: 10px;
+      max-width: 650px;
     }
 
     .rating-proof-row {
@@ -547,9 +588,9 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 10px;
-      font-size: 13px;
+      font-size: 13.5px;
       color: var(--text-secondary);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
       line-height: 1.5;
     }
 
@@ -586,14 +627,14 @@
       align-items: baseline;
       gap: 12px;
       margin-bottom: 4px;
-      line-height: 1.4;
+      line-height: 1.3;
       flex-wrap: wrap;
     }
 
     .current-price {
       font-family: var(--font-display);
-      font-size: clamp(28px, 5vw, 36px);
-      font-weight: 800;
+      font-size: clamp(30px, 4.5vw, 42px);
+      font-weight: 700;
       color: var(--metallic-bright);
       letter-spacing: -0.02em;
     }
@@ -611,9 +652,9 @@
       font-size: 11.5px;
       font-weight: 800;
       letter-spacing: 0.05em;
-      padding: 3px 10px;
-      border-radius: var(--radius-pill);
-      line-height: 1.5;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      line-height: 1.4;
       text-transform: uppercase;
     }
 
@@ -633,7 +674,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
       box-shadow: var(--shadow-subtle);
       width: 100%;
       box-sizing: border-box;
@@ -727,10 +768,10 @@
       align-items: center;
       justify-content: space-between;
       width: 104px;
-      height: 52px;
+      height: 50px;
       background-color: var(--bg-card);
-      border: 1.5px solid var(--border-steel);
-      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-steel);
+      border-radius: var(--radius-md);
       padding: 0 6px;
       flex-shrink: 0;
       transition: border-color var(--transition-fast);
@@ -749,7 +790,7 @@
       font-size: 18px;
       font-weight: 500;
       color: var(--text-primary);
-      border-radius: 50%;
+      border-radius: var(--radius-sm);
       transition: background-color var(--transition-fast);
     }
 
@@ -767,15 +808,15 @@
 
     .btn-add-to-cart {
       flex: 1;
-      height: 52px;
+      height: 50px;
       background-color: var(--color-primary);
       color: #FFFFFF;
       font-family: var(--font-display);
       font-size: 13.5px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      border-radius: var(--radius-pill);
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -789,7 +830,6 @@
 
     .btn-add-to-cart:hover {
       background-color: var(--color-primary-hover);
-      transform: translateY(-1px);
       box-shadow: 0 6px 24px rgba(58, 56, 184, 0.6);
     }
 
@@ -801,10 +841,10 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 12px 10px;
-      padding: 18px 0;
+      padding: 20px 0;
+      margin-bottom: 24px;
       border-top: 1px solid var(--border-steel);
       border-bottom: 1px solid var(--border-steel);
-      margin-bottom: 24px;
       width: 100%;
     }
 
@@ -1308,7 +1348,7 @@
     .daily-relief-benefit-card {
       background: var(--bg-card);
       border: 1px solid var(--border-steel);
-      border-radius: 20px;
+      border-radius: var(--radius-lg);
       overflow: hidden;
       display: grid;
       grid-template-columns: 1fr;
@@ -1320,7 +1360,7 @@
     @media (min-width: 820px) {
       .daily-relief-benefit-card {
         grid-template-columns: 1fr 1fr;
-        border-radius: 24px;
+        border-radius: var(--radius-lg);
       }
       .daily-relief-benefit-card.reversed .benefit-card-content {
         order: 2;
@@ -1411,7 +1451,7 @@
     .daily-relief-bottom-benefits {
       background: var(--bg-card);
       border: 1px solid var(--border-steel);
-      border-radius: 18px;
+      border-radius: var(--radius-lg);
       padding: 24px 16px;
       width: 100%;
       box-sizing: border-box;
@@ -1420,7 +1460,7 @@
     @media (min-width: 768px) {
       .daily-relief-bottom-benefits {
         padding: 32px 24px;
-        border-radius: 20px;
+        border-radius: var(--radius-lg);
       }
     }
 
@@ -1863,7 +1903,7 @@
       height: 50px;
       background-color: transparent;
       border: 1.5px solid var(--metallic-grey);
-      border-radius: var(--radius-pill);
+      border-radius: var(--radius-md);
       color: #FFFFFF;
       font-family: var(--font-display);
       font-size: 14px;
@@ -1993,13 +2033,13 @@
 
     .newsletter-input {
       flex: 1;
-      height: 44px;
+      height: 46px;
       background-color: var(--bg-secondary);
       border: 1px solid var(--border-steel);
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-md);
       padding: 0 14px;
       color: #FFFFFF;
-      font-size: 13px;
+      font-size: 13.5px;
       font-family: inherit;
       outline: none;
       transition: border-color var(--transition-fast);
@@ -2015,18 +2055,22 @@
     }
 
     .newsletter-submit-btn {
-      height: 44px;
+      height: 46px;
       padding: 0 18px;
       background-color: var(--color-primary);
       color: #FFFFFF;
       font-family: var(--font-display);
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-md);
       transition: background-color var(--transition-fast);
       flex-shrink: 0;
+    }
+
+    .newsletter-submit-btn:hover {
+      background-color: var(--color-primary-hover);
     }
 
     .footer-bottom-bar {
